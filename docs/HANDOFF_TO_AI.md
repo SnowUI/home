@@ -6,19 +6,22 @@
 
 ## 🎯 需要交给 AI 的内容
 
-### 1. 设计系统 (`snowui/design-system`)
-- **位置**: `snowui/design-system/src/snowui.css`
+### 1. 设计系统 (`design-system/`)
+- **位置**: 本仓库中的 `design-system/src/snowui.css`
+- **GitHub**: [SnowUI/home](https://github.com/snowui/home) 仓库
 - **内容**: 完整的 CSS 设计系统，包含颜色、间距、字体、阴影等设计令牌
 - **用途**: 提供一致的设计规范和样式变量
 
-### 2. 设计素材 (`snowui/resource`)
-- **位置**: `snowui/resource/core/assets/`
+### 2. 设计素材 (Design Resources)
+- **GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
+- **位置**: `assets/` 目录（在 resource-core 仓库中）
 - **内容**: 
   - 图标（1500+）
   - 头像（330+）
   - 背景（144+）
   - 光标、表情、插画、图片、Logo 等
 - **用途**: 提供丰富的设计素材供网页设计使用
+- **React 组件**: [resource-react](https://github.com/snowui/resource-react) - 可直接使用的 React 组件
 
 ### 3. 文档和指南
 - **AI 使用指南**: `docs/AI_USAGE_GUIDE.md` - 详细的使用说明
@@ -31,13 +34,21 @@
 如果 AI 助手可以访问你的项目目录，直接告诉它：
 
 ```
-我有一套设计系统和素材库，位于：
-- 设计系统: snowui/design-system/src/snowui.css
-- 设计素材: snowui/resource/core/assets/
-- 使用指南: snowui/docs/AI_USAGE_GUIDE.md
-- 快速参考: snowui/docs/QUICK_REFERENCE.md
+我有一套设计系统和素材库：
 
-请先阅读 docs/AI_USAGE_GUIDE.md 了解如何使用这些资源，然后使用它们来设计网页。
+设计系统（本仓库）：
+- 位置: design-system/src/snowui.css
+- GitHub: https://github.com/snowui/home
+
+设计素材（独立仓库）：
+- GitHub: https://github.com/snowui/resource-core
+- React 组件: https://github.com/snowui/resource-react
+
+文档：
+- 使用指南: https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md
+- 快速参考: https://snowui.github.io/home/docs/QUICK_REFERENCE.md
+
+请先阅读 AI_USAGE_GUIDE.md 了解如何使用这些资源，然后使用它们来设计网页。
 ```
 
 ### 方法 2: 提供关键文件内容
@@ -45,15 +56,17 @@
 如果 AI 助手无法直接访问文件系统，你可以：
 
 1. **复制设计系统 CSS 文件内容**
-   - 打开 `snowui/design-system/src/snowui.css`
+   - 从本仓库打开 `design-system/src/snowui.css`
+   - 或从 GitHub: https://github.com/snowui/home/blob/main/design-system/src/snowui.css
    - 将内容提供给 AI
 
 2. **提供素材列表**
-   - 查看 `snowui/resource/core/src/icons.ts` 和 `snowui/resource/core/src/assets.ts`
+   - 查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的 `src/icons.ts` 和 `src/assets.ts`
    - 将这些元数据提供给 AI，让 AI 知道有哪些可用素材
 
 3. **提供使用指南**
    - 复制 `docs/AI_USAGE_GUIDE.md` 的内容给 AI
+   - 或提供链接：https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md
 
 ### 方法 3: 创建独立的工作目录
 
@@ -64,14 +77,14 @@
 mkdir snowui-for-ai
 cd snowui-for-ai
 
-# 复制设计系统
-cp -r ../snowui/design-system .
+# 克隆设计系统仓库
+git clone https://github.com/snowui/home.git
+cd home
 
-# 复制素材（只复制必要的）
-cp -r ../snowui/resource/core/assets .
+# 克隆素材仓库
+git clone https://github.com/snowui/resource-core.git
 
-# 复制文档
-cp -r ../snowui/docs .
+# 文档已在 home 仓库的 docs/ 目录中
 
 # 创建简化的素材索引（可选）
 # 可以创建一个简单的 JSON 文件列出所有可用素材
@@ -86,10 +99,15 @@ cp -r ../snowui/docs .
 ```
 我有一个设计系统和素材库，想让你使用它们来设计网页。
 
-设计系统位置: snowui/design-system/src/snowui.css
-素材库位置: snowui/resource/core/assets/
+设计系统：
+- GitHub: https://github.com/snowui/home
+- 文件: design-system/src/snowui.css
 
-请先阅读 snowui/docs/AI_USAGE_GUIDE.md 了解：
+素材库：
+- GitHub: https://github.com/snowui/resource-core
+- React 组件: https://github.com/snowui/resource-react
+
+请先阅读 https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md 了解：
 1. 如何使用设计系统的 CSS 变量
 2. 如何引用和使用设计素材
 3. 设计规范和最佳实践
@@ -120,12 +138,12 @@ cp -r ../snowui/docs .
 请使用 SnowUI 设计系统创建一个 [具体页面类型，如：登录页面/产品展示页/个人资料页]。
 
 要求：
-1. 使用 snowui/design-system/src/snowui.css 中的设计变量
-2. 从 snowui/resource/core/assets/ 选择合适的素材
-3. 参考 snowui/example/ 目录中的示例代码
+1. 使用 design-system/src/snowui.css 中的设计变量（本仓库）
+2. 从 [resource-core](https://github.com/snowui/resource-core) 选择合适的素材，或使用 [resource-react](https://github.com/snowui/resource-react) 的 React 组件
+3. 参考 [example](https://github.com/snowui/example) 仓库中的示例代码
 4. 确保设计符合 SnowUI 设计规范
 
-请先查看 snowui/docs/AI_USAGE_GUIDE.md 了解如何使用这些资源。
+请先查看 https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md 了解如何使用这些资源。
 ```
 
 ## ✅ 验证 AI 是否正确理解
@@ -155,18 +173,20 @@ cp -r ../snowui/docs .
 你好！我想让你使用我的设计系统和素材库来设计网页。
 
 ## 项目位置
-- 设计系统: snowui/design-system/src/snowui.css
-- 设计素材: snowui/resource/core/assets/
-- 使用指南: snowui/AI_USAGE_GUIDE.md
+- 设计系统: https://github.com/snowui/home (design-system/src/snowui.css)
+- 设计素材: https://github.com/snowui/resource-core
+- React 组件: https://github.com/snowui/resource-react
+- 使用指南: https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md
 
 ## 快速开始
-1. 先阅读 snowui/AI_USAGE_GUIDE.md 了解如何使用
-2. 查看 snowui/QUICK_REFERENCE.md 快速查找设计变量和素材路径
-3. 参考 snowui/example-template.html 查看示例代码
+1. 先阅读 https://snowui.github.io/home/docs/AI_USAGE_GUIDE.md 了解如何使用
+2. 查看 https://snowui.github.io/home/docs/QUICK_REFERENCE.md 快速查找设计变量和素材路径
+3. 参考 https://snowui.github.io/example 查看示例网站
 
 ## 核心要点
 - 设计系统使用 CSS 变量（如 var(--background-1)）
-- 素材直接引用文件路径（如 ./resource/core/assets/icons/regular/heart-regular.svg）
+- 推荐使用 React 组件：@snowui-design-system/resource-react
+- 或直接引用素材文件（需要克隆 resource-core 仓库）
 - 支持多主题切换（通过添加主题类）
 
 现在请帮我设计一个 [你的需求]。

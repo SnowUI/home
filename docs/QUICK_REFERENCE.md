@@ -84,38 +84,52 @@ var(--gradient-green)        /* 绿色渐变 */
 
 ## 📦 素材路径速查
 
-### 图标
+**注意**：所有素材位于独立的 GitHub 仓库 [resource-core](https://github.com/snowui/resource-core)
+
+### 使用 React 组件（推荐）
+
+```tsx
+import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
 ```
-resource/core/assets/icons/{weight}/{name}-{weight}.svg
+
+**GitHub**: [resource-react](https://github.com/snowui/resource-react)
+
+### 直接使用素材文件（需要克隆 resource-core 仓库）
+
+#### 图标
+```
+assets/icons/{weight}/{name}-{weight}.svg
 
 权重: regular, thin, light, bold, fill, duotone
-示例: resource/core/assets/icons/regular/heart-regular.svg
+示例: assets/icons/regular/heart-regular.svg
 ```
 
-### 头像
+#### 头像
 ```
-resource/core/assets/avatars/avatar-{name}-{size}.jpg
+assets/avatars/avatar-{name}-{size}.jpg
 
 尺寸: 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 128, 256, 512
-示例: resource/core/assets/avatars/avatar-byewind-32.jpg
+示例: assets/avatars/avatar-byewind-32.jpg
 ```
 
-### 背景
+#### 背景
 ```
-resource/core/assets/backgrounds/{name}-{width}.jpg
+assets/backgrounds/{name}-{width}.jpg
 
 宽度: 320, 640, 1024, 1920
-示例: resource/core/assets/backgrounds/gradient-01-1024.jpg
+示例: assets/backgrounds/gradient-01-1024.jpg
 ```
 
-### 其他素材
+#### 其他素材
 ```
-光标: resource/core/assets/cursors/cursors-{name}.svg
-表情: resource/core/assets/emoji/{name}.svg
-插画: resource/core/assets/illustrations/{name}-{width}.png
-图片: resource/core/assets/images/image-{id}-{width}.png
-Logo: resource/core/assets/logos/{name}.svg
+光标: assets/cursors/cursors-{name}.svg
+表情: assets/emoji/{name}.svg
+插画: assets/illustrations/{name}-{width}.png
+图片: assets/images/image-{id}-{width}.png
+Logo: assets/logos/{name}.svg
 ```
+
+**GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
 
 ## 🚀 快速开始模板
 
@@ -214,7 +228,9 @@ function App() {
 
 ## 🔍 查找素材
 
-查看以下文件了解所有可用素材：
-- 图标: `resource/core/src/icons.ts`
-- 素材: `resource/core/src/assets.ts`
+查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的以下文件了解所有可用素材：
+- 图标: `src/icons.ts`
+- 素材: `src/assets.ts`
+
+或查看 [在线示例网站](https://snowui.github.io/example) 浏览所有素材。
 
