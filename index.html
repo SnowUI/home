@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SnowUI Design System</title>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <!-- SnowUI Design System CSS from GitHub CDN -->
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css">
   <style>
     * {
       margin: 0;
@@ -62,12 +63,10 @@
       text-decoration: none;
       color: var(--foreground);
       font-size: var(--font-size-14);
-      transition: all 0.2s;
     }
 
     .badge:hover {
       background: var(--background-3);
-      transform: translateY(-2px);
     }
 
     .lang-switcher {
@@ -192,6 +191,15 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    code {
+      background: var(--background-2);
+      padding: var(--spacing-4) var(--spacing-8);
+      border-radius: var(--corner-radius-4);
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: var(--font-size-14);
+      color: var(--foreground);
     }
 
     .footer {
@@ -322,7 +330,7 @@ function App() {
 
         <p><strong>Use Design System CSS:</strong></p>
         <div class="code-block language-html">
-          <code>&lt;link rel="stylesheet" href="path/to/design-system/src/snowui.css"&gt;</code>
+          <code>&lt;link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css"&gt;</code>
         </div>
 
         <div class="code-block language-css">
@@ -493,4 +501,3 @@ function App() {
   </script>
 </body>
 </html>
-

@@ -82,8 +82,18 @@ function App() {
 ```
 
 **Use Design System CSS:**
+
+**Option 1: From GitHub (CDN) - Recommended**
 ```html
-<link rel="stylesheet" href="path/to/design-system/src/snowui.css">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css">
+```
+
+**Option 2: Download and use locally**
+1. Download `snowui.css` from [GitHub](https://github.com/snowui/home/blob/main/design-system/src/snowui.css)
+2. Place it in your project
+3. Reference it:
+```html
+<link rel="stylesheet" href="./path/to/snowui.css">
 ```
 
 ```css
