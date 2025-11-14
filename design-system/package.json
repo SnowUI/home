@@ -1,0 +1,8 @@
+{
+    "name": "@snowui/design-system",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./src/snowui.css",
+    "style": "./src/snowui.css"
+  }
+  

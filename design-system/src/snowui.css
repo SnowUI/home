@@ -1,0 +1,558 @@
+/*
+  Figma 多主题全局变量，自动生成
+  1. 默认 SnowUl-Light 全量变量写在 :root
+  2. 其它模式用 .theme-snowui-dark:root .theme-snowui-light:root .theme-ios-dark:root
+  3. 无论在哪一模式，spacing、radius、font-size、shadow 等永远用 :root 下的变量
+  4. 变量名统一 kebab-case
+  5. 强烈建议gap/padding/margin/radius场景使用 gap-[var(--spacing-8)] rounded-[var(--corner-radius-8)] 不推荐 tailwind原生 spacing/radius
+*/
+:root,
+.theme-snowui-light:root {
+  /* === Corner Radius === */
+  --corner-radius-0: 0;
+  --corner-radius-4: 0.25rem;  /* 4px */
+  --corner-radius-8: 0.5rem;   /* 8px */
+  --corner-radius-12: 0.75rem; /* 12px */
+  --corner-radius-16: 1rem;    /* 16px */
+  --corner-radius-20: 1.25rem; /* 20px */
+  --corner-radius-24: 1.5rem;  /* 24px */
+  --corner-radius-28: 1.75rem; /* 28px */
+  --corner-radius-32: 2rem;    /* 32px */
+  --corner-radius-40: 2.5rem;  /* 40px */
+  --corner-radius-48: 3rem;    /* 48px */
+  --corner-radius-80: 5rem;    /* 80px */
+
+  /* === Spacing === */
+  --spacing-0: 0;
+  --spacing-4: 0.25rem;  /* 4px */
+  --spacing-8: 0.5rem;   /* 8px */
+  --spacing-12: 0.75rem; /* 12px */
+  --spacing-16: 1rem;    /* 16px */
+  --spacing-20: 1.25rem; /* 20px */
+  --spacing-24: 1.5rem;  /* 24px */
+  --spacing-28: 1.75rem; /* 28px */
+  --spacing-40: 2.5rem;  /* 40px */
+  --spacing-48: 3rem;    /* 48px */
+
+  /* === Size === */
+  --size-16: 1rem;      /* 16px */
+  --size-20: 1.25rem;   /* 20px */
+  --size-24: 1.5rem;    /* 24px */
+  --size-28: 1.75rem;   /* 28px */
+  --size-32: 2rem;      /* 32px */
+  --size-40: 2.5rem;    /* 40px */
+  --size-48: 3rem;      /* 48px */
+  --size-56: 3.5rem;    /* 56px */
+  --size-64: 4rem;      /* 64px */
+  --size-72: 4.5rem;    /* 72px */
+  --size-80: 5rem;      /* 80px */
+
+  /* === Font === */
+  --font-size-12: 0.75rem;        /* 12px */
+  --line-height-12: 1rem;         /* 16px */
+  --paragraph-spacing-12: 0.5rem; /* 8px */
+
+  --font-size-14: 0.875rem;       /* 14px */
+  --line-height-14: 1.25rem;      /* 20px */
+  --paragraph-spacing-14: 0.625rem; /* 10px */
+
+  --font-size-16: 1rem;           /* 16px */
+  --line-height-16: 1.5rem;       /* 24px */
+  --paragraph-spacing-16: 0.75rem; /* 12px */
+
+  --font-size-18: 1.125rem;       /* 18px */
+  --line-height-18: 1.75rem;      /* 28px */
+  --paragraph-spacing-18: 0.875rem; /* 14px */
+
+  --font-size-24: 1.5rem;         /* 24px */
+  --line-height-24: 2rem;         /* 32px */
+  --paragraph-spacing-24: 1.125rem; /* 18px */
+
+  --font-size-32: 2rem;           /* 32px */
+  --line-height-32: 2.5rem;       /* 40px */
+  --paragraph-spacing-32: 1.5rem; /* 24px */
+
+  --font-size-48: 3rem;           /* 48px */
+  --line-height-48: 3.625rem;     /* 58px */
+  --paragraph-spacing-48: 2.25rem; /* 36px */
+
+  --font-size-64: 4rem;           /* 64px */
+  --line-height-64: 4.875rem;     /* 78px */
+  --paragraph-spacing-64: 3rem;   /* 48px */
+
+  /* === Font Weight === */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  /* === Static Colors (Fixed, not theme-dependent) === */
+  --static-black-100: #000000FF;
+  --static-black-80: #000000CC;
+  --static-black-40: #00000066;
+  --static-black-20: #00000033;
+  --static-black-10: #0000001A;
+  --static-black-4: #0000000A;
+  --static-white-100: #FFFFFFFF;
+  --static-white-80: #FFFFFFCC;
+  --static-white-40: #FFFFFF66;
+  --static-white-20: #FFFFFF33;
+  --static-white-10: #FFFFFF1A;
+  --static-white-4: #FFFFFF0A;
+
+  /* === Theme - SnowUl-Light === */
+  --black-100: #000000FF;
+  --black-80: #000000CC;
+  --black-40: #00000066;
+  --black-20: #00000033;
+  --black-10: #0000001A;
+  --black-4: #0000000A;
+  --white-100: #FFFFFFFF;
+  --white-80: #FFFFFFCC;
+  --white-40: #FFFFFF66;
+  --white-20: #FFFFFF33;
+  --white-10: #FFFFFF1A;
+  --white-4: #FFFFFF0A;
+  --background-1: #FFFFFFFF;
+  --background-2: #F9F9FAFF;
+  --background-3: #FFFFFFCC;
+  --background-4: #EDEEFCFF;
+  --background-5: #E6F1FDFF;
+  --background-6: #FFFFFFE5;
+  --secondary-purple: #B899EBFF;
+  --secondary-indigo: #ADADFBFF;
+  --secondary-blue: #7DBBFFFF;
+  --secondary-cyan: #A0BCE8FF;
+  --secondary-mint: #6BE6D3FF;
+  --secondary-green: #71DD8CFF;
+  --secondary-yellow: #FFCC00FF;
+  --secondary-orange: #FFB55BFF;
+  --secondary-red: #FF4747FF;
+  --background: var(--background-1);
+  --foreground: var(--black-100);
+  --primary: var(--black-100);
+  --logo: #4C98FDFF;
+  --logo-2: #4F507FFF;
+
+  /* === Background Gradients === */
+  --gradient-primary: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--primary);
+  --gradient-gray: linear-gradient(180deg, #00000008 0%, #00000003 100%), var(--background-2);
+  --gradient-black: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), linear-gradient(0deg, var(--black-20) 0%, var(--black-20) 100%), var(--black-100);
+  --gradient-purple: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-purple);
+  --gradient-indigo: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-indigo);
+  --gradient-blue: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-blue);
+  --gradient-cyan: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-cyan);
+  --gradient-mint: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-mint);
+  --gradient-green: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-green);
+  --gradient-yellow: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-yellow);
+  --gradient-orange: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-orange);
+  --gradient-red: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-red);
+  --gradient-border-lighting: linear-gradient(155deg, #FFFFFF66 7.86%, #FFFFFF00 38.39%, #FFFFFF00 53.66%, #FFFFFF1A 84.19%);
+
+  /* === Effect Styles (Shadow & Blur) === */
+  --effect-glass-1: 0 4px 16px 0 #0000000A, -2px -2px 8px 0 #FFFFFF26, 2px 4px 12px 0 #00000014, 0 8px 24px -4px #0000000D,0 -1px 2px 0 #FFFFFF14;
+  --effect-glass-2: 0 8px 28px 0 #0000001A, -3px -3px 12px 0 #FFFFFF33, 3px 6px 16px 0 #0000001F, 0 12px 32px -6px #00000014, 0 -2px 4px 0 #FFFFFF1F, 0 4px 12px 0 #0000000F;
+  --effect-glow: 0 0 12px 8px #00000033, 0 0 12px 8px #FFFFFF33;
+  --effect-focus: 0 0 0 4px #0000000A;
+  --effect-inner-shadow: 0 -0.5px 1px 0 #FFFFFF4D inset, 0 -0.5px 1px 0 #FFFFFF40 inset, 1px 1.5px 4px 0 #00000014 inset, 1px 1.5px 4px 0 #0000001A inset;
+  --effect-drop-shadow-1: 0 0.5px 0.5px 0 #0000001A;
+  --effect-drop-shadow-2: 0 2px 4px 0 #0000001A;
+  --effect-image-hover: 0 20px 20px 0 #000000FF inset;
+  --effect-background-blur-40: blur(20px);
+  --effect-background-blur-100: blur(50px);
+}
+
+/* === Theme - SnowUl-Dark === */
+.theme-snowui-dark:root {
+  --black-100: #FFFFFFFF;
+  --black-80: #FFFFFFCC;
+  --black-40: #FFFFFF66;
+  --black-20: #FFFFFF33;
+  --black-10: #FFFFFF26;
+  --black-4: #FFFFFF1A;
+  --white-100: #000000FF;
+  --white-80: #000000CC;
+  --white-40: #00000066;
+  --white-20: #00000033;
+  --white-10: #0000001A;
+  --white-4: #0000000A;
+  --background-1: #333333FF;
+  --background-2: #FFFFFF0A;
+  --background-3: #0000001A;
+  --background-4: #EDEEFCFF;
+  --background-5: #E6F1FDFF;
+  --background-6: #404040E5;
+  --secondary-purple: #B899EBFF;
+  --secondary-indigo: #ADADFBFF;
+  --secondary-blue: #7DBBFFFF;
+  --secondary-cyan: #A0BCE8FF;
+  --secondary-mint: #6BE6D3FF;
+  --secondary-green: #71DD8CFF;
+  --secondary-yellow: #FFCC00FF;
+  --secondary-orange: #FFB55BFF;
+  --secondary-red: #FF4747FF;
+  --primary: var(--secondary-indigo);
+  --logo: #4C98FDFF;
+  --logo-2: #EDEDFFFF;
+}
+
+/* === Theme - SnowUl-Light === */
+.theme-ios-light:root {
+  --black-100: #000000FF;
+  --black-80: #000000CC;
+  --black-40: #00000066;
+  --black-20: #00000033;
+  --black-10: #0000001A;
+  --black-4: #0000000A;
+  --white-100: #FFFFFFFF;
+  --white-80: #FFFFFFCC;
+  --white-40: #FFFFFF66;
+  --white-20: #FFFFFF33;
+  --white-10: #FFFFFF1A;
+  --white-4: #FFFFFF0A;
+  --background-1: #F5F5F6FF;
+  --background-2: #FFFFFFFF;
+  --background-3: #00000008;
+  --background-4: #00000005;
+  --background-5: #FFFFFFFF;
+  --background-6: #FFFFFFE5;
+  --secondary-purple: #AF52DEFF;
+  --secondary-indigo: #5856D6FF;
+  --secondary-blue: #007AFFFF;
+  --secondary-cyan: #32ADE6FF;
+  --secondary-mint: #00C7BEFF;
+  --secondary-green: #34C759FF;
+  --secondary-yellow: #FFCC00FF;
+  --secondary-orange: #FF9500FF;
+  --secondary-red: #FF3B30FF;
+  --primary: var(--secondary-blue);
+  --logo: var(--primary);
+  --logo-2: #4F507FFF;
+}
+
+/* === Theme - iOS-Dark === */
+.theme-ios-dark:root {
+  --black-100: #FFFFFFFF;
+  --black-80: #FFFFFFCC;
+  --black-40: #FFFFFF66;
+  --black-20: #FFFFFF33;
+  --black-10: #FFFFFF26;
+  --black-4: #FFFFFF1A;
+  --white-100: #000000FF;
+  --white-80: #000000CC;
+  --white-40: #00000066;
+  --white-20: #00000033;
+  --white-10: #0000001A;
+  --white-4: #0000000A;
+  --background-1: #333333FF;
+  --background-2: #FFFFFF0A;
+  --background-3: #0000001A;
+  --background-4: #0000001A;
+  --background-5: #FFFFFFCC;
+  --background-6: #404040E5;
+  --secondary-purple: #BF5AF2FF;
+  --secondary-indigo: #5E5CE6FF;
+  --secondary-blue: #0A84FFFF;
+  --secondary-cyan: #64D2FFFF;
+  --secondary-mint: #63E6E2FF;
+  --secondary-green: #30D158FF;
+  --secondary-yellow: #FFD60AFF;
+  --secondary-orange: #FF9F0AFF;
+  --secondary-red: #FF453AFF;
+  --primary: var(--secondary-blue);
+  --logo: var(--primary);
+  --logo-2: #EDEDFFFF;
+}
+
+@theme inline {
+  /* === Corner Radius 映射 === */
+  /* 映射圆角到 Tailwind，可使用 rounded-0, rounded-4, rounded-8 等 */
+  --radius-0px: var(--corner-radius-0);
+  --radius-4px: var(--corner-radius-4);
+  --radius-8px: var(--corner-radius-8);
+  --radius-12px: var(--corner-radius-12);
+  --radius-16px: var(--corner-radius-16);
+  --radius-20px: var(--corner-radius-20);
+  --radius-24px: var(--corner-radius-24);
+  --radius-28px: var(--corner-radius-28);
+  --radius-32px: var(--corner-radius-32);
+  --radius-40px: var(--corner-radius-40);
+  --radius-48px: var(--corner-radius-48);
+  --radius-80px: var(--corner-radius-80);
+
+  /* === Spacing 映射 === */
+  /* 映射间距到 Tailwind，可使用 p-4, m-8, gap-12 等 */
+  --spacing-0px: var(--spacing-0);
+  --spacing-4px: var(--spacing-4);
+  --spacing-8px: var(--spacing-8);
+  --spacing-12px: var(--spacing-12);
+  --spacing-16px: var(--spacing-16);
+  --spacing-20px: var(--spacing-20);
+  --spacing-24px: var(--spacing-24);
+  --spacing-28px: var(--spacing-28);
+  --spacing-40px: var(--spacing-40);
+  --spacing-48px: var(--spacing-48);
+
+  /* === Size 映射 === */
+  /* 映射 size 到 Tailwind size 系统，可使用 w-icon-16, h-icon-16 等 */
+  --size-16px: var(--size-16);
+  --size-20px: var(--size-20);
+  --size-24px: var(--size-24);
+  --size-28px: var(--size-28);
+  --size-32px: var(--size-32);
+  --size-40px: var(--size-40);
+  --size-48px: var(--size-48);
+  --size-56px: var(--size-56);
+  --size-64px: var(--size-64);
+  --size-72px: var(--size-72);
+  --size-80px: var(--size-80);
+
+  /* === Font Weight 映射 === */
+  /* 映射字重到 Tailwind，可使用 font-regular, font-semibold */
+  /* 注意：默认字重在 @layer base 中设置为 regular，大部分情况下不需要显式设置 */
+  --font-weight-regular: var(--font-weight-regular);
+  --font-weight-semibold: var(--font-weight-semibold);
+
+  /* === Static Colors 映射 === */
+  /* 固定颜色（不随主题变化），可使用 bg-static-black-100, text-static-white-80 等 */
+  --color-static-black-100: var(--static-black-100);
+  --color-static-black-80: var(--static-black-80);
+  --color-static-black-40: var(--static-black-40);
+  --color-static-black-20: var(--static-black-20);
+  --color-static-black-10: var(--static-black-10);
+  --color-static-black-4: var(--static-black-4);
+  --color-static-white-100: var(--static-white-100);
+  --color-static-white-80: var(--static-white-80);
+  --color-static-white-40: var(--static-white-40);
+  --color-static-white-20: var(--static-white-20);
+  --color-static-white-10: var(--static-white-10);
+  --color-static-white-4: var(--static-white-4);
+
+  /* === Theme Colors 映射 === */
+  /* 主题颜色（随主题变化），可使用 bg-black-100, text-white-80 等 */
+  --color-black-100: var(--black-100);
+  --color-black-80: var(--black-80);
+  --color-black-40: var(--black-40);
+  --color-black-20: var(--black-20);
+  --color-black-10: var(--black-10);
+  --color-black-4: var(--black-4);
+  --color-white-100: var(--white-100);
+  --color-white-80: var(--white-80);
+  --color-white-40: var(--white-40);
+  --color-white-20: var(--white-20);
+  --color-white-10: var(--white-10);
+  --color-white-4: var(--white-4);
+
+  /* === Background Colors 映射 === */
+  --color-background-1: var(--background-1);
+  --color-background-2: var(--background-2);
+  --color-background-3: var(--background-3);
+  --color-background-4: var(--background-4);
+  --color-background-5: var(--background-5);
+  --color-background-6: var(--background-6);
+
+  /* === Secondary Colors 映射 === */
+  /* 次要颜色，可使用 bg-purple, text-blue 等 */
+  --color-purple: var(--secondary-purple);
+  --color-indigo: var(--secondary-indigo);
+  --color-blue: var(--secondary-blue);
+  --color-cyan: var(--secondary-cyan);
+  --color-mint: var(--secondary-mint);
+  --color-green: var(--secondary-green);
+  --color-yellow: var(--secondary-yellow);
+  --color-orange: var(--secondary-orange);
+  --color-red: var(--secondary-red);
+
+  /* === Primary & Foreground 映射 === */
+  /* 使用 --background 而不是直接使用 --background-1，保持一致性 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-logo: var(--logo);
+  --color-logo-2: var(--logo-2);
+
+  /* === Shadow 映射 === */
+  /* 映射阴影效果到 Tailwind，可使用 shadow-glass-1, shadow-focus 等 */
+  --shadow-glow: var(--effect-glow);
+  --shadow-focus: var(--effect-focus);
+  --shadow-inner-shadow: var(--effect-inner-shadow);
+  --shadow-drop-shadow-1: var(--effect-drop-shadow-1);
+  --shadow-drop-shadow-2: var(--effect-drop-shadow-2);
+  --shadow-image-hover: var(--effect-image-hover);
+  --backdrop-blur-40: var(--effect-background-blur-40);
+  --backdrop-blur-100: var(--effect-background-blur-100);
+}
+
+/* === Font Size Utility Classes === */
+/* 基于 :root 中定义的字体变量创建的快捷工具类 */
+.font-12 {
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-12);
+}
+
+.font-12.paragraph {
+  margin-bottom: var(--paragraph-spacing-12);
+}
+
+.font-14 {
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-14);
+}
+
+.font-14.paragraph {
+  margin-bottom: var(--paragraph-spacing-14);
+}
+
+.font-16 {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-16);
+}
+
+.font-16.paragraph {
+  margin-bottom: var(--paragraph-spacing-16);
+}
+
+.font-18 {
+  font-size: var(--font-size-18);
+  line-height: var(--line-height-18);
+}
+
+.font-18.paragraph {
+  margin-bottom: var(--paragraph-spacing-18);
+}
+
+.font-24 {
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-24);
+}
+
+.font-24.paragraph {
+  margin-bottom: var(--paragraph-spacing-24);
+}
+
+.font-32 {
+  font-size: var(--font-size-32);
+  line-height: var(--line-height-32);
+}
+
+.font-32.paragraph {
+  margin-bottom: var(--paragraph-spacing-32);
+}
+
+.font-48 {
+  font-size: var(--font-size-48);
+  line-height: var(--line-height-48);
+}
+
+.font-48.paragraph {
+  margin-bottom: var(--paragraph-spacing-48);
+}
+
+.font-64 {
+  font-size: var(--font-size-64);
+  line-height: var(--line-height-64);
+}
+
+.font-64.paragraph {
+  margin-bottom: var(--paragraph-spacing-64);
+}
+
+/* === Glass Effect Utility Classes === */
+/* 完整的液态玻璃效果工具类，结合阴影、模糊和边框 */
+.glass-1 {
+  box-shadow: var(--effect-glass-1);
+  border: 1px solid #FFFFFF33;
+  backdrop-filter: blur(8px);
+}
+
+.glass-2 {
+  box-shadow: var(--effect-glass-2);
+  border: 1px solid #FFFFFF4D;
+  backdrop-filter: blur(20px);
+}
+
+/* === Gradient Background Utility Classes === */
+/* 渐变背景工具类，直接使用原始渐变变量 */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-gray {
+  background: var(--gradient-gray);
+}
+
+.bg-gradient-black {
+  background: var(--gradient-black);
+}
+
+.bg-gradient-purple {
+  background: var(--gradient-purple);
+}
+
+.bg-gradient-indigo {
+  background: var(--gradient-indigo);
+}
+
+.bg-gradient-blue {
+  background: var(--gradient-blue);
+}
+
+.bg-gradient-cyan {
+  background: var(--gradient-cyan);
+}
+
+.bg-gradient-mint {
+  background: var(--gradient-mint);
+}
+
+.bg-gradient-green {
+  background: var(--gradient-green);
+}
+
+.bg-gradient-yellow {
+  background: var(--gradient-yellow);
+}
+
+.bg-gradient-orange {
+  background: var(--gradient-orange);
+}
+
+.bg-gradient-red {
+  background: var(--gradient-red);
+}
+
+@layer base {
+  html {
+    font-size: 16px;  /* 默认值，可以改成你想要的，比如 14px、18px 等 */
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-weight: var(--font-weight-regular);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* 字体平滑渲染设置 */
+    /* -webkit-font-smoothing: antialiased; - 让文字在 WebKit 内核浏览器（Chrome、Safari、Edge）中更平滑，关闭子像素渲染，使用灰度抗锯齿 */
+    -webkit-font-smoothing: antialiased;
+    /* -moz-osx-font-smoothing: grayscale; - 让文字在 Firefox（macOS 系统）中更平滑，使用灰度抗锯齿而不是子像素渲染 */
+    -moz-osx-font-smoothing: grayscale;
+   
+  }
+  code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+}
+
+/* === Phosphor Icons Duotone 透明度自定义 === */
+/* 全局修改所有 duotone 图标的背景层透明度，从默认的 0.2 改为 0.04 */
+/* 
+ * 精确选择器：只匹配 Phosphor Icons 的 duotone 图标
+ * - viewBox="0 0 256 256" 是 Phosphor Icons 的标准 viewBox
+ * - path:first-of-type[opacity="0.2"] 匹配第一个 path 且 opacity 为 0.2（duotone 的特征）
+ * - 这样可以避免影响其他 SVG 元素
+ */
+svg[viewBox="0 0 256 256"] path:first-of-type[opacity="0.2"], svg[viewBox="0 0 256 256"] g[opacity="0.2"],
+svg[viewBox="0 0 256 256"] g[opacity=".2"] {
+  opacity: 0.08 !important;
+}
+
+/* 备用选择器：如果上面的选择器不生效，使用这个更通用的选择器 */
+/* 只匹配包含多个 path 且第一个 path 有 opacity="0.2" 的 SVG（duotone 图标的特征） */
+/* svg[viewBox="0 0 256 256"]:has(path:first-of-type[opacity="0.2"]) path:first-of-type[opacity="0.2"] {
+  opacity: 0.08 !important;
+} */
