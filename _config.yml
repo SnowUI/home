@@ -1,0 +1,38 @@
+# Jekyll configuration for GitHub Pages
+# This ensures Markdown is properly rendered
+
+# Site settings
+title: SnowUI Design System
+description: A comprehensive design system with icons, avatars, backgrounds, and more
+url: https://snowui.github.io
+baseurl: /home
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude from processing
+exclude:
+  - node_modules
+  - apps
+  - resource
+  - example
+  - package.json
+  - package-lock.json
+  - pnpm-lock.yaml
+  - turbo.json
+  - tsconfig.json
+
+# Kramdown settings for better code block rendering
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
