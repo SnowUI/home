@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SnowUI Design System</title>
-  <!-- SnowUI Design System CSS from GitHub CDN -->
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css">
+  <!-- SnowUI Design System CSS from jsDelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
   <style>
     * {
       margin: 0;
@@ -26,7 +26,7 @@
       margin: 0 auto;
     }
 
-    header {
+    .header {
       text-align: center;
       padding: var(--spacing-40) 0;
       border-bottom: 1px solid var(--black-10);
@@ -46,6 +46,24 @@
       line-height: var(--line-height-18);
       color: var(--black-80);
       margin-bottom: var(--spacing-24);
+      font-weight: var(--font-weight-regular);
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: var(--spacing-8);
+      justify-content: center;
+      margin: var(--spacing-16) 0;
+    }
+
+    .lang-switcher a {
+      color: var(--secondary-blue);
+      text-decoration: none;
+      font-size: var(--font-size-14);
+    }
+
+    .lang-switcher a:hover {
+      text-decoration: underline;
     }
 
     .badges {
@@ -53,6 +71,7 @@
       gap: var(--spacing-12);
       justify-content: center;
       flex-wrap: wrap;
+      margin-top: var(--spacing-16);
     }
 
     .badge {
@@ -69,21 +88,10 @@
       background: var(--background-3);
     }
 
-    .lang-switcher {
-      display: flex;
-      gap: var(--spacing-8);
-      justify-content: center;
-      margin-top: var(--spacing-16);
-    }
-
-    .lang-switcher a {
-      color: var(--secondary-blue);
-      text-decoration: none;
-      font-size: var(--font-size-14);
-    }
-
-    .lang-switcher a:hover {
-      text-decoration: underline;
+    hr {
+      border: none;
+      border-top: 1px solid var(--black-10);
+      margin: var(--spacing-40) 0;
     }
 
     section {
@@ -94,6 +102,7 @@
       font-size: var(--font-size-32);
       line-height: var(--line-height-32);
       font-weight: var(--font-weight-semibold);
+      margin-top: var(--spacing-48);
       margin-bottom: var(--spacing-24);
       color: var(--foreground);
     }
@@ -102,8 +111,17 @@
       font-size: var(--font-size-24);
       line-height: var(--line-height-24);
       font-weight: var(--font-weight-semibold);
-      margin-top: var(--spacing-32);
+      margin-top: var(--spacing-28);
       margin-bottom: var(--spacing-16);
+      color: var(--foreground);
+    }
+
+    h4 {
+      font-size: var(--font-size-18);
+      line-height: var(--line-height-18);
+      font-weight: var(--font-weight-semibold);
+      margin-top: var(--spacing-24);
+      margin-bottom: var(--spacing-12);
       color: var(--foreground);
     }
 
@@ -126,7 +144,21 @@
       margin-bottom: var(--spacing-8);
     }
 
-    .code-block {
+    strong {
+      font-weight: var(--font-weight-semibold);
+      color: var(--foreground);
+    }
+
+    code {
+      background: var(--background-2);
+      padding: var(--spacing-4) var(--spacing-8);
+      border-radius: var(--corner-radius-4);
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: var(--font-size-14);
+      color: var(--foreground);
+    }
+
+    pre {
       background: var(--background-2);
       border: 1px solid var(--black-10);
       border-radius: var(--corner-radius-8);
@@ -138,22 +170,29 @@
       line-height: var(--line-height-16);
     }
 
-    .code-block code {
+    pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
       color: var(--foreground);
       white-space: pre;
     }
 
-    .code-block.language-bash code {
-      color: var(--secondary-green);
+    blockquote {
+      border-left: 4px solid var(--secondary-blue);
+      padding-left: var(--spacing-16);
+      margin: var(--spacing-16) 0;
+      color: var(--black-80);
+      font-style: italic;
     }
 
-    .code-block.language-tsx code,
-    .code-block.language-html code {
+    a {
       color: var(--secondary-blue);
+      text-decoration: none;
     }
 
-    .code-block.language-css code {
-      color: var(--secondary-purple);
+    a:hover {
+      text-decoration: underline;
     }
 
     .card {
@@ -178,36 +217,12 @@
       border-radius: var(--corner-radius-12);
     }
 
-    .feature-item strong {
-      color: var(--foreground);
-      display: block;
-      margin-bottom: var(--spacing-8);
-    }
-
-    a {
-      color: var(--secondary-blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    code {
-      background: var(--background-2);
-      padding: var(--spacing-4) var(--spacing-8);
-      border-radius: var(--corner-radius-4);
-      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-      font-size: var(--font-size-14);
-      color: var(--foreground);
-    }
-
     .footer {
       text-align: center;
       padding: var(--spacing-40) 0;
       border-top: 1px solid var(--black-10);
       margin-top: var(--spacing-48);
-      color: var(--black-60);
+      color: var(--black-80);
     }
 
     .footer-links {
@@ -215,21 +230,7 @@
       gap: var(--spacing-16);
       justify-content: center;
       margin-top: var(--spacing-16);
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: var(--spacing-16);
-      }
-
-      h1 {
-        font-size: var(--font-size-32);
-        line-height: var(--line-height-32);
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
+      flex-wrap: wrap;
     }
 
     /* Hide Chinese section by default */
@@ -245,11 +246,31 @@
     body.chinese #english {
       display: none;
     }
+
+    @media (max-width: 768px) {
+      body {
+        padding: var(--spacing-16);
+      }
+
+      h1 {
+        font-size: var(--font-size-32);
+        line-height: var(--line-height-32);
+      }
+
+      h2 {
+        font-size: var(--font-size-24);
+        line-height: var(--line-height-24);
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="header">
       <h1>SnowUI Design System</h1>
       <p class="subtitle">A comprehensive design system with icons, avatars, backgrounds, and more</p>
       <div class="lang-switcher">
@@ -264,9 +285,9 @@
 
     <div id="english">
       <section>
-        <h2>🎯 What is SnowUI?</h2>
         <p>SnowUI is a complete design system ecosystem that provides design systems, design resource libraries, and multi-platform support. It's designed to help developers and AI assistants create beautiful, consistent web interfaces.</p>
-        
+
+        <h2>🎯 What is SnowUI?</h2>
         <p>SnowUI consists of two core components:</p>
         <ol>
           <li><strong>Design System</strong> (<code>design-system/</code>) - A comprehensive CSS design system with design tokens, themes, and utility classes</li>
@@ -276,32 +297,37 @@
 
       <section>
         <h2>✨ Key Features</h2>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <strong>🎨 Complete Design System</strong>
-            CSS variables for colors, spacing, typography, shadows, and effects
-          </div>
-          <div class="feature-item">
-            <strong>🎭 Multi-Theme Support</strong>
-            SnowUI Light/Dark and iOS Light/Dark themes (4 themes total)
-          </div>
-          <div class="feature-item">
-            <strong>📦 1500+ Icons</strong>
-            6 weight variants (regular, thin, light, bold, fill, duotone)
-          </div>
-          <div class="feature-item">
-            <strong>🖼️ Rich Assets</strong>
-            330+ avatars, 144+ backgrounds, 180+ illustrations, 124+ logos
-          </div>
-          <div class="feature-item">
-            <strong>📱 Smart Sizing</strong>
-            Automatic multi-size generation and matching for bitmaps
-          </div>
-          <div class="feature-item">
-            <strong>⚡ TypeScript Support</strong>
-            Full type definitions for all components
-          </div>
-        </div>
+        <ul>
+          <li><strong>🎨 Complete Design System</strong>: CSS variables for colors, spacing, typography, shadows, and effects</li>
+          <li><strong>🎭 Multi-Theme Support</strong>: SnowUI Light/Dark and iOS Light/Dark themes (4 themes total)</li>
+          <li><strong>📦 1500+ Icons</strong>: 6 weight variants (regular, thin, light, bold, fill, duotone)</li>
+          <li><strong>🖼️ Rich Assets</strong>: 330+ avatars, 144+ backgrounds, 180+ illustrations, 124+ logos, 21+ cursors, 22+ emoji</li>
+          <li><strong>📱 Smart Sizing</strong>: Automatic multi-size generation and matching for bitmaps</li>
+          <li><strong>⚡ TypeScript Support</strong>: Full type definitions for all components</li>
+          <li><strong>🌳 Tree-shaking</strong>: Optimized bundle size with ES modules</li>
+          <li><strong>🔧 Multi-Platform</strong>: React components available (Vue, Svelte, Web coming soon)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>📦 Project Structure</h2>
+        <p>This repository (<code>SnowUI/home</code>) contains:</p>
+        <pre><code>snowui/
+├── design-system/          # Design system CSS with design tokens
+│   └── src/
+│       └── snowui.css     # Main design system file
+└── docs/                  # Documentation for AI assistants
+    ├── AI_USAGE_GUIDE.md  # Complete guide for AI assistants
+    ├── QUICK_REFERENCE.md # Quick reference for design tokens
+    └── HANDOFF_TO_AI.md   # Guide for handing off to other AI</code></pre>
+
+        <p><strong>Related Repositories</strong> (separate GitHub repositories):</p>
+        <ul>
+          <li><a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> - Core resource package with all design assets</li>
+          <li><a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> - React components package</li>
+          <li><a href="https://github.com/snowui/example" target="_blank">example</a> - Example website and demo</li>
+          <li><a href="https://snowui.github.io/example" target="_blank">Live Demo</a> - View the example website</li>
+        </ul>
       </section>
 
       <section>
@@ -309,13 +335,10 @@
         
         <h3>For Developers</h3>
         <p><strong>Install React Components:</strong></p>
-        <div class="code-block language-bash">
-          <code>npm install @snowui-design-system/resource-react</code>
-        </div>
+        <pre><code>npm install @snowui-design-system/resource-react</code></pre>
 
         <p><strong>Use in Your Project:</strong></p>
-        <div class="code-block language-tsx">
-          <code>import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
+        <pre><code>import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
 
 function App() {
   return (
@@ -325,49 +348,105 @@ function App() {
       &lt;Gradient01 width={1024} /&gt;
     &lt;/div&gt;
   );
-}</code>
-        </div>
+}</code></pre>
 
         <p><strong>Use Design System CSS:</strong></p>
-        <div class="code-block language-html">
-          <code>&lt;link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css"&gt;</code>
-        </div>
+        <p><strong>Option 1: From GitHub (CDN) - Recommended</strong></p>
+        <pre><code>&lt;link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css"&gt;</code></pre>
 
-        <div class="code-block language-css">
-          <code>.card {
+        <p><strong>Option 2: Download and use locally</strong></p>
+        <ol>
+          <li>Download <code>snowui.css</code> from <a href="https://github.com/snowui/home/blob/main/design-system/src/snowui.css" target="_blank">GitHub</a></li>
+          <li>Place it in your project</li>
+          <li>Reference it:</li>
+        </ol>
+        <pre><code>&lt;link rel="stylesheet" href="./path/to/snowui.css"&gt;</code></pre>
+
+        <pre><code>.card {
   background: var(--background-1);
   padding: var(--spacing-16);
   border-radius: var(--corner-radius-8);
   box-shadow: var(--effect-glass-1);
-}</code>
-        </div>
+}</code></pre>
 
         <h3>For AI Assistants</h3>
         <div class="card">
-          <p><strong>📖 Important:</strong> If you're an AI assistant helping with web design, start by reading the <a href="./docs/AI_USAGE_GUIDE.html">AI Usage Guide</a> for complete instructions.</p>
+          <p><strong>📖 Important</strong>: If you're an AI assistant helping with web design, start by reading the <a href="./docs/AI_USAGE_GUIDE.html">AI Usage Guide</a> for complete instructions.</p>
         </div>
 
         <p><strong>Quick Access:</strong></p>
         <ul>
-          <li><strong>Design System:</strong> <code>design-system/src/snowui.css</code> - Complete CSS design tokens</li>
-          <li><strong>Assets:</strong> Available in <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> repository</li>
-          <li><strong>Documentation:</strong>
+          <li><strong>Design System</strong>: <code>design-system/src/snowui.css</code> - Complete CSS design tokens</li>
+          <li><strong>Assets</strong>: Available in <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> repository</li>
+          <li><strong>Documentation</strong>:
             <ul>
               <li><a href="./docs/AI_USAGE_GUIDE.html">AI Usage Guide</a> ⭐ - Complete guide for AI assistants</li>
               <li><a href="./docs/QUICK_REFERENCE.html">Quick Reference</a> - Quick reference for design tokens and asset paths</li>
             </ul>
           </li>
         </ul>
+
+        <p><strong>Key Information:</strong></p>
+        <ul>
+          <li>Design tokens: <code>design-system/src/snowui.css</code></li>
+          <li>Icons: 1500+ icons in 6 weights (regular, thin, light, bold, fill, duotone)</li>
+          <li>Avatars: 330+ avatars with sizes 16×16 to 512×512</li>
+          <li>Backgrounds: 144+ backgrounds with widths 320, 640, 1024, 1920</li>
+          <li>See <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> for all assets</li>
+        </ul>
+
+        <p><strong>Basic Usage Example:</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="./design-system/src/snowui.css"&gt;
+  &lt;style&gt;
+    .card {
+      background: var(--background-1);
+      padding: var(--spacing-24);
+      border-radius: var(--corner-radius-16);
+      box-shadow: var(--effect-glass-1);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="card"&gt;
+    &lt;h1 style="color: var(--foreground);"&gt;Title&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
       </section>
 
       <section>
         <h2>📚 Documentation</h2>
         
         <h3>For AI Assistants</h3>
+        <blockquote>
+          <p><strong>Start here if you're an AI assistant</strong>: These documents are specifically designed for AI assistants to understand and use SnowUI.</p>
+        </blockquote>
         <ul>
-          <li><a href="./docs/AI_USAGE_GUIDE.html">AI Usage Guide</a> ⭐ - Complete guide for AI assistants</li>
-          <li><a href="./docs/QUICK_REFERENCE.html">Quick Reference</a> - Quick reference for design tokens and asset paths</li>
-          <li><a href="./docs/HANDOFF_TO_AI.html">Handoff to AI</a> - Guide for handing off SnowUI resources to other AI assistants</li>
+          <li><a href="./docs/AI_USAGE_GUIDE.html">AI Usage Guide</a> ⭐ - Complete guide for AI assistants to use SnowUI design system and resources
+            <ul>
+              <li>How to use design system CSS variables</li>
+              <li>How to reference and use design assets</li>
+              <li>Code examples and best practices</li>
+              <li>Complete usage instructions</li>
+            </ul>
+          </li>
+          <li><a href="./docs/QUICK_REFERENCE.html">Quick Reference</a> - Quick reference for design tokens and asset paths
+            <ul>
+              <li>Design system variables cheat sheet</li>
+              <li>Asset path patterns</li>
+              <li>Common code templates</li>
+            </ul>
+          </li>
+          <li><a href="./docs/HANDOFF_TO_AI.html">Handoff to AI</a> - Guide for handing off SnowUI resources to other AI assistants
+            <ul>
+              <li>How to provide SnowUI resources to other AI</li>
+              <li>Prompt templates</li>
+              <li>Verification methods</li>
+            </ul>
+          </li>
         </ul>
 
         <h3>For Developers</h3>
@@ -375,25 +454,200 @@ function App() {
           <li><a href="https://github.com/snowui/resource-core" target="_blank">Resource Core</a> - Core resource package with all design assets</li>
           <li><a href="https://github.com/snowui/resource-react" target="_blank">Resource React</a> - React components package</li>
           <li><a href="https://snowui.github.io/example" target="_blank">Example Website</a> - Live demo and showcase</li>
+          <li><a href="https://github.com/snowui/example" target="_blank">Example Repository</a> - Example website source code</li>
         </ul>
+      </section>
+
+      <section>
+        <h2>🎨 Design System Overview</h2>
+        <p>The design system is located in <code>design-system/src/snowui.css</code> and provides:</p>
+
+        <h3>Design Tokens</h3>
+        <p><strong>Colors:</strong></p>
+        <ul>
+          <li>Theme colors: <code>--background-1</code>, <code>--foreground</code>, <code>--primary</code></li>
+          <li>Secondary colors: <code>--secondary-purple</code>, <code>--secondary-blue</code>, <code>--secondary-green</code>, <code>--secondary-red</code>, etc.</li>
+          <li>Static colors: <code>--static-black-100</code>, <code>--static-white-100</code> (theme-independent)</li>
+        </ul>
+
+        <p><strong>Spacing:</strong></p>
+        <ul>
+          <li><code>--spacing-4</code> (4px), <code>--spacing-8</code> (8px), <code>--spacing-12</code> (12px), <code>--spacing-16</code> (16px), <code>--spacing-24</code> (24px), <code>--spacing-40</code> (40px), <code>--spacing-48</code> (48px)</li>
+        </ul>
+
+        <p><strong>Typography:</strong></p>
+        <ul>
+          <li>Font sizes: <code>--font-size-12</code> to <code>--font-size-64</code></li>
+          <li>Line heights: <code>--line-height-12</code> to <code>--line-height-64</code></li>
+          <li>Font weights: <code>--font-weight-regular</code> (400), <code>--font-weight-semibold</code> (600)</li>
+        </ul>
+
+        <p><strong>Corner Radius:</strong></p>
+        <ul>
+          <li><code>--corner-radius-4</code> (4px) to <code>--corner-radius-80</code> (80px)</li>
+        </ul>
+
+        <p><strong>Effects:</strong></p>
+        <ul>
+          <li>Glass effects: <code>--effect-glass-1</code>, <code>--effect-glass-2</code></li>
+          <li>Shadows: <code>--effect-focus</code>, <code>--effect-glow</code></li>
+          <li>Gradients: <code>--gradient-primary</code>, <code>--gradient-blue</code>, <code>--gradient-purple</code>, etc.</li>
+        </ul>
+
+        <p><strong>Themes:</strong></p>
+        <ul>
+          <li><code>theme-snowui-light</code> (default)</li>
+          <li><code>theme-snowui-dark</code></li>
+          <li><code>theme-ios-light</code></li>
+          <li><code>theme-ios-dark</code></li>
+        </ul>
+
+        <p>See <a href="./docs/QUICK_REFERENCE.html">Quick Reference</a> for complete token list.</p>
+
+        <h3>Utility Classes</h3>
+        <p><strong>Font Classes:</strong></p>
+        <pre><code>&lt;div class="font-12"&gt;12px font&lt;/div&gt;
+&lt;div class="font-14"&gt;14px font&lt;/div&gt;
+&lt;div class="font-16"&gt;16px font&lt;/div&gt;
+&lt;div class="font-24"&gt;24px font&lt;/div&gt;</code></pre>
+
+        <p><strong>Glass Effects:</strong></p>
+        <pre><code>&lt;div class="glass-1"&gt;Light glass effect&lt;/div&gt;
+&lt;div class="glass-2"&gt;Heavy glass effect&lt;/div&gt;</code></pre>
+
+        <p><strong>Gradient Backgrounds:</strong></p>
+        <pre><code>&lt;div class="bg-gradient-primary"&gt;Primary gradient&lt;/div&gt;
+&lt;div class="bg-gradient-blue"&gt;Blue gradient&lt;/div&gt;
+&lt;div class="bg-gradient-purple"&gt;Purple gradient&lt;/div&gt;</code></pre>
+      </section>
+
+      <section>
+        <h2>📦 Asset Library</h2>
+        <p>All design assets are available in the <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> repository:</p>
+
+        <h3>Icons (1500+)</h3>
+        <ul>
+          <li><strong>Weights</strong>: regular, thin, light, bold, fill, duotone</li>
+          <li><strong>Format</strong>: SVG</li>
+          <li><strong>Usage</strong>: Use React components from <a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> or direct SVG files</li>
+        </ul>
+
+        <h3>Avatars (330+)</h3>
+        <ul>
+          <li><strong>Sizes</strong>: 16×16, 20×20, 24×24, 28×28, 32×32, 40×40, 48×48, 56×56, 64×64, 80×80, 128×128, 256×256, 512×512</li>
+          <li><strong>Default</strong>: 32×32</li>
+          <li><strong>Format</strong>: JPG</li>
+          <li><strong>Usage</strong>: Use React components or direct image files</li>
+        </ul>
+
+        <h3>Backgrounds (144+)</h3>
+        <ul>
+          <li><strong>Widths</strong>: 320, 640, 1024, 1920</li>
+          <li><strong>Default</strong>: 1024px (height auto)</li>
+          <li><strong>Format</strong>: JPG</li>
+          <li><strong>Usage</strong>: Use React components or direct image files</li>
+        </ul>
+
+        <h3>Other Assets</h3>
+        <ul>
+          <li><strong>Cursors</strong>: 21+ SVG cursors</li>
+          <li><strong>Emoji</strong>: 22+ emoji SVG</li>
+          <li><strong>Illustrations</strong>: 180+ illustrations (PNG/SVG)</li>
+          <li><strong>Images</strong>: Sample images (PNG)</li>
+          <li><strong>Logos</strong>: 124+ brand logos (SVG)</li>
+        </ul>
+
+        <p>For detailed asset information, see <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> repository.</p>
       </section>
 
       <section>
         <h2>🔗 Related Projects</h2>
         <ul>
-          <li><a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> - Core resource package (npm: <code>@snowui-design-system/resource-core</code>)</li>
-          <li><a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> - React components package (npm: <code>@snowui-design-system/resource-react</code>)</li>
-          <li><a href="https://github.com/snowui/example" target="_blank">example</a> - Example website and demo</li>
-          <li><a href="https://snowui.github.io/example" target="_blank">Live Demo</a> - View the example website</li>
+          <li><a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> - Core resource package (npm: <code>@snowui-design-system/resource-core</code>)
+            <ul>
+              <li>All design assets (icons, avatars, backgrounds, etc.)</li>
+              <li>Asset processing scripts</li>
+              <li>Metadata files</li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> - React components package (npm: <code>@snowui-design-system/resource-react</code>)
+            <ul>
+              <li>React components for all assets</li>
+              <li>TypeScript support</li>
+              <li>Tree-shaking optimized</li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/snowui/example" target="_blank">example</a> - Example website and demo
+            <ul>
+              <li>Live demo: <a href="https://snowui.github.io/example" target="_blank">https://snowui.github.io/example</a></li>
+              <li>Showcases all assets</li>
+              <li>Usage examples</li>
+            </ul>
+          </li>
         </ul>
+      </section>
+
+      <section>
+        <h2>🛠️ Development</h2>
+        
+        <h3>Prerequisites</h3>
+        <ul>
+          <li><strong>Node.js</strong>: v18.0.0 or higher</li>
+          <li><strong>npm</strong>: v8.0.0 or higher (comes with Node.js)</li>
+        </ul>
+
+        <h3>Using Design System</h3>
+        <p><strong>In HTML:</strong></p>
+        <pre><code>&lt;link rel="stylesheet" href="design-system/src/snowui.css"&gt;</code></pre>
+
+        <p><strong>In React/Vue/Other:</strong></p>
+        <pre><code>import './design-system/src/snowui.css';</code></pre>
+
+        <p><strong>With Tailwind CSS:</strong></p>
+        <pre><code>&lt;div className="bg-[var(--background-1)] p-[var(--spacing-16)] rounded-[var(--corner-radius-8)]"&gt;
+  &lt;h1 className="text-[var(--foreground)]"&gt;Title&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section>
+        <h2>📊 Asset Sizing</h2>
+        
+        <h3>Avatars (Square Sizes)</h3>
+        <p>Generated sizes: 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 128, 256, 512<br>Default: 32×32</p>
+
+        <h3>Backgrounds (Fixed Width, Auto Height)</h3>
+        <p>Generated widths: 320, 640, 1024, 1920<br>Default: 1024px</p>
+
+        <h3>Images (Fixed Width, Auto Height)</h3>
+        <p>Generated widths: 160, 320, 640, 1024<br>Default: 320px</p>
+
+        <h3>Illustrations (Fixed Width, Auto Height)</h3>
+        <p>Generated widths: 160, 320, 640, 1024<br>Default: 320px</p>
+      </section>
+
+      <section>
+        <h2>🎯 Use Cases</h2>
+        <ul>
+          <li><strong>Web Development</strong>: Use React components or direct asset files</li>
+          <li><strong>AI-Assisted Design</strong>: Provide design system and assets to AI for web design</li>
+          <li><strong>Design Systems</strong>: Build consistent UIs with design tokens</li>
+          <li><strong>Prototyping</strong>: Quick access to icons, avatars, and backgrounds</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>📄 License</h2>
+        <p>MIT</p>
       </section>
     </div>
 
+    <hr>
+
     <div id="chinese">
       <section>
-        <h2>🎯 什么是 SnowUI？</h2>
         <p>SnowUI 是一个完整的设计系统生态系统，提供设计系统、设计素材库以及多平台支持。旨在帮助开发者和 AI 助手创建美观、一致的 Web 界面。</p>
-        
+
+        <h2>🎯 什么是 SnowUI？</h2>
         <p>SnowUI 包含两个核心组件：</p>
         <ol>
           <li><strong>设计系统</strong> (<code>design-system/</code>) - 包含设计令牌、主题和工具类的完整 CSS 设计系统</li>
@@ -403,32 +657,37 @@ function App() {
 
       <section>
         <h2>✨ 核心特性</h2>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <strong>🎨 完整设计系统</strong>
-            颜色、间距、字体、阴影和效果的 CSS 变量
-          </div>
-          <div class="feature-item">
-            <strong>🎭 多主题支持</strong>
-            SnowUI Light/Dark 和 iOS Light/Dark 主题（共 4 种主题）
-          </div>
-          <div class="feature-item">
-            <strong>📦 1500+ 图标</strong>
-            6 种权重变体（regular, thin, light, bold, fill, duotone）
-          </div>
-          <div class="feature-item">
-            <strong>🖼️ 丰富素材</strong>
-            330+ 头像、144+ 背景、180+ 插画、124+ Logo
-          </div>
-          <div class="feature-item">
-            <strong>📱 智能尺寸</strong>
-            位图自动多尺寸生成和匹配
-          </div>
-          <div class="feature-item">
-            <strong>⚡ TypeScript 支持</strong>
-            所有组件都有完整的类型定义
-          </div>
-        </div>
+        <ul>
+          <li><strong>🎨 完整设计系统</strong>：颜色、间距、字体、阴影和效果的 CSS 变量</li>
+          <li><strong>🎭 多主题支持</strong>：SnowUI Light/Dark 和 iOS Light/Dark 主题（共 4 种主题）</li>
+          <li><strong>📦 1500+ 图标</strong>：6 种权重变体（regular, thin, light, bold, fill, duotone）</li>
+          <li><strong>🖼️ 丰富素材</strong>：330+ 头像、144+ 背景、180+ 插画、124+ Logo、21+ 光标、22+ 表情</li>
+          <li><strong>📱 智能尺寸</strong>：位图自动多尺寸生成和匹配</li>
+          <li><strong>⚡ TypeScript 支持</strong>：所有组件都有完整的类型定义</li>
+          <li><strong>🌳 Tree-shaking</strong>：使用 ES 模块优化打包体积</li>
+          <li><strong>🔧 多平台</strong>：React 组件已可用（Vue、Svelte、Web 即将推出）</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>📦 项目结构</h2>
+        <p>本仓库 (<code>SnowUI/home</code>) 包含：</p>
+        <pre><code>snowui/
+├── design-system/          # 设计系统 CSS 和设计令牌
+│   └── src/
+│       └── snowui.css     # 主设计系统文件
+└── docs/                  # AI 助手文档
+    ├── AI_USAGE_GUIDE.md  # AI 助手完整指南
+    ├── QUICK_REFERENCE.md # 设计令牌快速参考
+    └── HANDOFF_TO_AI.md   # 交接给其他 AI 的指南</code></pre>
+
+        <p><strong>相关仓库</strong>（独立的 GitHub 仓库）：</p>
+        <ul>
+          <li><a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> - 核心资源包，包含所有设计素材</li>
+          <li><a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> - React 组件包</li>
+          <li><a href="https://github.com/snowui/example" target="_blank">example</a> - 示例网站和演示</li>
+          <li><a href="https://snowui.github.io/example" target="_blank">在线演示</a> - 查看示例网站</li>
+        </ul>
       </section>
 
       <section>
@@ -436,13 +695,10 @@ function App() {
         
         <h3>开发者使用</h3>
         <p><strong>安装 React 组件：</strong></p>
-        <div class="code-block language-bash">
-          <code>npm install @snowui-design-system/resource-react</code>
-        </div>
+        <pre><code>npm install @snowui-design-system/resource-react</code></pre>
 
         <p><strong>在项目中使用：</strong></p>
-        <div class="code-block language-tsx">
-          <code>import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
+        <pre><code>import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
 
 function App() {
   return (
@@ -452,36 +708,294 @@ function App() {
       &lt;Gradient01 width={1024} /&gt;
     &lt;/div&gt;
   );
-}</code>
-        </div>
+}</code></pre>
+
+        <p><strong>使用设计系统 CSS：</strong></p>
+        <pre><code>&lt;link rel="stylesheet" href="path/to/design-system/src/snowui.css"&gt;</code></pre>
+
+        <pre><code>.card {
+  background: var(--background-1);
+  padding: var(--spacing-16);
+  border-radius: var(--corner-radius-8);
+  box-shadow: var(--effect-glass-1);
+}</code></pre>
 
         <h3>AI 助手使用</h3>
         <div class="card">
-          <p><strong>📖 重要提示：</strong> 如果你是帮助网页设计的 AI 助手，请先阅读 <a href="./docs/AI_USAGE_GUIDE.html">AI 使用指南</a> 获取完整说明。</p>
+          <p><strong>📖 重要提示</strong>：如果你是帮助网页设计的 AI 助手，请先阅读 <a href="./docs/AI_USAGE_GUIDE.html">AI 使用指南</a> 获取完整说明。</p>
         </div>
+
+        <p><strong>快速访问：</strong></p>
+        <ul>
+          <li><strong>设计系统</strong>：<code>design-system/src/snowui.css</code> - 完整的 CSS 设计令牌</li>
+          <li><strong>素材</strong>：在 <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> 仓库中</li>
+          <li><strong>文档</strong>：
+            <ul>
+              <li><a href="./docs/AI_USAGE_GUIDE.html">AI 使用指南</a> ⭐ - AI 助手完整指南</li>
+              <li><a href="./docs/QUICK_REFERENCE.html">快速参考</a> - 设计令牌和素材路径快速参考</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>关键信息：</strong></p>
+        <ul>
+          <li>设计令牌：<code>design-system/src/snowui.css</code></li>
+          <li>图标：1500+ 图标，6 种权重（regular, thin, light, bold, fill, duotone）</li>
+          <li>头像：330+ 头像，尺寸从 16×16 到 512×512</li>
+          <li>背景：144+ 背景，宽度 320, 640, 1024, 1920</li>
+          <li>查看 <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> 获取所有素材</li>
+        </ul>
+
+        <p><strong>基本使用示例：</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="./design-system/src/snowui.css"&gt;
+  &lt;style&gt;
+    .card {
+      background: var(--background-1);
+      padding: var(--spacing-24);
+      border-radius: var(--corner-radius-16);
+      box-shadow: var(--effect-glass-1);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="card"&gt;
+    &lt;h1 style="color: var(--foreground);"&gt;标题&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
       </section>
 
       <section>
         <h2>📚 文档</h2>
         
         <h3>AI 助手文档</h3>
+        <blockquote>
+          <p><strong>如果你是 AI 助手，从这里开始</strong>：这些文档专门为 AI 助手设计，帮助理解和使用 SnowUI。</p>
+        </blockquote>
         <ul>
-          <li><a href="./docs/AI_USAGE_GUIDE.html">AI 使用指南</a> ⭐ - AI 助手完整指南</li>
-          <li><a href="./docs/QUICK_REFERENCE.html">快速参考</a> - 设计令牌和素材路径快速参考</li>
-          <li><a href="./docs/HANDOFF_TO_AI.html">交接给 AI</a> - 将 SnowUI 资源交给其他 AI 助手的指南</li>
+          <li><a href="./docs/AI_USAGE_GUIDE.html">AI 使用指南</a> ⭐ - AI 助手使用 SnowUI 设计系统和素材的完整指南
+            <ul>
+              <li>如何使用设计系统 CSS 变量</li>
+              <li>如何引用和使用设计素材</li>
+              <li>代码示例和最佳实践</li>
+              <li>完整使用说明</li>
+            </ul>
+          </li>
+          <li><a href="./docs/QUICK_REFERENCE.html">快速参考</a> - 设计令牌和素材路径快速参考
+            <ul>
+              <li>设计系统变量速查表</li>
+              <li>素材路径模式</li>
+              <li>常用代码模板</li>
+            </ul>
+          </li>
+          <li><a href="./docs/HANDOFF_TO_AI.html">交接给 AI</a> - 将 SnowUI 资源交给其他 AI 助手的指南
+            <ul>
+              <li>如何向其他 AI 提供 SnowUI 资源</li>
+              <li>提示词模板</li>
+              <li>验证方法</li>
+            </ul>
+          </li>
         </ul>
 
         <h3>开发者文档</h3>
         <ul>
-          <li><a href="https://github.com/snowui/resource-core" target="_blank">Resource Core</a> - 核心资源包</li>
+          <li><a href="https://github.com/snowui/resource-core" target="_blank">Resource Core</a> - 核心资源包，包含所有设计素材</li>
           <li><a href="https://github.com/snowui/resource-react" target="_blank">Resource React</a> - React 组件包</li>
           <li><a href="https://snowui.github.io/example" target="_blank">示例网站</a> - 在线演示和展示</li>
+          <li><a href="https://github.com/snowui/example" target="_blank">示例仓库</a> - 示例网站源代码</li>
         </ul>
+      </section>
+
+      <section>
+        <h2>🎨 设计系统概览</h2>
+        <p>设计系统位于 <code>design-system/src/snowui.css</code>，提供：</p>
+
+        <h3>设计令牌</h3>
+        <p><strong>颜色：</strong></p>
+        <ul>
+          <li>主题颜色：<code>--background-1</code>、<code>--foreground</code>、<code>--primary</code></li>
+          <li>次要颜色：<code>--secondary-purple</code>、<code>--secondary-blue</code>、<code>--secondary-green</code>、<code>--secondary-red</code> 等</li>
+          <li>静态颜色：<code>--static-black-100</code>、<code>--static-white-100</code>（不随主题变化）</li>
+        </ul>
+
+        <p><strong>间距：</strong></p>
+        <ul>
+          <li><code>--spacing-4</code> (4px)、<code>--spacing-8</code> (8px)、<code>--spacing-12</code> (12px)、<code>--spacing-16</code> (16px)、<code>--spacing-24</code> (24px)、<code>--spacing-40</code> (40px)、<code>--spacing-48</code> (48px)</li>
+        </ul>
+
+        <p><strong>字体：</strong></p>
+        <ul>
+          <li>字体大小：<code>--font-size-12</code> 到 <code>--font-size-64</code></li>
+          <li>行高：<code>--line-height-12</code> 到 <code>--line-height-64</code></li>
+          <li>字重：<code>--font-weight-regular</code> (400)、<code>--font-weight-semibold</code> (600)</li>
+        </ul>
+
+        <p><strong>圆角：</strong></p>
+        <ul>
+          <li><code>--corner-radius-4</code> (4px) 到 <code>--corner-radius-80</code> (80px)</li>
+        </ul>
+
+        <p><strong>效果：</strong></p>
+        <ul>
+          <li>玻璃效果：<code>--effect-glass-1</code>、<code>--effect-glass-2</code></li>
+          <li>阴影：<code>--effect-focus</code>、<code>--effect-glow</code></li>
+          <li>渐变：<code>--gradient-primary</code>、<code>--gradient-blue</code>、<code>--gradient-purple</code> 等</li>
+        </ul>
+
+        <p><strong>主题：</strong></p>
+        <ul>
+          <li><code>theme-snowui-light</code>（默认）</li>
+          <li><code>theme-snowui-dark</code></li>
+          <li><code>theme-ios-light</code></li>
+          <li><code>theme-ios-dark</code></li>
+        </ul>
+
+        <p>查看 <a href="./docs/QUICK_REFERENCE.html">快速参考</a> 获取完整令牌列表。</p>
+
+        <h3>工具类</h3>
+        <p><strong>字体类：</strong></p>
+        <pre><code>&lt;div class="font-12"&gt;12px 字体&lt;/div&gt;
+&lt;div class="font-14"&gt;14px 字体&lt;/div&gt;
+&lt;div class="font-16"&gt;16px 字体&lt;/div&gt;
+&lt;div class="font-24"&gt;24px 字体&lt;/div&gt;</code></pre>
+
+        <p><strong>玻璃效果：</strong></p>
+        <pre><code>&lt;div class="glass-1"&gt;轻度玻璃效果&lt;/div&gt;
+&lt;div class="glass-2"&gt;重度玻璃效果&lt;/div&gt;</code></pre>
+
+        <p><strong>渐变背景：</strong></p>
+        <pre><code>&lt;div class="bg-gradient-primary"&gt;主色渐变&lt;/div&gt;
+&lt;div class="bg-gradient-blue"&gt;蓝色渐变&lt;/div&gt;
+&lt;div class="bg-gradient-purple"&gt;紫色渐变&lt;/div&gt;</code></pre>
+      </section>
+
+      <section>
+        <h2>📦 素材库</h2>
+        <p>所有设计素材都在 <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> 仓库中：</p>
+
+        <h3>图标（1500+）</h3>
+        <ul>
+          <li><strong>权重</strong>：regular, thin, light, bold, fill, duotone</li>
+          <li><strong>格式</strong>：SVG</li>
+          <li><strong>用法</strong>：使用 <a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> 的 React 组件或直接使用 SVG 文件</li>
+        </ul>
+
+        <h3>头像（330+）</h3>
+        <ul>
+          <li><strong>尺寸</strong>：16×16, 20×20, 24×24, 28×28, 32×32, 40×40, 48×48, 56×56, 64×64, 80×80, 128×128, 256×256, 512×512</li>
+          <li><strong>默认</strong>：32×32</li>
+          <li><strong>格式</strong>：JPG</li>
+          <li><strong>用法</strong>：使用 React 组件或直接使用图片文件</li>
+        </ul>
+
+        <h3>背景（144+）</h3>
+        <ul>
+          <li><strong>宽度</strong>：320, 640, 1024, 1920</li>
+          <li><strong>默认</strong>：1024px（高度自适应）</li>
+          <li><strong>格式</strong>：JPG</li>
+          <li><strong>用法</strong>：使用 React 组件或直接使用图片文件</li>
+        </ul>
+
+        <h3>其他素材</h3>
+        <ul>
+          <li><strong>光标</strong>：21+ SVG 光标</li>
+          <li><strong>表情</strong>：22+ 表情 SVG</li>
+          <li><strong>插画</strong>：180+ 插画（PNG/SVG）</li>
+          <li><strong>图片</strong>：示例图片（PNG）</li>
+          <li><strong>Logo</strong>：124+ 品牌 Logo（SVG）</li>
+        </ul>
+
+        <p>详细素材信息，请查看 <a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> 仓库。</p>
+      </section>
+
+      <section>
+        <h2>🔗 相关项目</h2>
+        <ul>
+          <li><a href="https://github.com/snowui/resource-core" target="_blank">resource-core</a> - 核心资源包（npm: <code>@snowui-design-system/resource-core</code>）
+            <ul>
+              <li>所有设计素材（图标、头像、背景等）</li>
+              <li>素材处理脚本</li>
+              <li>元数据文件</li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/snowui/resource-react" target="_blank">resource-react</a> - React 组件包（npm: <code>@snowui-design-system/resource-react</code>）
+            <ul>
+              <li>所有素材的 React 组件</li>
+              <li>TypeScript 支持</li>
+              <li>Tree-shaking 优化</li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/snowui/example" target="_blank">example</a> - 示例网站和演示
+            <ul>
+              <li>在线演示：<a href="https://snowui.github.io/example" target="_blank">https://snowui.github.io/example</a></li>
+              <li>展示所有素材</li>
+              <li>使用示例</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🛠️ 开发</h2>
+        
+        <h3>环境要求</h3>
+        <ul>
+          <li><strong>Node.js</strong>：v18.0.0 或更高版本</li>
+          <li><strong>npm</strong>：v8.0.0 或更高版本（Node.js 自带）</li>
+        </ul>
+
+        <h3>使用设计系统</h3>
+        <p><strong>在 HTML 中：</strong></p>
+        <pre><code>&lt;link rel="stylesheet" href="design-system/src/snowui.css"&gt;</code></pre>
+
+        <p><strong>在 React/Vue/其他框架中：</strong></p>
+        <pre><code>import './design-system/src/snowui.css';</code></pre>
+
+        <p><strong>与 Tailwind CSS 结合：</strong></p>
+        <pre><code>&lt;div className="bg-[var(--background-1)] p-[var(--spacing-16)] rounded-[var(--corner-radius-8)]"&gt;
+  &lt;h1 className="text-[var(--foreground)]"&gt;标题&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section>
+        <h2>📊 素材尺寸</h2>
+        
+        <h3>头像（正方形尺寸）</h3>
+        <p>生成的尺寸：16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 128, 256, 512<br>默认：32×32</p>
+
+        <h3>背景（固定宽度，高度自适应）</h3>
+        <p>生成的宽度：320, 640, 1024, 1920<br>默认：1024px</p>
+
+        <h3>图片（固定宽度，高度自适应）</h3>
+        <p>生成的宽度：160, 320, 640, 1024<br>默认：320px</p>
+
+        <h3>插画（固定宽度，高度自适应）</h3>
+        <p>生成的宽度：160, 320, 640, 1024<br>默认：320px</p>
+      </section>
+
+      <section>
+        <h2>🎯 使用场景</h2>
+        <ul>
+          <li><strong>Web 开发</strong>：使用 React 组件或直接使用素材文件</li>
+          <li><strong>AI 辅助设计</strong>：向 AI 提供设计系统和素材进行网页设计</li>
+          <li><strong>设计系统</strong>：使用设计令牌构建一致的 UI</li>
+          <li><strong>原型设计</strong>：快速访问图标、头像和背景</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>📄 许可证</h2>
+        <p>MIT</p>
       </section>
     </div>
 
+    <hr>
+
     <footer class="footer">
-      <p>Made with ❤️ by SnowUI Team</p>
+      <p><strong>Made with ❤️ by SnowUI Team</strong></p>
       <div class="footer-links">
         <a href="./docs/AI_USAGE_GUIDE.html">Documentation</a>
         <a href="./docs/QUICK_REFERENCE.html">Quick Reference</a>
@@ -501,3 +1015,4 @@ function App() {
   </script>
 </body>
 </html>
+

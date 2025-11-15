@@ -83,9 +83,9 @@ function App() {
 
 **Use Design System CSS:**
 
-**Option 1: From GitHub (CDN) - Recommended**
+**Option 1: From jsDelivr CDN - Recommended**
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/snowui/home/main/design-system/src/snowui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
 ```
 
 **Option 2: Download and use locally**
