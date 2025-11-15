@@ -1,30 +1,30 @@
-# SnowUI 快速参考
+# SnowUI Quick Reference
 
-## 🎨 设计系统变量速查
+## 🎨 Design System Variables Cheat Sheet
 
-### 颜色
+### Colors
 ```css
-/* 背景色 */
-var(--background-1)      /* 主背景 */
-var(--background-2)      /* 次背景 */
+/* Background colors */
+var(--background-1)      /* Primary background */
+var(--background-2)      /* Secondary background */
 
-/* 文字颜色 */
-var(--foreground)        /* 前景色（文字） */
-var(--black-100)         /* 纯黑/纯白（根据主题） */
-var(--black-80)          /* 80% 透明度 */
-var(--black-40)          /* 40% 透明度 */
+/* Text colors */
+var(--foreground)        /* Foreground (text) */
+var(--black-100)         /* Pure black/white (theme-dependent) */
+var(--black-80)          /* 80% opacity */
+var(--black-40)          /* 40% opacity */
 
-/* 主题色 */
-var(--primary)           /* 主色 */
+/* Theme colors */
+var(--primary)           /* Primary color */
 
-/* 次要颜色 */
-var(--secondary-purple)  /* 紫色 */
-var(--secondary-blue)    /* 蓝色 */
-var(--secondary-green)   /* 绿色 */
-var(--secondary-red)     /* 红色 */
+/* Secondary colors */
+var(--secondary-purple)  /* Purple */
+var(--secondary-blue)    /* Blue */
+var(--secondary-green)   /* Green */
+var(--secondary-red)     /* Red */
 ```
 
-### 间距
+### Spacing
 ```css
 var(--spacing-4)    /* 4px */
 var(--spacing-8)    /* 8px */
@@ -34,7 +34,7 @@ var(--spacing-24)   /* 24px */
 var(--spacing-40)   /* 40px */
 ```
 
-### 圆角
+### Corner Radius
 ```css
 var(--corner-radius-4)   /* 4px */
 var(--corner-radius-8)   /* 8px */
@@ -43,9 +43,9 @@ var(--corner-radius-16)  /* 16px */
 var(--corner-radius-24)  /* 24px */
 ```
 
-### 字体
+### Typography
 ```css
-/* 字体大小和行高 */
+/* Font sizes and line heights */
 var(--font-size-12)      /* 12px */
 var(--line-height-12)    /* 16px */
 
@@ -61,32 +61,32 @@ var(--line-height-18)    /* 28px */
 var(--font-size-24)      /* 24px */
 var(--line-height-24)    /* 32px */
 
-/* 字重 */
+/* Font weights */
 var(--font-weight-regular)   /* 400 */
 var(--font-weight-semibold)  /* 600 */
 ```
 
-### 阴影和效果
+### Shadows and Effects
 ```css
-var(--effect-glass-1)        /* 轻度玻璃效果 */
-var(--effect-glass-2)        /* 重度玻璃效果 */
-var(--effect-focus)          /* 焦点效果 */
-var(--effect-glow)           /* 发光效果 */
+var(--effect-glass-1)        /* Light glass effect */
+var(--effect-glass-2)        /* Heavy glass effect */
+var(--effect-focus)          /* Focus effect */
+var(--effect-glow)           /* Glow effect */
 ```
 
-### 渐变
+### Gradients
 ```css
-var(--gradient-primary)      /* 主色渐变 */
-var(--gradient-blue)         /* 蓝色渐变 */
-var(--gradient-purple)       /* 紫色渐变 */
-var(--gradient-green)        /* 绿色渐变 */
+var(--gradient-primary)      /* Primary gradient */
+var(--gradient-blue)         /* Blue gradient */
+var(--gradient-purple)       /* Purple gradient */
+var(--gradient-green)        /* Green gradient */
 ```
 
-## 📦 素材路径速查
+## 📦 Asset Paths Cheat Sheet
 
-**注意**：所有素材位于独立的 GitHub 仓库 [resource-core](https://github.com/snowui/resource-core)
+**Note**: All assets are located in the separate GitHub repository [resource-core](https://github.com/snowui/resource-core)
 
-### 使用 React 组件（推荐）
+### Using React Components (Recommended)
 
 ```tsx
 import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
@@ -94,51 +94,51 @@ import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource
 
 **GitHub**: [resource-react](https://github.com/snowui/resource-react)
 
-### 直接使用素材文件（需要克隆 resource-core 仓库）
+### Direct Asset Files (requires cloning resource-core repository)
 
-#### 图标
+#### Icons
 ```
 assets/icons/{weight}/{name}-{weight}.svg
 
-权重: regular, thin, light, bold, fill, duotone
-示例: assets/icons/regular/heart-regular.svg
+Weights: regular, thin, light, bold, fill, duotone
+Example: assets/icons/regular/heart-regular.svg
 ```
 
-#### 头像
+#### Avatars
 ```
 assets/avatars/avatar-{name}-{size}.jpg
 
-尺寸: 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 128, 256, 512
-示例: assets/avatars/avatar-byewind-32.jpg
+Sizes: 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 128, 256, 512
+Example: assets/avatars/avatar-byewind-32.jpg
 ```
 
-#### 背景
+#### Backgrounds
 ```
 assets/backgrounds/{name}-{width}.jpg
 
-宽度: 320, 640, 1024, 1920
-示例: assets/backgrounds/gradient-01-1024.jpg
+Widths: 320, 640, 1024, 1920
+Example: assets/backgrounds/gradient-01-1024.jpg
 ```
 
-#### 其他素材
+#### Other Assets
 ```
-光标: assets/cursors/cursors-{name}.svg
-表情: assets/emoji/{name}.svg
-插画: assets/illustrations/{name}-{width}.png
-图片: assets/images/image-{id}-{width}.png
-Logo: assets/logos/{name}.svg
+Cursors: assets/cursors/cursors-{name}.svg
+Emoji: assets/emoji/{name}.svg
+Illustrations: assets/illustrations/{name}-{width}.png
+Images: assets/images/image-{id}-{width}.png
+Logos: assets/logos/{name}.svg
 ```
 
-**GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
+**GitHub Repository**: [resource-core](https://github.com/snowui/resource-core)
 
-## 🚀 快速开始模板
+## 🚀 Quick Start Templates
 
-### HTML 模板
+### HTML Template
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
   <style>
     body {
       background: var(--background-1);
@@ -156,15 +156,15 @@ Logo: assets/logos/{name}.svg
 </head>
 <body>
   <div class="card">
-    <!-- 内容 -->
+    <!-- Content -->
   </div>
 </body>
 </html>
 ```
 
-### React 模板
+### React Template
 ```tsx
-import './design-system/src/snowui.css';
+import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css';
 
 function App() {
   return (
@@ -172,15 +172,15 @@ function App() {
       background: 'var(--background-1)',
       padding: 'var(--spacing-16)',
     }}>
-      {/* 内容 */}
+      {/* Content */}
     </div>
   );
 }
 ```
 
-## 🎯 常用组合
+## 🎯 Common Combinations
 
-### 卡片样式
+### Card Style
 ```css
 .card {
   background: var(--background-1);
@@ -190,7 +190,7 @@ function App() {
 }
 ```
 
-### 按钮样式
+### Button Style
 ```css
 .button {
   background: var(--primary);
@@ -201,7 +201,7 @@ function App() {
 }
 ```
 
-### 输入框样式
+### Input Style
 ```css
 .input {
   background: var(--background-2);
@@ -212,25 +212,24 @@ function App() {
 }
 ```
 
-## 📝 主题切换
+## 📝 Theme Switching
 
 ```html
-<!-- 默认主题 (SnowUI Light) -->
-<div>内容</div>
+<!-- Default theme (SnowUI Light) -->
+<div>Content</div>
 
-<!-- 暗色主题 -->
-<div class="theme-snowui-dark">内容</div>
+<!-- Dark theme -->
+<div class="theme-snowui-dark">Content</div>
 
-<!-- iOS 主题 -->
-<div class="theme-ios-light">内容</div>
-<div class="theme-ios-dark">内容</div>
+<!-- iOS themes -->
+<div class="theme-ios-light">Content</div>
+<div class="theme-ios-dark">Content</div>
 ```
 
-## 🔍 查找素材
+## 🔍 Finding Assets
 
-查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的以下文件了解所有可用素材：
-- 图标: `src/icons.ts`
-- 素材: `src/assets.ts`
+Check the following files in the [resource-core](https://github.com/snowui/resource-core) repository to see all available assets:
+- Icons: `src/icons.ts`
+- Assets: `src/assets.ts`
 
-或查看 [在线示例网站](https://snowui.github.io/example) 浏览所有素材。
-
+Or visit the [online example website](https://snowui.github.io/example) to browse all assets.

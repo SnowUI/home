@@ -1,169 +1,169 @@
-# SnowUI 设计资源 AI 使用指南
+# SnowUI Design Resources AI Usage Guide
 
-本文档旨在帮助 AI 助手理解和使用 SnowUI 设计系统的素材和设计系统进行网页设计。
+This document is designed to help AI assistants understand and use SnowUI design system assets and design system for web design.
 
-## 📋 目录
+## 📋 Table of Contents
 
-1. [项目概述](#项目概述)
-2. [设计系统 (design-system)](#设计系统-design-system)
-3. [设计素材 (resource)](#设计素材-resource)
-4. [快速开始](#快速开始)
-5. [使用示例](#使用示例)
-6. [最佳实践](#最佳实践)
-
----
-
-## 项目概述
-
-SnowUI 包含两个核心项目，用于网页设计：
-
-### 1. `design-system/` - 设计系统
-**位置**：本仓库中的 `design-system/src/snowui.css`
-
-包含完整的设计系统 CSS 变量，包括：
-- 颜色系统（主题色、背景色、次要色）
-- 间距系统（spacing）
-- 圆角系统（corner-radius）
-- 字体系统（font-size, line-height）
-- 阴影和效果（glass effects, gradients）
-- 多主题支持（SnowUI Light/Dark, iOS Light/Dark）
-
-### 2. Design Resources - 设计素材
-**位置**：独立的 GitHub 仓库 [resource-core](https://github.com/snowui/resource-core)
-
-包含丰富的设计素材库：
-- **图标** (Icons): 1500+ 图标，支持 6 种权重（regular, thin, light, bold, fill, duotone）
-- **头像** (Avatars): 330+ 头像图片
-- **背景** (Backgrounds): 144+ 背景图片
-- **光标** (Cursors): 21+ 光标 SVG
-- **表情** (Emoji): 22+ 表情 SVG
-- **插画** (Illustrations): 180+ 插画图片
-- **图片** (Images): 6+ 示例图片
-- **Logo** (Logos): 124+ 品牌 Logo SVG
-
-**GitHub 仓库**：
-- [resource-core](https://github.com/snowui/resource-core) - 核心资源包（所有素材）
-- [resource-react](https://github.com/snowui/resource-react) - React 组件包
-- [example](https://github.com/snowui/example) - 示例网站
+1. [Project Overview](#project-overview)
+2. [Design System (design-system)](#design-system-design-system)
+3. [Design Resources (resource)](#design-resources-resource)
+4. [Quick Start](#quick-start)
+5. [Usage Examples](#usage-examples)
+6. [Best Practices](#best-practices)
 
 ---
 
-## 设计系统 (design-system)
+## Project Overview
 
-### 文件位置
+SnowUI consists of two core projects for web design:
+
+### 1. `design-system/` - Design System
+**Location**: `design-system/src/snowui.css` in this repository
+
+Contains a complete design system CSS variables, including:
+- Color system (theme colors, background colors, secondary colors)
+- Spacing system (spacing)
+- Corner radius system (corner-radius)
+- Typography system (font-size, line-height)
+- Shadows and effects (glass effects, gradients)
+- Multi-theme support (SnowUI Light/Dark, iOS Light/Dark)
+
+### 2. Design Resources - Design Assets
+**Location**: Separate GitHub repository [resource-core](https://github.com/snowui/resource-core)
+
+Contains a rich design asset library:
+- **Icons**: 1500+ icons, supporting 6 weights (regular, thin, light, bold, fill, duotone)
+- **Avatars**: 330+ avatar images
+- **Backgrounds**: 144+ background images
+- **Cursors**: 21+ cursor SVGs
+- **Emoji**: 22+ emoji SVGs
+- **Illustrations**: 180+ illustration images
+- **Images**: 6+ sample images
+- **Logos**: 124+ brand logo SVGs
+
+**GitHub Repositories**:
+- [resource-core](https://github.com/snowui/resource-core) - Core resource package (all assets)
+- [resource-react](https://github.com/snowui/resource-react) - React components package
+- [example](https://github.com/snowui/example) - Example website
+
+---
+
+## Design System (design-system)
+
+### File Location
 ```
 snowui/design-system/src/snowui.css
 ```
 
-### 核心内容
+### Core Content
 
-#### 1. CSS 变量系统
+#### 1. CSS Variable System
 
-设计系统使用 CSS 变量（CSS Custom Properties）定义所有设计令牌。
+The design system uses CSS variables (CSS Custom Properties) to define all design tokens.
 
-**颜色变量示例：**
+**Color Variable Examples:**
 ```css
-/* 主题颜色（随主题变化） */
+/* Theme colors (theme-dependent) */
 --black-100: #000000FF;
 --white-100: #FFFFFFFF;
 --background-1: #FFFFFFFF;
 --primary: var(--black-100);
 
-/* 次要颜色 */
+/* Secondary colors */
 --secondary-purple: #B899EBFF;
 --secondary-blue: #7DBBFFFF;
 --secondary-green: #71DD8CFF;
-/* ... 更多颜色 */
+/* ... more colors */
 ```
 
-**间距变量：**
+**Spacing Variables:**
 ```css
 --spacing-4: 0.25rem;   /* 4px */
 --spacing-8: 0.5rem;    /* 8px */
 --spacing-16: 1rem;     /* 16px */
 --spacing-24: 1.5rem;   /* 24px */
-/* ... 更多间距 */
+/* ... more spacing */
 ```
 
-**圆角变量：**
+**Corner Radius Variables:**
 ```css
 --corner-radius-4: 0.25rem;   /* 4px */
 --corner-radius-8: 0.5rem;    /* 8px */
 --corner-radius-16: 1rem;     /* 16px */
-/* ... 更多圆角 */
+/* ... more corner radius */
 ```
 
-#### 2. 主题系统
+#### 2. Theme System
 
-支持 4 种主题：
-- `theme-snowui-light` (默认)
+Supports 4 themes:
+- `theme-snowui-light` (default)
 - `theme-snowui-dark`
 - `theme-ios-light`
 - `theme-ios-dark`
 
-**使用方法：**
+**Usage:**
 ```html
-<!-- 默认使用 SnowUI Light 主题 -->
+<!-- Default SnowUI Light theme -->
 <div class="container">
-  <!-- 内容 -->
+  <!-- Content -->
 </div>
 
-<!-- 使用 SnowUI Dark 主题 -->
+<!-- Use SnowUI Dark theme -->
 <div class="theme-snowui-dark">
   <div class="container">
-    <!-- 内容 -->
+    <!-- Content -->
   </div>
 </div>
 ```
 
-#### 3. 工具类
+#### 3. Utility Classes
 
-设计系统提供了一些实用的工具类：
+The design system provides some practical utility classes:
 
-**字体工具类：**
+**Font Utility Classes:**
 ```html
-<div class="font-12">12px 字体</div>
-<div class="font-14">14px 字体</div>
-<div class="font-16">16px 字体</div>
-<div class="font-24">24px 字体</div>
+<div class="font-12">12px font</div>
+<div class="font-14">14px font</div>
+<div class="font-16">16px font</div>
+<div class="font-24">24px font</div>
 ```
 
-**玻璃效果：**
+**Glass Effects:**
 ```html
-<div class="glass-1">轻度玻璃效果</div>
-<div class="glass-2">重度玻璃效果</div>
+<div class="glass-1">Light glass effect</div>
+<div class="glass-2">Heavy glass effect</div>
 ```
 
-**渐变背景：**
+**Gradient Backgrounds:**
 ```html
-<div class="bg-gradient-primary">主色渐变</div>
-<div class="bg-gradient-blue">蓝色渐变</div>
-<div class="bg-gradient-purple">紫色渐变</div>
+<div class="bg-gradient-primary">Primary gradient</div>
+<div class="bg-gradient-blue">Blue gradient</div>
+<div class="bg-gradient-purple">Purple gradient</div>
 ```
 
-### 在网页设计中使用
+### Using in Web Design
 
-#### 方法 1: 直接引入 CSS 文件
+#### Method 1: Directly Import CSS File
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
 </head>
 <body>
   <div style="background: var(--background-1); padding: var(--spacing-16);">
-    <h1 style="color: var(--foreground);">标题</h1>
+    <h1 style="color: var(--foreground);">Title</h1>
   </div>
 </body>
 </html>
 ```
 
-#### 方法 2: 在 React/Vue 项目中使用
+#### Method 2: Use in React/Vue Projects
 
 ```tsx
-// React 示例
-import '../design-system/src/snowui.css';
+// React example
+import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css';
 
 function App() {
   return (
@@ -172,95 +172,95 @@ function App() {
       padding: 'var(--spacing-16)',
       borderRadius: 'var(--corner-radius-8)'
     }}>
-      <h1 style={{ color: 'var(--foreground)' }}>标题</h1>
+      <h1 style={{ color: 'var(--foreground)' }}>Title</h1>
     </div>
   );
 }
 ```
 
-#### 方法 3: 与 Tailwind CSS 结合使用
+#### Method 3: Use with Tailwind CSS
 
-设计系统的变量可以直接在 Tailwind 中使用：
+Design system variables can be used directly in Tailwind:
 
 ```tsx
 <div className="bg-[var(--background-1)] p-[var(--spacing-16)] rounded-[var(--corner-radius-8)]">
-  <h1 className="text-[var(--foreground)]">标题</h1>
+  <h1 className="text-[var(--foreground)]">Title</h1>
 </div>
 ```
 
 ---
 
-## 设计素材 (resource)
+## Design Resources (resource)
 
-### 项目结构
+### Project Structure
 
-设计素材位于独立的 GitHub 仓库 [resource-core](https://github.com/snowui/resource-core)：
+Design resources are located in the separate GitHub repository [resource-core](https://github.com/snowui/resource-core):
 
 ```
 resource-core/
-├── assets/            # 所有原始素材文件
-│   ├── icons/        # 图标（6 种权重）
-│   ├── avatars/      # 头像
-│   ├── backgrounds/  # 背景
-│   ├── cursors/      # 光标
-│   ├── emoji/        # 表情
-│   ├── illustrations/# 插画
-│   ├── images/       # 图片
-│   └── logos/        # Logo
-└── src/              # 元数据文件（icons.ts, assets.ts）
+├── assets/            # All original asset files
+│   ├── icons/        # Icons (6 weights)
+│   ├── avatars/      # Avatars
+│   ├── backgrounds/  # Backgrounds
+│   ├── cursors/      # Cursors
+│   ├── emoji/        # Emoji
+│   ├── illustrations/# Illustrations
+│   ├── images/     # Images
+│   └── logos/        # Logos
+└── src/              # Metadata files (icons.ts, assets.ts)
 ```
 
-**相关仓库**：
-- [resource-core](https://github.com/snowui/resource-core) - 核心资源包
-- [resource-react](https://github.com/snowui/resource-react) - React 组件包
+**Related Repositories**:
+- [resource-core](https://github.com/snowui/resource-core) - Core resource package
+- [resource-react](https://github.com/snowui/resource-react) - React components package
 
-### 素材类型和位置
+### Asset Types and Locations
 
-#### 1. 图标 (Icons)
-- **GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
-- **路径**: `assets/icons/{weight}/`（在 resource-core 仓库中）
-- **权重**: regular, thin, light, bold, fill, duotone
-- **格式**: SVG
-- **数量**: 1500+ 图标
+#### 1. Icons
+- **GitHub Repository**: [resource-core](https://github.com/snowui/resource-core)
+- **Path**: `assets/icons/{weight}/` (in resource-core repository)
+- **Weights**: regular, thin, light, bold, fill, duotone
+- **Format**: SVG
+- **Count**: 1500+ icons
 
-#### 2. 头像 (Avatars)
-- **GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
-- **路径**: `assets/avatars/`（在 resource-core 仓库中）
-- **格式**: JPG
-- **尺寸**: 自动生成多种尺寸（16×16 到 512×512）
-- **数量**: 330+ 头像
+#### 2. Avatars
+- **GitHub Repository**: [resource-core](https://github.com/snowui/resource-core)
+- **Path**: `assets/avatars/` (in resource-core repository)
+- **Format**: JPG
+- **Sizes**: Auto-generated multiple sizes (16×16 to 512×512)
+- **Count**: 330+ avatars
 
-#### 3. 背景 (Backgrounds)
-- **GitHub 仓库**: [resource-core](https://github.com/snowui/resource-core)
-- **路径**: `assets/backgrounds/`（在 resource-core 仓库中）
-- **格式**: JPG
-- **尺寸**: 自动生成多种宽度（320, 640, 1024, 1920）
-- **数量**: 144+ 背景
+#### 3. Backgrounds
+- **GitHub Repository**: [resource-core](https://github.com/snowui/resource-core)
+- **Path**: `assets/backgrounds/` (in resource-core repository)
+- **Format**: JPG
+- **Sizes**: Auto-generated multiple widths (320, 640, 1024, 1920)
+- **Count**: 144+ backgrounds
 
-#### 4. 其他素材
-- **光标**: `assets/cursors/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
-- **表情**: `assets/emoji/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
-- **插画**: `assets/illustrations/` (PNG/SVG) - [resource-core](https://github.com/snowui/resource-core)
-- **图片**: `assets/images/` (PNG) - [resource-core](https://github.com/snowui/resource-core)
-- **Logo**: `assets/logos/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
+#### 4. Other Assets
+- **Cursors**: `assets/cursors/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
+- **Emoji**: `assets/emoji/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
+- **Illustrations**: `assets/illustrations/` (PNG/SVG) - [resource-core](https://github.com/snowui/resource-core)
+- **Images**: `assets/images/` (PNG) - [resource-core](https://github.com/snowui/resource-core)
+- **Logos**: `assets/logos/` (SVG) - [resource-core](https://github.com/snowui/resource-core)
 
-### 使用方式
+### Usage Methods
 
-#### 方式 1: 直接使用资源文件（推荐用于网页设计）
+#### Method 1: Direct Asset Files (Recommended for Web Design)
 
-**在 HTML 中使用**（需要克隆 [resource-core](https://github.com/snowui/resource-core) 仓库）：
+**In HTML** (requires cloning [resource-core](https://github.com/snowui/resource-core) repository):
 ```html
-<!-- 使用图标 -->
+<!-- Use icon -->
 <img src="./assets/icons/regular/heart-regular.svg" alt="Heart" width="24" height="24">
 
-<!-- 使用头像 -->
+<!-- Use avatar -->
 <img src="./assets/avatars/avatar-byewind-32.jpg" alt="Avatar" width="32" height="32">
 
-<!-- 使用背景 -->
+<!-- Use background -->
 <img src="./assets/backgrounds/gradient-01-1024.jpg" alt="Background">
 ```
 
-**在 CSS 中使用**（需要克隆 [resource-core](https://github.com/snowui/resource-core) 仓库）：
+**In CSS** (requires cloning [resource-core](https://github.com/snowui/resource-core) repository):
 ```css
 .hero-section {
   background-image: url('./assets/backgrounds/gradient-01-1024.jpg');
@@ -269,7 +269,7 @@ resource-core/
 }
 ```
 
-#### 方式 2: 使用 React 组件（如果项目使用 React）
+#### Method 2: Use React Components (if project uses React)
 
 ```tsx
 import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource-react';
@@ -277,59 +277,59 @@ import { Heart, AvatarByewind, Gradient01 } from '@snowui-design-system/resource
 function App() {
   return (
     <div>
-      {/* 图标 */}
+      {/* Icon */}
       <Heart size={24} weight="bold" className="text-red-500" />
       
-      {/* 头像 */}
+      {/* Avatar */}
       <AvatarByewind size={64} className="rounded-full" />
       
-      {/* 背景 */}
+      {/* Background */}
       <Gradient01 width={1024} />
     </div>
   );
 }
 ```
 
-#### 方式 3: 查看可用素材列表
+#### Method 3: View Available Assets List
 
-查看元数据文件了解所有可用素材：
+Check metadata files to see all available assets:
 
 ```typescript
-// 查看 resource/core/src/icons.ts 了解所有图标
-// 查看 resource/core/src/assets.ts 了解所有素材
+// Check resource/core/src/icons.ts for all icons
+// Check resource/core/src/assets.ts for all assets
 ```
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 步骤 1: 了解项目结构
+### Step 1: Understand Project Structure
 
-**本仓库 (SnowUI/home)**：
+**This Repository (SnowUI/home)**:
 ```
 snowui/
-├── design-system/     # 设计系统 CSS
+├── design-system/     # Design system CSS
 │   └── src/
 │       └── snowui.css
-└── docs/              # 文档
+└── docs/              # Documentation
 ```
 
-**相关仓库**：
-- [resource-core](https://github.com/snowui/resource-core) - 所有设计素材
-- [resource-react](https://github.com/snowui/resource-react) - React 组件包
-- [example](https://github.com/snowui/example) - 示例网站
+**Related Repositories**:
+- [resource-core](https://github.com/snowui/resource-core) - All design assets
+- [resource-react](https://github.com/snowui/resource-react) - React components package
+- [example](https://github.com/snowui/example) - Example website
 
-### 步骤 2: 引入设计系统
+### Step 2: Import Design System
 
-在 HTML 或项目中引入设计系统 CSS：
+Import design system CSS in HTML or project:
 
 ```html
-<link rel="stylesheet" href="./design-system/src/snowui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
 ```
 
-### 步骤 3: 使用设计变量
+### Step 3: Use Design Variables
 
-使用 CSS 变量定义样式：
+Use CSS variables to define styles:
 
 ```css
 .card {
@@ -341,30 +341,30 @@ snowui/
 }
 ```
 
-### 步骤 4: 使用设计素材
+### Step 4: Use Design Assets
 
-**推荐方式：使用 React 组件**
+**Recommended: Use React Components**
 ```tsx
 import { Heart } from '@snowui-design-system/resource-react';
 <Heart size={24} />
 ```
 
-**或直接使用素材文件**（需要克隆 [resource-core](https://github.com/snowui/resource-core) 仓库）：
+**Or use asset files directly** (requires cloning [resource-core](https://github.com/snowui/resource-core) repository):
 ```html
 <img src="./assets/icons/regular/star-regular.svg" alt="Star">
 ```
 
 ---
 
-## 使用示例
+## Usage Examples
 
-### 示例 1: 创建一个卡片组件
+### Example 1: Create a Card Component
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
   <style>
     .card {
       background: var(--background-1);
@@ -398,27 +398,27 @@ import { Heart } from '@snowui-design-system/resource-react';
 <body>
   <div class="card">
     <div class="card-header">
-      <!-- 如果使用 React 组件: <Heart size={24} /> -->
-      <!-- 如果克隆了 resource-core 仓库: -->
+      <!-- If using React components: <Heart size={24} /> -->
+      <!-- If cloned resource-core repository: -->
       <img src="./assets/icons/regular/star-regular.svg" 
            alt="Star" width="24" height="24">
-      <h2 class="card-title">标题</h2>
+      <h2 class="card-title">Title</h2>
     </div>
     <p class="card-content">
-      这是卡片内容。使用 SnowUI 设计系统的变量和素材创建。
+      This is card content. Created using SnowUI design system variables and assets.
     </p>
   </div>
 </body>
 </html>
 ```
 
-### 示例 2: 创建一个带背景的英雄区域
+### Example 2: Create a Hero Section with Background
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
   <style>
     .hero {
       position: relative;
@@ -464,25 +464,25 @@ import { Heart } from '@snowui-design-system/resource-react';
 </head>
 <body>
   <div class="hero">
-    <!-- 如果克隆了 resource-core 仓库: -->
+    <!-- If cloned resource-core repository: -->
     <img src="./assets/backgrounds/gradient-01-1024.jpg" 
          alt="Background" class="hero-background">
     <div class="hero-content">
-      <h1 class="hero-title">欢迎使用 SnowUI</h1>
-      <p class="hero-subtitle">一个完整的设计系统和素材库</p>
+      <h1 class="hero-title">Welcome to SnowUI</h1>
+      <p class="hero-subtitle">A complete design system and asset library</p>
     </div>
   </div>
 </body>
 </html>
 ```
 
-### 示例 3: 创建一个用户资料卡片
+### Example 3: Create a User Profile Card
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
   <style>
     .profile-card {
       background: var(--background-1);
@@ -517,7 +517,7 @@ import { Heart } from '@snowui-design-system/resource-react';
     .profile-role {
       font-size: var(--font-size-14);
       line-height: var(--line-height-14);
-      color: var(--black-60);
+      color: var(--black-80);
     }
     
     .profile-stats {
@@ -541,7 +541,7 @@ import { Heart } from '@snowui-design-system/resource-react';
     .stat-label {
       font-size: var(--font-size-12);
       line-height: var(--line-height-12);
-      color: var(--black-60);
+      color: var(--black-80);
       margin-top: var(--spacing-4);
     }
   </style>
@@ -549,26 +549,26 @@ import { Heart } from '@snowui-design-system/resource-react';
 <body>
   <div class="profile-card">
     <div class="profile-header">
-      <!-- 如果克隆了 resource-core 仓库: -->
+      <!-- If cloned resource-core repository: -->
       <img src="./assets/avatars/avatar-byewind-64.jpg" 
            alt="Avatar" class="avatar">
       <div>
-        <div class="profile-name">用户名</div>
-        <div class="profile-role">设计师</div>
+        <div class="profile-name">Username</div>
+        <div class="profile-role">Designer</div>
       </div>
     </div>
     <div class="profile-stats">
       <div class="stat">
         <div class="stat-value">1.2K</div>
-        <div class="stat-label">关注者</div>
+        <div class="stat-label">Followers</div>
       </div>
       <div class="stat">
         <div class="stat-value">456</div>
-        <div class="stat-label">作品</div>
+        <div class="stat-label">Works</div>
       </div>
       <div class="stat">
         <div class="stat-value">89</div>
-        <div class="stat-label">点赞</div>
+        <div class="stat-label">Likes</div>
       </div>
     </div>
   </div>
@@ -578,11 +578,11 @@ import { Heart } from '@snowui-design-system/resource-react';
 
 ---
 
-## 最佳实践
+## Best Practices
 
-### 1. 使用设计系统变量
+### 1. Use Design System Variables
 
-✅ **推荐：**
+✅ **Recommended:**
 ```css
 .card {
   padding: var(--spacing-16);
@@ -591,7 +591,7 @@ import { Heart } from '@snowui-design-system/resource-react';
 }
 ```
 
-❌ **不推荐：**
+❌ **Not Recommended:**
 ```css
 .card {
   padding: 16px;
@@ -600,25 +600,25 @@ import { Heart } from '@snowui-design-system/resource-react';
 }
 ```
 
-### 2. 素材尺寸选择
+### 2. Asset Size Selection
 
-- **图标**: 通常使用 16px, 20px, 24px, 32px
-- **头像**: 根据上下文选择合适尺寸（32px, 48px, 64px, 128px）
-- **背景**: 根据容器宽度选择（320px, 640px, 1024px, 1920px）
+- **Icons**: Usually use 16px, 20px, 24px, 32px
+- **Avatars**: Choose appropriate size based on context (32px, 48px, 64px, 128px)
+- **Backgrounds**: Choose based on container width (320px, 640px, 1024px, 1920px)
 
-### 3. 主题切换
+### 3. Theme Switching
 
-如果需要支持多主题，使用主题类：
+If you need to support multiple themes, use theme classes:
 
 ```html
 <div class="theme-snowui-dark">
-  <!-- 内容会自动使用暗色主题 -->
+  <!-- Content will automatically use dark theme -->
 </div>
 ```
 
-### 4. 响应式设计
+### 4. Responsive Design
 
-结合 CSS 变量和媒体查询：
+Combine CSS variables with media queries:
 
 ```css
 .container {
@@ -632,64 +632,64 @@ import { Heart } from '@snowui-design-system/resource-react';
 }
 ```
 
-### 5. 性能优化
+### 5. Performance Optimization
 
-- 对于图标，优先使用 SVG（可缩放、文件小）
-- 对于头像和背景，使用合适的尺寸（不要使用过大的图片）
-- 考虑使用 WebP 格式（如果支持）
-
----
-
-## 素材查找指南
-
-### 如何找到合适的图标？
-
-1. 查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的 `src/icons.ts` 文件，了解所有可用图标
-2. 图标命名采用 kebab-case（如：`four-leaf-clover`）
-3. 图标文件位于 `assets/icons/{weight}/` 目录（在 resource-core 仓库中）
-4. 或使用 React 组件：`import { FourLeafClover } from '@snowui-design-system/resource-react'`
-
-### 如何找到合适的头像？
-
-1. 查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的 `src/assets.ts` 文件，筛选类型为 `avatars` 的素材
-2. 头像文件位于 `assets/avatars/` 目录（在 resource-core 仓库中）
-3. 文件名格式：`avatar-{name}-{size}.jpg`
-4. 或使用 React 组件：`import { AvatarByewind } from '@snowui-design-system/resource-react'`
-
-### 如何找到合适的背景？
-
-1. 查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的 `src/assets.ts` 文件，筛选类型为 `backgrounds` 的素材
-2. 背景文件位于 `assets/backgrounds/` 目录（在 resource-core 仓库中）
-3. 文件名格式：`{name}-{width}.jpg`
-4. 或使用 React 组件：`import { Gradient01 } from '@snowui-design-system/resource-react'`
+- For icons, prioritize SVG (scalable, small file size)
+- For avatars and backgrounds, use appropriate sizes (don't use oversized images)
+- Consider using WebP format (if supported)
 
 ---
 
-## 常见问题
+## Asset Search Guide
 
-### Q: 如何知道有哪些可用的图标/素材？
+### How to Find Suitable Icons?
 
-A: 查看 [resource-core](https://github.com/snowui/resource-core) 仓库中的 `src/icons.ts` 和 `src/assets.ts` 文件，这些文件包含了所有可用素材的元数据。或者查看 [在线示例网站](https://snowui.github.io/example) 浏览所有素材。
+1. Check the `src/icons.ts` file in the [resource-core](https://github.com/snowui/resource-core) repository to see all available icons
+2. Icon names use kebab-case (e.g., `four-leaf-clover`)
+3. Icon files are located in the `assets/icons/{weight}/` directory (in resource-core repository)
+4. Or use React components: `import { FourLeafClover } from '@snowui-design-system/resource-react'`
 
-### Q: 设计系统的变量可以在 Tailwind 中使用吗？
+### How to Find Suitable Avatars?
 
-A: 可以！设计系统的 CSS 变量可以直接在 Tailwind 的任意值语法中使用：
+1. Check the `src/assets.ts` file in the [resource-core](https://github.com/snowui/resource-core) repository, filter assets of type `avatars`
+2. Avatar files are located in the `assets/avatars/` directory (in resource-core repository)
+3. File name format: `avatar-{name}-{size}.jpg`
+4. Or use React components: `import { AvatarByewind } from '@snowui-design-system/resource-react'`
+
+### How to Find Suitable Backgrounds?
+
+1. Check the `src/assets.ts` file in the [resource-core](https://github.com/snowui/resource-core) repository, filter assets of type `backgrounds`
+2. Background files are located in the `assets/backgrounds/` directory (in resource-core repository)
+3. File name format: `{name}-{width}.jpg`
+4. Or use React components: `import { Gradient01 } from '@snowui-design-system/resource-react'`
+
+---
+
+## Frequently Asked Questions
+
+### Q: How do I know what icons/assets are available?
+
+A: Check the `src/icons.ts` and `src/assets.ts` files in the [resource-core](https://github.com/snowui/resource-core) repository. These files contain metadata for all available assets. Or visit the [online example website](https://snowui.github.io/example) to browse all assets.
+
+### Q: Can design system variables be used in Tailwind?
+
+A: Yes! Design system CSS variables can be used directly in Tailwind's arbitrary value syntax:
 ```tsx
 <div className="bg-[var(--background-1)] p-[var(--spacing-16)]">
 ```
 
-### Q: 如何切换主题？
+### Q: How do I switch themes?
 
-A: 在容器元素上添加主题类：
+A: Add theme classes to container elements:
 ```html
 <div class="theme-snowui-dark">
-  <!-- 内容 -->
+  <!-- Content -->
 </div>
 ```
 
-### Q: 素材文件需要处理吗？
+### Q: Do asset files need processing?
 
-A: 不需要。[resource-core](https://github.com/snowui/resource-core) 仓库中的素材文件已经处理过，可以直接使用。如果克隆了仓库并需要重新处理，可以运行：
+A: No. Asset files in the [resource-core](https://github.com/snowui/resource-core) repository are already processed and can be used directly. If you cloned the repository and need to reprocess, you can run:
 ```bash
 cd resource-core
 npm run process
@@ -697,16 +697,15 @@ npm run process
 
 ---
 
-## 总结
+## Summary
 
-使用 SnowUI 进行网页设计的核心步骤：
+Core steps for using SnowUI for web design:
 
-1. **引入设计系统**: 引入 `design-system/src/snowui.css`（本仓库）
-2. **使用设计变量**: 使用 CSS 变量定义样式（颜色、间距、圆角等）
-3. **使用设计素材**: 
-   - 推荐：使用 React 组件 `@snowui-design-system/resource-react`
-   - 或：克隆 [resource-core](https://github.com/snowui/resource-core) 仓库后直接引用素材文件
-4. **遵循设计规范**: 使用设计系统提供的变量和工具类，保持设计一致性
+1. **Import Design System**: Import `design-system/src/snowui.css` (this repository)
+2. **Use Design Variables**: Use CSS variables to define styles (colors, spacing, corner radius, etc.)
+3. **Use Design Assets**: 
+   - Recommended: Use React components `@snowui-design-system/resource-react`
+   - Or: Clone [resource-core](https://github.com/snowui/resource-core) repository and directly reference asset files
+4. **Follow Design Standards**: Use variables and utility classes provided by the design system to maintain design consistency
 
-通过遵循这些指南，AI 助手可以高效地使用 SnowUI 设计系统和素材创建美观、一致的网页设计。
-
+By following these guidelines, AI assistants can efficiently use the SnowUI design system and assets to create beautiful, consistent web designs.
