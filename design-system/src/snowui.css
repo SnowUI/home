@@ -546,8 +546,8 @@
  * - path:first-of-type[opacity="0.2"] 匹配第一个 path 且 opacity 为 0.2（duotone 的特征）
  * - 这样可以避免影响其他 SVG 元素
  */
-svg[viewBox="0 0 256 256"] path:first-of-type[opacity="0.2"], svg[viewBox="0 0 256 256"] g[opacity="0.2"],
-svg[viewBox="0 0 256 256"] g[opacity=".2"] {
+svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"], svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],svg[viewBox="0 0 32 32"] g[opacity="0.08"],
+svg[viewBox="0 0 32 32"] g[opacity=".08"] {
   opacity: 0.08 !important;
 }
 
