@@ -27,3 +27,6 @@ yarn-error.log*
 /resource
 /apps
 /site
+/playground
+/packages
+/components

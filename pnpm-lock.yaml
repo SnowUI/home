@@ -21,14 +21,17 @@ importers:
         specifier: ^2.1.10
         version: 2.1.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@snowui-design-system/resource-react':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.14
+        version: 1.0.14(react@19.2.0)
       react:
         specifier: ^19.2.0
         version: 19.2.0
       react-dom:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
+      react-grab:
+        specifier: ^0.0.39
+        version: 0.0.39(@types/react@19.2.2)(react@19.2.0)
       react-scripts:
         specifier: ^5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.28.5))(@babel/plugin-transform-react-jsx@7.27.1(@babel/core@7.28.5))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.2.0)(ts-node@10.9.2(@types/node@24.10.0)(typescript@5.9.3))(tsx@4.20.6)(type-fest@0.21.3)(typescript@5.9.3)
@@ -60,6 +63,38 @@ importers:
 
   design-system: {}
 
+  packages/core:
+    dependencies:
+      react:
+        specifier: ^18.0.0
+        version: 18.3.1
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+
+  packages/react:
+    dependencies:
+      '@snowui/core':
+        specifier: workspace:*
+        version: link:../core
+      react:
+        specifier: ^18.0.0
+        version: 19.2.0
+      react-grab:
+        specifier: ^0.0.39
+        version: 0.0.39(@types/react@18.3.26)(react@19.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.3.26
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.3.7(@types/react@18.3.26)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+
   resource/core:
     devDependencies:
       sharp:
@@ -75,8 +110,8 @@ importers:
   resource/react:
     dependencies:
       '@snowui-design-system/resource-core':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.14
+        version: 1.0.14
       react:
         specifier: '>=18 <21'
         version: 19.2.0
@@ -1325,6 +1360,9 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
+  '@medv/finder@4.0.2':
+    resolution: {integrity: sha512-RraNY9SCcx4KZV0Dh6BEW6XEW2swkqYca74pkFFRw6hHItSHiy+O/xMnpbofjYbzXj0tSpBGthUF1hHTsr3vIQ==}
+
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
 
@@ -1530,11 +1568,13 @@ packages:
   '@sinonjs/fake-timers@8.1.0':
     resolution: {integrity: sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==}
 
-  '@snowui-design-system/resource-core@1.0.0':
-    resolution: {integrity: sha512-SwgB8VoHl6A5TBwxaFpP2DkKMLI+jyMltCyjvMPE+0fIZkiHCE/PRh7LnpHpsF1oWlur+l3wJDjs5Njb4Td/cA==}
+  '@snowui-design-system/resource-core@1.0.14':
+    resolution: {integrity: sha512-ydzy9VI6XDR3cAGuddR8gYUd59P5aqEgIqxEuxl4Zsoq1+IPv0qYKcgbqwi8kQvyii3dHvR8G13RB3OGr1Yvyg==}
 
-  '@snowui-design-system/resource-react@1.0.0':
-    resolution: {integrity: sha512-GqmS4a34ljK7d4yzQOUP8LBKAnF/cKcrR+ndRBayUkRhV3Nbi4+WZpRiz6Fl/dpQgti5OGBLYHycf3Ea7Ns6dQ==}
+  '@snowui-design-system/resource-react@1.0.14':
+    resolution: {integrity: sha512-bGLkuWu0wjDS8bEhCS6cQAiMAGF4cbQJbyoYb1G+NUro9LfIn8L6BCIsblnhf2Q7VDbqtMNfJ4ccqv/ji/HfGA==}
+    peerDependencies:
+      react: '>=18 <21'
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
@@ -1863,10 +1903,20 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
+  '@types/react-dom@18.3.7':
+    resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
+    peerDependencies:
+      '@types/react': ^18.0.0
+
   '@types/react-dom@19.2.2':
     resolution: {integrity: sha512-9KQPoO6mZCi7jcIStSnlOWn2nEF3mNmyr3rIAsGnAbQKYbRLyqmeSc39EVgtxXVia+LMT8j3knZLAZAh+xLmrw==}
     peerDependencies:
       '@types/react': ^19.2.0
+
+  '@types/react-reconciler@0.28.9':
+    resolution: {integrity: sha512-HHM3nxyUZ3zAylX8ZEyrDNd2XZOnQ0D5XfunJF5FLQnZbHHYq4UWvW1QfelQNXv1ICNkwYhfxjwfnqivYB6bFg==}
+    peerDependencies:
+      '@types/react': '*'
 
   '@types/react@18.3.26':
     resolution: {integrity: sha512-RFA/bURkcKzx/X9oumPG9Vp3D3JUgus/d0b67KB0t5S/raciymilkOa66olh78MUI92QLbEJevO7rvqU/kjwKA==}
@@ -2335,6 +2385,11 @@ packages:
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  bippy@0.5.14:
+    resolution: {integrity: sha512-QrY2UHRFiIA8+2nkZfTLucGXhjshbkLnwGCCShQTO1FecJwDLHKOUBzOd1DArUsJnnomFZTggFRmj1Zxt4uamg==}
+    peerDependencies:
+      react: '>=17.0.1'
 
   bluebird@3.7.2:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
@@ -4470,6 +4525,9 @@ packages:
   mlly@1.8.0:
     resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
 
+  modern-screenshot@4.6.7:
+    resolution: {integrity: sha512-0GhgI6i6le4AhKzCvLYjwEmsP47kTsX45iT5yuAzsLTi/7i3Rjxe8fbH2VjGJLuyOThwsa0CdQAPd4auoEtsZg==}
+
   ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
@@ -5279,6 +5337,9 @@ packages:
   react-error-overlay@6.1.0:
     resolution: {integrity: sha512-SN/U6Ytxf1QGkw/9ve5Y+NxBbZM6Ht95tuXNMKs8EJyFa/Vy/+Co3stop3KBHARfn/giv+Lj1uUnTfOJ3moFEQ==}
 
+  react-grab@0.0.39:
+    resolution: {integrity: sha512-Q1R4mECia8giYHn4C85GzEY8EQISLB6uC8in4bUvtfLd50poIN88Umm037QtiK0ITROiYiMw9gOjU9Dhm6DxXQ==}
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -5551,6 +5612,16 @@ packages:
   serialize-javascript@6.0.2:
     resolution: {integrity: sha512-Saa1xPByTTq2gdeFZYLLo+RFE35NHZkAbqZeWNd3BpzppeVisAqpDjcp8dyf6uIvEqJRd46jemmyA4iFIeVk8g==}
 
+  seroval-plugins@1.3.3:
+    resolution: {integrity: sha512-16OL3NnUBw8JG1jBLUoZJsLnQq0n5Ua6aHalhJK4fMQkz1lqR7Osz1sA30trBtd9VUDc2NgkuRCn8+/pBwqZ+w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      seroval: ^1.0
+
+  seroval@1.3.2:
+    resolution: {integrity: sha512-RbcPH1n5cfwKrru7v7+zrZvjLurgHhGyso3HTyGtRivGWgYjbOmGuivCQaORNELjNONoK35nj28EoWul9sb1zQ==}
+    engines: {node: '>=10'}
+
   serve-index@1.9.1:
     resolution: {integrity: sha512-pXHfKNP4qujrtteMrSBb0rc8HJ9Ms/GrXwcUtUtD5s4ewDJI8bT3Cz2zTVRMKtri49pLx2e0Ya8ziP5Ya2pZZw==}
     engines: {node: '>= 0.8.0'}
@@ -5639,6 +5710,14 @@ packages:
 
   sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
+
+  solid-js@1.9.10:
+    resolution: {integrity: sha512-Coz956cos/EPDlhs6+jsdTxKuJDPT7B5SVIWgABwROyxjY7Xbr8wkzD68Et+NxnV7DLJ3nJdAC2r9InuV/4Jew==}
+
+  solid-sonner@0.2.8:
+    resolution: {integrity: sha512-EQ2EIznvHHpAmkYh2CTu0AdCgmPJRJWLGFRWygE8j+vMEfvIV2wotHU5qgWzqzVTG1SODGsay2Lwq6ENWx/rPA==}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   source-list-map@2.0.1:
     resolution: {integrity: sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==}
@@ -7881,6 +7960,8 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
+  '@medv/finder@4.0.2': {}
+
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     dependencies:
       eslint-scope: 5.1.1
@@ -8034,12 +8115,12 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 1.8.6
 
-  '@snowui-design-system/resource-core@1.0.0': {}
+  '@snowui-design-system/resource-core@1.0.14': {}
 
-  '@snowui-design-system/resource-react@1.0.0':
+  '@snowui-design-system/resource-react@1.0.14(react@19.2.0)':
     dependencies:
-      '@snowui-design-system/resource-core': 1.0.0
-      react: 18.3.1
+      '@snowui-design-system/resource-core': 1.0.14
+      react: 19.2.0
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     dependencies:
@@ -8378,7 +8459,19 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
+  '@types/react-dom@18.3.7(@types/react@18.3.26)':
+    dependencies:
+      '@types/react': 18.3.26
+
   '@types/react-dom@19.2.2(@types/react@19.2.2)':
+    dependencies:
+      '@types/react': 19.2.2
+
+  '@types/react-reconciler@0.28.9(@types/react@18.3.26)':
+    dependencies:
+      '@types/react': 18.3.26
+
+  '@types/react-reconciler@0.28.9(@types/react@19.2.2)':
     dependencies:
       '@types/react': 19.2.2
 
@@ -8979,6 +9072,20 @@ snapshots:
   big.js@5.2.2: {}
 
   binary-extensions@2.3.0: {}
+
+  bippy@0.5.14(@types/react@18.3.26)(react@19.2.0):
+    dependencies:
+      '@types/react-reconciler': 0.28.9(@types/react@18.3.26)
+      react: 19.2.0
+    transitivePeerDependencies:
+      - '@types/react'
+
+  bippy@0.5.14(@types/react@19.2.2)(react@19.2.0):
+    dependencies:
+      '@types/react-reconciler': 0.28.9(@types/react@19.2.2)
+      react: 19.2.0
+    transitivePeerDependencies:
+      - '@types/react'
 
   bluebird@3.7.2: {}
 
@@ -11551,6 +11658,8 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.1
 
+  modern-screenshot@4.6.7: {}
+
   ms@2.0.0: {}
 
   ms@2.1.3: {}
@@ -12381,6 +12490,28 @@ snapshots:
 
   react-error-overlay@6.1.0: {}
 
+  react-grab@0.0.39(@types/react@18.3.26)(react@19.2.0):
+    dependencies:
+      '@medv/finder': 4.0.2
+      bippy: 0.5.14(@types/react@18.3.26)(react@19.2.0)
+      modern-screenshot: 4.6.7
+      solid-js: 1.9.10
+      solid-sonner: 0.2.8(solid-js@1.9.10)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
+
+  react-grab@0.0.39(@types/react@19.2.2)(react@19.2.0):
+    dependencies:
+      '@medv/finder': 4.0.2
+      bippy: 0.5.14(@types/react@19.2.2)(react@19.2.0)
+      modern-screenshot: 4.6.7
+      solid-js: 1.9.10
+      solid-sonner: 0.2.8(solid-js@1.9.10)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
+
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -12762,6 +12893,12 @@ snapshots:
     dependencies:
       randombytes: 2.1.0
 
+  seroval-plugins@1.3.3(seroval@1.3.2):
+    dependencies:
+      seroval: 1.3.2
+
+  seroval@1.3.2: {}
+
   serve-index@1.9.1:
     dependencies:
       accepts: 1.3.8
@@ -12899,6 +13036,16 @@ snapshots:
       faye-websocket: 0.11.4
       uuid: 8.3.2
       websocket-driver: 0.7.4
+
+  solid-js@1.9.10:
+    dependencies:
+      csstype: 3.1.3
+      seroval: 1.3.2
+      seroval-plugins: 1.3.3(seroval@1.3.2)
+
+  solid-sonner@0.2.8(solid-js@1.9.10):
+    dependencies:
+      solid-js: 1.9.10
 
   source-list-map@2.0.1: {}
 
