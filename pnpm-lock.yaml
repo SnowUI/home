@@ -21,8 +21,8 @@ importers:
         specifier: ^2.1.10
         version: 2.1.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@snowui-design-system/resource-react':
-        specifier: ^1.0.14
-        version: 1.0.14(react@19.2.0)
+        specifier: ^1.0.22
+        version: 1.0.22(react@19.2.0)
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -75,15 +75,18 @@ importers:
 
   packages/react:
     dependencies:
-      '@snowui/core':
+      '@snowui/packages-core':
         specifier: workspace:*
         version: link:../core
       react:
         specifier: ^18.0.0
-        version: 19.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.0.0
+        version: 18.3.1(react@18.3.1)
       react-grab:
         specifier: ^0.0.39
-        version: 0.0.39(@types/react@18.3.26)(react@19.2.0)
+        version: 0.0.39(@types/react@18.3.26)(react@18.3.1)
     devDependencies:
       '@types/react':
         specifier: ^18.2.0
@@ -110,8 +113,8 @@ importers:
   resource/react:
     dependencies:
       '@snowui-design-system/resource-core':
-        specifier: ^1.0.14
-        version: 1.0.14
+        specifier: ^1.0.22
+        version: 1.0.22
       react:
         specifier: '>=18 <21'
         version: 19.2.0
@@ -1568,11 +1571,11 @@ packages:
   '@sinonjs/fake-timers@8.1.0':
     resolution: {integrity: sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==}
 
-  '@snowui-design-system/resource-core@1.0.14':
-    resolution: {integrity: sha512-ydzy9VI6XDR3cAGuddR8gYUd59P5aqEgIqxEuxl4Zsoq1+IPv0qYKcgbqwi8kQvyii3dHvR8G13RB3OGr1Yvyg==}
+  '@snowui-design-system/resource-core@1.0.22':
+    resolution: {integrity: sha512-ezKtK9wOvUZwnYrfSvkB9YV36VAQYrJsUH/nM65tYkK1bbSxODfRQLeb6h6vikbbEKiGXAKUkkd8m8dahpgODA==}
 
-  '@snowui-design-system/resource-react@1.0.14':
-    resolution: {integrity: sha512-bGLkuWu0wjDS8bEhCS6cQAiMAGF4cbQJbyoYb1G+NUro9LfIn8L6BCIsblnhf2Q7VDbqtMNfJ4ccqv/ji/HfGA==}
+  '@snowui-design-system/resource-react@1.0.22':
+    resolution: {integrity: sha512-KYYhTIbKTRpFA9oy0EeIXK72nrIvs8sBgoJeJVvAyTGb81F6p52stTV9XwoZDHF7K/j106Y4VVMqXpct04hpcQ==}
     peerDependencies:
       react: '>=18 <21'
 
@@ -5329,6 +5332,11 @@ packages:
       typescript:
         optional: true
 
+  react-dom@18.3.1:
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+    peerDependencies:
+      react: ^18.3.1
+
   react-dom@19.2.0:
     resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
     peerDependencies:
@@ -5566,6 +5574,9 @@ packages:
   saxes@5.0.1:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
     engines: {node: '>=10'}
+
+  scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
@@ -8115,11 +8126,11 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 1.8.6
 
-  '@snowui-design-system/resource-core@1.0.14': {}
+  '@snowui-design-system/resource-core@1.0.22': {}
 
-  '@snowui-design-system/resource-react@1.0.14(react@19.2.0)':
+  '@snowui-design-system/resource-react@1.0.22(react@19.2.0)':
     dependencies:
-      '@snowui-design-system/resource-core': 1.0.14
+      '@snowui-design-system/resource-core': 1.0.22
       react: 19.2.0
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
@@ -9073,10 +9084,10 @@ snapshots:
 
   binary-extensions@2.3.0: {}
 
-  bippy@0.5.14(@types/react@18.3.26)(react@19.2.0):
+  bippy@0.5.14(@types/react@18.3.26)(react@18.3.1):
     dependencies:
       '@types/react-reconciler': 0.28.9(@types/react@18.3.26)
-      react: 19.2.0
+      react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
 
@@ -12483,6 +12494,12 @@ snapshots:
       - supports-color
       - vue-template-compiler
 
+  react-dom@18.3.1(react@18.3.1):
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.2
+
   react-dom@19.2.0(react@19.2.0):
     dependencies:
       react: 19.2.0
@@ -12490,10 +12507,10 @@ snapshots:
 
   react-error-overlay@6.1.0: {}
 
-  react-grab@0.0.39(@types/react@18.3.26)(react@19.2.0):
+  react-grab@0.0.39(@types/react@18.3.26)(react@18.3.1):
     dependencies:
       '@medv/finder': 4.0.2
-      bippy: 0.5.14(@types/react@18.3.26)(react@19.2.0)
+      bippy: 0.5.14(@types/react@18.3.26)(react@18.3.1)
       modern-screenshot: 4.6.7
       solid-js: 1.9.10
       solid-sonner: 0.2.8(solid-js@1.9.10)
@@ -12828,6 +12845,10 @@ snapshots:
   saxes@5.0.1:
     dependencies:
       xmlchars: 2.2.0
+
+  scheduler@0.23.2:
+    dependencies:
+      loose-envify: 1.4.0
 
   scheduler@0.27.0: {}
 
