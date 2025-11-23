@@ -6,6 +6,7 @@
     "packages/*",
     "apps/*",
     "design-system",
+    "components",
     "resource/*"
   ],
   "scripts": {
@@ -15,8 +16,10 @@
     "clean": "turbo run clean"
   },
   "devDependencies": {
+    "@tsconfig/svelte": "^5.0.6",
+    "@unocss/svelte-scoped": "^66.5.9",
     "turbo": "^2.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "unocss": "^66.5.9"
   }
 }
-  

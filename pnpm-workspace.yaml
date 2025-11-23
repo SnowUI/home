@@ -2,6 +2,9 @@ packages:
   - 'apps/*'
   - 'resource/*'
   - 'design-system'
+  - 'components'
   - 'packages/*'
+  - 'example'
+  - 'example/*'
 
 

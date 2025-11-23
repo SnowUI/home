@@ -381,6 +381,106 @@
   --backdrop-blur-100: var(--effect-background-blur-100);
 }
 
+/* ============================================
+   UnoCSS 支持说明
+   ============================================
+   
+   UnoCSS 不支持 @theme inline 指令（这是 Tailwind CSS v4 的特性）。
+   如果使用 UnoCSS，需要在 uno.config.ts 中配置主题映射。
+   
+   示例配置：
+   
+   ```typescript
+   import { defineConfig } from 'unocss'
+   
+   export default defineConfig({
+     theme: {
+       colors: {
+         'static-black-100': 'var(--static-black-100)',
+         'static-black-80': 'var(--static-black-80)',
+         // ... 其他颜色映射
+         'black-100': 'var(--black-100)',
+         'black-80': 'var(--black-80)',
+         // ... 其他主题颜色
+         'background-1': 'var(--background-1)',
+         'background-2': 'var(--background-2)',
+         // ... 其他背景颜色
+         'purple': 'var(--secondary-purple)',
+         'indigo': 'var(--secondary-indigo)',
+         // ... 其他次要颜色
+         'primary': 'var(--primary)',
+         'foreground': 'var(--foreground)',
+         'logo': 'var(--logo)',
+         'logo-2': 'var(--logo-2)',
+       },
+       borderRadius: {
+         '0': 'var(--corner-radius-0)',
+         '4': 'var(--corner-radius-4)',
+         '8': 'var(--corner-radius-8)',
+         '12': 'var(--corner-radius-12)',
+         '16': 'var(--corner-radius-16)',
+         '20': 'var(--corner-radius-20)',
+         '24': 'var(--corner-radius-24)',
+         '28': 'var(--corner-radius-28)',
+         '32': 'var(--corner-radius-32)',
+         '40': 'var(--corner-radius-40)',
+         '48': 'var(--corner-radius-48)',
+         '80': 'var(--corner-radius-80)',
+       },
+       spacing: {
+         '0': 'var(--spacing-0)',
+         '4': 'var(--spacing-4)',
+         '8': 'var(--spacing-8)',
+         '12': 'var(--spacing-12)',
+         '16': 'var(--spacing-16)',
+         '20': 'var(--spacing-20)',
+         '24': 'var(--spacing-24)',
+         '28': 'var(--spacing-28)',
+         '40': 'var(--spacing-40)',
+         '48': 'var(--spacing-48)',
+       },
+       fontSize: {
+         '12': ['var(--font-size-12)', { lineHeight: 'var(--line-height-12)' }],
+         '14': ['var(--font-size-14)', { lineHeight: 'var(--line-height-14)' }],
+         '16': ['var(--font-size-16)', { lineHeight: 'var(--line-height-16)' }],
+         '18': ['var(--font-size-18)', { lineHeight: 'var(--line-height-18)' }],
+         '24': ['var(--font-size-24)', { lineHeight: 'var(--line-height-24)' }],
+         '32': ['var(--font-size-32)', { lineHeight: 'var(--line-height-32)' }],
+         '48': ['var(--font-size-48)', { lineHeight: 'var(--line-height-48)' }],
+         '64': ['var(--font-size-64)', { lineHeight: 'var(--line-height-64)' }],
+       },
+       fontWeight: {
+         'regular': 'var(--font-weight-regular)',
+         'semibold': 'var(--font-weight-semibold)',
+       },
+       boxShadow: {
+         'glow': 'var(--effect-glow)',
+         'focus': 'var(--effect-focus)',
+         'inner-shadow': 'var(--effect-inner-shadow)',
+         'drop-shadow-1': 'var(--effect-drop-shadow-1)',
+         'drop-shadow-2': 'var(--effect-drop-shadow-2)',
+         'image-hover': 'var(--effect-image-hover)',
+         'glass-1': 'var(--effect-glass-1)',
+         'glass-2': 'var(--effect-glass-2)',
+       },
+       backdropBlur: {
+         '40': 'var(--effect-background-blur-40)',
+         '100': 'var(--effect-background-blur-100)',
+       },
+     },
+   })
+   ```
+   
+   使用示例：
+   - 颜色：bg-primary, text-foreground, bg-purple
+   - 圆角：rounded-8, rounded-12
+   - 间距：p-4, m-8, gap-12
+   - 字体：text-14, text-16, font-semibold
+   - 阴影：shadow-glass-1, shadow-focus
+   - 模糊：backdrop-blur-40
+   
+   ============================================ */
+
 /* === Font Size Utility Classes === */
 /* 基于 :root 中定义的字体变量创建的快捷工具类 */
 .font-12 {
