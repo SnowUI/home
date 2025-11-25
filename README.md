@@ -85,11 +85,11 @@ function App() {
 
 **Option 1: From jsDelivr CDN - Recommended**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css">
 ```
 
 **Option 2: Download and use locally**
-1. Download `snowui.css` from [GitHub](https://github.com/snowui/home/blob/main/design-system/src/snowui.css)
+1. Download `snowui.css` from [GitHub](https://github.com/snowui/home/blob/main/design-system/snowui.css)
 2. Place it in your project
 3. Reference it:
 ```html
@@ -110,14 +110,14 @@ function App() {
 > **📖 Important**: If you're an AI assistant helping with web design, start by reading the [AI Usage Guide](./docs/AI_USAGE_GUIDE.md) for complete instructions.
 
 **Quick Access:**
-- **Design System**: `design-system/src/snowui.css` - Complete CSS design tokens
+- **Design System**: `design-system/snowui.css` - Complete CSS design tokens
 - **Assets**: Available in [resource-core](https://github.com/snowui/resource-core) repository
 - **Documentation**: 
   - [AI Usage Guide](./docs/AI_USAGE_GUIDE.md) ⭐ - Complete guide for AI assistants
   - [Quick Reference](./docs/QUICK_REFERENCE.md) - Quick reference for design tokens and asset paths
 
 **Key Information:**
-- Design tokens: `design-system/src/snowui.css`
+- Design tokens: `design-system/snowui.css`
 - Icons: 1500+ icons in 6 weights (regular, thin, light, bold, fill, duotone)
 - Avatars: 330+ avatars with sizes 16×16 to 512×512
 - Backgrounds: 144+ backgrounds with widths 320, 640, 1024, 1920
@@ -128,7 +128,7 @@ function App() {
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="./design-system/snowui.css">
   <style>
     .card {
       background: var(--background-1);
@@ -177,7 +177,7 @@ function App() {
 
 ### 🎨 Design System Overview
 
-The design system is located in `design-system/src/snowui.css` and provides:
+The design system is located in `design-system/snowui.css` and provides:
 
 #### Design Tokens
 
@@ -291,12 +291,12 @@ For detailed asset information, see [resource-core](https://github.com/snowui/re
 
 **In HTML:**
 ```html
-<link rel="stylesheet" href="design-system/src/snowui.css">
+<link rel="stylesheet" href="design-system/snowui.css">
 ```
 
 **In React/Vue/Other:**
 ```tsx
-import './design-system/src/snowui.css';
+import './design-system/snowui.css';
 ```
 
 **With Tailwind CSS:**
@@ -407,7 +407,7 @@ function App() {
 
 **使用设计系统 CSS：**
 ```html
-<link rel="stylesheet" href="path/to/design-system/src/snowui.css">
+<link rel="stylesheet" href="path/to/design-system/snowui.css">
 ```
 
 ```css
@@ -424,14 +424,14 @@ function App() {
 > **📖 重要提示**：如果你是帮助网页设计的 AI 助手，请先阅读 [AI 使用指南](./docs/AI_USAGE_GUIDE.md) 获取完整说明。
 
 **快速访问：**
-- **设计系统**：`design-system/src/snowui.css` - 完整的 CSS 设计令牌
+- **设计系统**：`design-system/snowui.css` - 完整的 CSS 设计令牌
 - **素材**：在 [resource-core](https://github.com/snowui/resource-core) 仓库中
 - **文档**：
   - [AI 使用指南](./docs/AI_USAGE_GUIDE.md) ⭐ - AI 助手完整指南
   - [快速参考](./docs/QUICK_REFERENCE.md) - 设计令牌和素材路径快速参考
 
 **关键信息：**
-- 设计令牌：`design-system/src/snowui.css`
+- 设计令牌：`design-system/snowui.css`
 - 图标：1500+ 图标，6 种权重（regular, thin, light, bold, fill, duotone）
 - 头像：330+ 头像，尺寸从 16×16 到 512×512
 - 背景：144+ 背景，宽度 320, 640, 1024, 1920
@@ -442,7 +442,7 @@ function App() {
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/src/snowui.css">
+  <link rel="stylesheet" href="./design-system/snowui.css">
   <style>
     .card {
       background: var(--background-1);
@@ -491,7 +491,7 @@ function App() {
 
 ### 🎨 设计系统概览
 
-设计系统位于 `design-system/src/snowui.css`，提供：
+设计系统位于 `design-system/snowui.css`，提供：
 
 #### 设计令牌
 
@@ -605,12 +605,12 @@ function App() {
 
 **在 HTML 中：**
 ```html
-<link rel="stylesheet" href="design-system/src/snowui.css">
+<link rel="stylesheet" href="design-system/snowui.css">
 ```
 
 **在 React/Vue/其他框架中：**
 ```tsx
-import './design-system/src/snowui.css';
+import './design-system/snowui.css';
 ```
 
 **与 Tailwind CSS 结合：**
