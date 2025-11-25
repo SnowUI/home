@@ -30,3 +30,11 @@ yarn-error.log*
 /playground
 /packages
 /components
+/demo-react
+/demo-svelte
+/resource-base
+/resource-react
+/resource-svelte
+/resource-demo-react
+/resource-demo-svelte
+/design-export
