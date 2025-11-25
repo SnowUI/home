@@ -52,7 +52,7 @@ snowui/
 
 **Related Repositories** (separate GitHub repositories):
 
-- **[resource-core](https://github.com/snowui/resource-core)** - Core resource package with all design assets
+- **[resource-base](https://github.com/SnowUI/resource-base)** - Core resource package with all design assets
 - **[resource-react](https://github.com/snowui/resource-react)** - React components package
 - **[example](https://github.com/snowui/example)** - Example website and demo
 - **[Live Demo](https://snowui.github.io/example)** - View the example website
@@ -85,11 +85,11 @@ function App() {
 
 **Option 1: From jsDelivr CDN - Recommended**
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css">
 ```
 
 **Option 2: Download and use locally**
-1. Download `snowui.css` from [GitHub](https://github.com/snowui/home/blob/main/design-system/snowui.css)
+1. Download `snowui.css` from [GitHub](https://github.com/SnowUI/home/blob/main/snowui.css)
 2. Place it in your project
 3. Reference it:
 ```html
@@ -110,25 +110,25 @@ function App() {
 > **📖 Important**: If you're an AI assistant helping with web design, start by reading the [AI Usage Guide](./docs/AI_USAGE_GUIDE.md) for complete instructions.
 
 **Quick Access:**
-- **Design System**: `design-system/snowui.css` - Complete CSS design tokens
-- **Assets**: Available in [resource-core](https://github.com/snowui/resource-core) repository
+- **Design System**: `snowui.css` - Complete CSS design tokens
+- **Assets**: Available in [resource-base](https://github.com/SnowUI/resource-base) repository
 - **Documentation**: 
   - [AI Usage Guide](./docs/AI_USAGE_GUIDE.md) ⭐ - Complete guide for AI assistants
   - [Quick Reference](./docs/QUICK_REFERENCE.md) - Quick reference for design tokens and asset paths
 
 **Key Information:**
-- Design tokens: `design-system/snowui.css`
+- Design tokens: `snowui.css`
 - Icons: 1500+ icons in 6 weights (regular, thin, light, bold, fill, duotone)
 - Avatars: 330+ avatars with sizes 16×16 to 512×512
 - Backgrounds: 144+ backgrounds with widths 320, 640, 1024, 1920
-- See [resource-core](https://github.com/snowui/resource-core) for all assets
+- See [resource-base](https://github.com/SnowUI/resource-base) for all assets
 
 **Basic Usage Example:**
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/snowui.css">
+  <link rel="stylesheet" href="./snowui.css">
   <style>
     .card {
       background: var(--background-1);
@@ -170,14 +170,14 @@ function App() {
 
 #### For Developers
 
-- **[Resource Core](https://github.com/snowui/resource-core)** - Core resource package with all design assets
+- **[Resource Base](https://github.com/SnowUI/resource-base)** - Core resource package with all design assets
 - **[Resource React](https://github.com/snowui/resource-react)** - React components package
 - **[Example Website](https://snowui.github.io/example)** - Live demo and showcase
 - **[Example Repository](https://github.com/snowui/example)** - Example website source code
 
 ### 🎨 Design System Overview
 
-The design system is located in `design-system/snowui.css` and provides:
+The design system is located in `snowui.css` and provides:
 
 #### Design Tokens
 
@@ -235,7 +235,7 @@ See [Quick Reference](./docs/QUICK_REFERENCE.md) for complete token list.
 
 ### 📦 Asset Library
 
-All design assets are available in the [resource-core](https://github.com/snowui/resource-core) repository:
+All design assets are available in the [resource-base](https://github.com/SnowUI/resource-base) repository:
 
 #### Icons (1500+)
 - **Weights**: regular, thin, light, bold, fill, duotone
@@ -261,11 +261,11 @@ All design assets are available in the [resource-core](https://github.com/snowui
 - **Images**: Sample images (PNG)
 - **Logos**: 124+ brand logos (SVG)
 
-For detailed asset information, see [resource-core](https://github.com/snowui/resource-core) repository.
+For detailed asset information, see [resource-base](https://github.com/SnowUI/resource-base) repository.
 
 ### 🔗 Related Projects
 
-- **[resource-core](https://github.com/snowui/resource-core)** - Core resource package (npm: `@snowui-design-system/resource-core`)
+- **[resource-base](https://github.com/SnowUI/resource-base)** - Core resource package (npm: `@snowui-design-system/resource-core`)
   - All design assets (icons, avatars, backgrounds, etc.)
   - Asset processing scripts
   - Metadata files
@@ -291,12 +291,12 @@ For detailed asset information, see [resource-core](https://github.com/snowui/re
 
 **In HTML:**
 ```html
-<link rel="stylesheet" href="design-system/snowui.css">
+<link rel="stylesheet" href="snowui.css">
 ```
 
 **In React/Vue/Other:**
 ```tsx
-import './design-system/snowui.css';
+import './snowui.css';
 ```
 
 **With Tailwind CSS:**
@@ -376,7 +376,7 @@ snowui/
 
 **相关仓库**（独立的 GitHub 仓库）：
 
-- **[resource-core](https://github.com/snowui/resource-core)** - 核心资源包，包含所有设计素材
+- **[resource-base](https://github.com/SnowUI/resource-base)** - 核心资源包，包含所有设计素材
 - **[resource-react](https://github.com/snowui/resource-react)** - React 组件包
 - **[example](https://github.com/snowui/example)** - 示例网站和演示
 - **[在线演示](https://snowui.github.io/example)** - 查看示例网站
@@ -407,7 +407,7 @@ function App() {
 
 **使用设计系统 CSS：**
 ```html
-<link rel="stylesheet" href="path/to/design-system/snowui.css">
+<link rel="stylesheet" href="path/to/snowui.css">
 ```
 
 ```css
@@ -424,25 +424,25 @@ function App() {
 > **📖 重要提示**：如果你是帮助网页设计的 AI 助手，请先阅读 [AI 使用指南](./docs/AI_USAGE_GUIDE.md) 获取完整说明。
 
 **快速访问：**
-- **设计系统**：`design-system/snowui.css` - 完整的 CSS 设计令牌
-- **素材**：在 [resource-core](https://github.com/snowui/resource-core) 仓库中
+- **设计系统**：`snowui.css` - 完整的 CSS 设计令牌
+- **素材**：在 [resource-base](https://github.com/SnowUI/resource-base) 仓库中
 - **文档**：
   - [AI 使用指南](./docs/AI_USAGE_GUIDE.md) ⭐ - AI 助手完整指南
   - [快速参考](./docs/QUICK_REFERENCE.md) - 设计令牌和素材路径快速参考
 
 **关键信息：**
-- 设计令牌：`design-system/snowui.css`
+- 设计令牌：`snowui.css`
 - 图标：1500+ 图标，6 种权重（regular, thin, light, bold, fill, duotone）
 - 头像：330+ 头像，尺寸从 16×16 到 512×512
 - 背景：144+ 背景，宽度 320, 640, 1024, 1920
-- 查看 [resource-core](https://github.com/snowui/resource-core) 获取所有素材
+- 查看 [resource-base](https://github.com/SnowUI/resource-base) 获取所有素材
 
 **基本使用示例：**
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="./design-system/snowui.css">
+  <link rel="stylesheet" href="./snowui.css">
   <style>
     .card {
       background: var(--background-1);
@@ -484,14 +484,14 @@ function App() {
 
 #### 开发者文档
 
-- **[Resource Core](https://github.com/snowui/resource-core)** - 核心资源包，包含所有设计素材
+- **[Resource Base](https://github.com/SnowUI/resource-base)** - 核心资源包，包含所有设计素材
 - **[Resource React](https://github.com/snowui/resource-react)** - React 组件包
 - **[示例网站](https://snowui.github.io/example)** - 在线演示和展示
 - **[示例仓库](https://github.com/snowui/example)** - 示例网站源代码
 
 ### 🎨 设计系统概览
 
-设计系统位于 `design-system/snowui.css`，提供：
+设计系统位于 `snowui.css`，提供：
 
 #### 设计令牌
 
@@ -549,7 +549,7 @@ function App() {
 
 ### 📦 素材库
 
-所有设计素材都在 [resource-core](https://github.com/snowui/resource-core) 仓库中：
+所有设计素材都在 [resource-base](https://github.com/SnowUI/resource-base) 仓库中：
 
 #### 图标（1500+）
 - **权重**：regular, thin, light, bold, fill, duotone
@@ -575,11 +575,11 @@ function App() {
 - **图片**：示例图片（PNG）
 - **Logo**：124+ 品牌 Logo（SVG）
 
-详细素材信息，请查看 [resource-core](https://github.com/snowui/resource-core) 仓库。
+详细素材信息，请查看 [resource-base](https://github.com/SnowUI/resource-base) 仓库。
 
 ### 🔗 相关项目
 
-- **[resource-core](https://github.com/snowui/resource-core)** - 核心资源包（npm: `@snowui-design-system/resource-core`）
+- **[resource-base](https://github.com/SnowUI/resource-base)** - 核心资源包（npm: `@snowui-design-system/resource-core`）
   - 所有设计素材（图标、头像、背景等）
   - 素材处理脚本
   - 元数据文件
@@ -605,12 +605,12 @@ function App() {
 
 **在 HTML 中：**
 ```html
-<link rel="stylesheet" href="design-system/snowui.css">
+<link rel="stylesheet" href="snowui.css">
 ```
 
 **在 React/Vue/其他框架中：**
 ```tsx
-import './design-system/snowui.css';
+import './snowui.css';
 ```
 
 **与 Tailwind CSS 结合：**
