@@ -1,658 +1,777 @@
 /*
-  Figma 多主题全局变量，自动生成
-  1. 默认 SnowUl-Light 全量变量写在 :root
-  2. 其它模式用 .theme-snowui-dark:root .theme-snowui-light:root .theme-ios-dark:root
-  3. 无论在哪一模式，spacing、radius、font-size、shadow 等永远用 :root 下的变量
-  4. 变量名统一 kebab-case
-  5. 强烈建议gap/padding/margin/radius场景使用 gap-[var(--spacing-8)] rounded-[var(--corner-radius-8)] 不推荐 tailwind原生 spacing/radius
+  SnowUI 设计系统 CSS
+  基于 Figma 多主题全局变量自动生成
+  
+  使用说明：
+  1. 支持多主题切换：SnowUI Light/Dark、iOS Light/Dark
+  2. 建议使用工具类而非直接使用变量
 */
-:root,
-.theme-snowui-light:root {
-  /* === Corner Radius === */
-  --corner-radius-0: 0;
-  --corner-radius-4: 0.25rem;  /* 4px */
-  --corner-radius-8: 0.5rem;   /* 8px */
-  --corner-radius-12: 0.75rem; /* 12px */
-  --corner-radius-16: 1rem;    /* 16px */
-  --corner-radius-20: 1.25rem; /* 20px */
-  --corner-radius-24: 1.5rem;  /* 24px */
-  --corner-radius-28: 1.75rem; /* 28px */
-  --corner-radius-32: 2rem;    /* 32px */
-  --corner-radius-40: 2.5rem;  /* 40px */
-  --corner-radius-48: 3rem;    /* 48px */
-  --corner-radius-80: 5rem;    /* 80px */
-
-  /* === Spacing === */
-  --spacing-0: 0;
-  --spacing-4: 0.25rem;  /* 4px */
-  --spacing-8: 0.5rem;   /* 8px */
-  --spacing-12: 0.75rem; /* 12px */
-  --spacing-16: 1rem;    /* 16px */
-  --spacing-20: 1.25rem; /* 20px */
-  --spacing-24: 1.5rem;  /* 24px */
-  --spacing-28: 1.75rem; /* 28px */
-  --spacing-40: 2.5rem;  /* 40px */
-  --spacing-48: 3rem;    /* 48px */
-
-  /* === Size === */
-  --size-16: 1rem;      /* 16px */
-  --size-20: 1.25rem;   /* 20px */
-  --size-24: 1.5rem;    /* 24px */
-  --size-28: 1.75rem;   /* 28px */
-  --size-32: 2rem;      /* 32px */
-  --size-40: 2.5rem;    /* 40px */
-  --size-48: 3rem;      /* 48px */
-  --size-56: 3.5rem;    /* 56px */
-  --size-64: 4rem;      /* 64px */
-  --size-72: 4.5rem;    /* 72px */
-  --size-80: 5rem;      /* 80px */
-
-  /* === Font === */
-  --font-size-12: 0.75rem;        /* 12px */
-  --line-height-12: 1rem;         /* 16px */
-  --paragraph-spacing-12: 0.5rem; /* 8px */
-
-  --font-size-14: 0.875rem;       /* 14px */
-  --line-height-14: 1.25rem;      /* 20px */
-  --paragraph-spacing-14: 0.625rem; /* 10px */
-
-  --font-size-16: 1rem;           /* 16px */
-  --line-height-16: 1.5rem;       /* 24px */
-  --paragraph-spacing-16: 0.75rem; /* 12px */
-
-  --font-size-18: 1.125rem;       /* 18px */
-  --line-height-18: 1.75rem;      /* 28px */
-  --paragraph-spacing-18: 0.875rem; /* 14px */
-
-  --font-size-24: 1.5rem;         /* 24px */
-  --line-height-24: 2rem;         /* 32px */
-  --paragraph-spacing-24: 1.125rem; /* 18px */
-
-  --font-size-32: 2rem;           /* 32px */
-  --line-height-32: 2.5rem;       /* 40px */
-  --paragraph-spacing-32: 1.5rem; /* 24px */
-
-  --font-size-48: 3rem;           /* 48px */
-  --line-height-48: 3.625rem;     /* 58px */
-  --paragraph-spacing-48: 2.25rem; /* 36px */
-
-  --font-size-64: 4rem;           /* 64px */
-  --line-height-64: 4.875rem;     /* 78px */
-  --paragraph-spacing-64: 3rem;   /* 48px */
-
-  /* === Font Weight === */
-  --font-weight-regular: 400;
-  --font-weight-semibold: 600;
-
-  /* === Static Colors (Fixed, not theme-dependent) === */
-  --static-black-100: #000000FF;
-  --static-black-80: #000000CC;
-  --static-black-40: #00000066;
-  --static-black-20: #00000033;
-  --static-black-10: #0000001A;
-  --static-black-4: #0000000A;
-  --static-white-100: #FFFFFFFF;
-  --static-white-80: #FFFFFFCC;
-  --static-white-40: #FFFFFF66;
-  --static-white-20: #FFFFFF33;
-  --static-white-10: #FFFFFF1A;
-  --static-white-4: #FFFFFF0A;
-
-  /* === Theme - SnowUl-Light === */
-  --black-100: #000000FF;
-  --black-80: #000000CC;
-  --black-40: #00000066;
-  --black-20: #00000033;
-  --black-10: #0000001A;
-  --black-4: #0000000A;
-  --white-100: #FFFFFFFF;
-  --white-80: #FFFFFFCC;
-  --white-40: #FFFFFF66;
-  --white-20: #FFFFFF33;
-  --white-10: #FFFFFF1A;
-  --white-4: #FFFFFF0A;
-  --background-1: #FFFFFFFF;
-  --background-2: #F9F9FAFF;
-  --background-3: #FFFFFFCC;
-  --background-4: #EDEEFCFF;
-  --background-5: #E6F1FDFF;
-  --background-6: #FFFFFFE5;
-  --secondary-purple: #B899EBFF;
-  --secondary-indigo: #ADADFBFF;
-  --secondary-blue: #7DBBFFFF;
-  --secondary-cyan: #A0BCE8FF;
-  --secondary-mint: #6BE6D3FF;
-  --secondary-green: #71DD8CFF;
-  --secondary-yellow: #FFCC00FF;
-  --secondary-orange: #FFB55BFF;
-  --secondary-red: #FF4747FF;
-  --background: var(--background-1);
-  --foreground: var(--black-100);
-  --primary: var(--black-100);
-  --logo: #4C98FDFF;
-  --logo-2: #4F507FFF;
-
-  /* === Background Gradients === */
-  --gradient-primary: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--primary);
-  --gradient-gray: linear-gradient(180deg, #00000008 0%, #00000003 100%), var(--background-2);
-  --gradient-black: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), linear-gradient(0deg, var(--black-20) 0%, var(--black-20) 100%), var(--black-100);
-  --gradient-purple: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-purple);
-  --gradient-indigo: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-indigo);
-  --gradient-blue: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-blue);
-  --gradient-cyan: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-cyan);
-  --gradient-mint: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-mint);
-  --gradient-green: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-green);
-  --gradient-yellow: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-yellow);
-  --gradient-orange: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-orange);
-  --gradient-red: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-red);
-  --gradient-border-lighting: linear-gradient(155deg, #FFFFFF66 7.86%, #FFFFFF00 38.39%, #FFFFFF00 53.66%, #FFFFFF1A 84.19%);
-
-  /* === Effect Styles (Shadow & Blur) === */
-  --effect-glass-1: 0 4px 16px 0 #0000000A, -2px -2px 8px 0 #FFFFFF26, 2px 4px 12px 0 #00000014, 0 8px 24px -4px #0000000D,0 -1px 2px 0 #FFFFFF14;
-  --effect-glass-2: 0 8px 28px 0 #0000001A, -3px -3px 12px 0 #FFFFFF33, 3px 6px 16px 0 #0000001F, 0 12px 32px -6px #00000014, 0 -2px 4px 0 #FFFFFF1F, 0 4px 12px 0 #0000000F;
-  --effect-glow: 0 0 12px 8px #00000033, 0 0 12px 8px #FFFFFF33;
-  --effect-focus: 0 0 0 4px #0000000A;
-  --effect-inner-shadow: 0 -0.5px 1px 0 #FFFFFF4D inset, 0 -0.5px 1px 0 #FFFFFF40 inset, 1px 1.5px 4px 0 #00000014 inset, 1px 1.5px 4px 0 #0000001A inset;
-  --effect-drop-shadow-1: 0 0.5px 0.5px 0 #0000001A;
-  --effect-drop-shadow-2: 0 2px 4px 0 #0000001A;
-  --effect-image-hover: 0 20px 20px 0 #000000FF inset;
-  --effect-background-blur-40: blur(20px);
-  --effect-background-blur-100: blur(50px);
-}
-
-/* === Theme - SnowUl-Dark === */
-.theme-snowui-dark:root {
-  --black-100: #FFFFFFFF;
-  --black-80: #FFFFFFCC;
-  --black-40: #FFFFFF66;
-  --black-20: #FFFFFF33;
-  --black-10: #FFFFFF26;
-  --black-4: #FFFFFF1A;
-  --white-100: #000000FF;
-  --white-80: #000000CC;
-  --white-40: #00000066;
-  --white-20: #00000033;
-  --white-10: #0000001A;
-  --white-4: #0000000A;
-  --background-1: #333333FF;
-  --background-2: #FFFFFF0A;
-  --background-3: #0000001A;
-  --background-4: #EDEEFCFF;
-  --background-5: #E6F1FDFF;
-  --background-6: #404040E5;
-  --secondary-purple: #B899EBFF;
-  --secondary-indigo: #ADADFBFF;
-  --secondary-blue: #7DBBFFFF;
-  --secondary-cyan: #A0BCE8FF;
-  --secondary-mint: #6BE6D3FF;
-  --secondary-green: #71DD8CFF;
-  --secondary-yellow: #FFCC00FF;
-  --secondary-orange: #FFB55BFF;
-  --secondary-red: #FF4747FF;
-  --primary: var(--secondary-indigo);
-  --logo: #4C98FDFF;
-  --logo-2: #EDEDFFFF;
-}
-
-/* === Theme - SnowUl-Light === */
-.theme-ios-light:root {
-  --black-100: #000000FF;
-  --black-80: #000000CC;
-  --black-40: #00000066;
-  --black-20: #00000033;
-  --black-10: #0000001A;
-  --black-4: #0000000A;
-  --white-100: #FFFFFFFF;
-  --white-80: #FFFFFFCC;
-  --white-40: #FFFFFF66;
-  --white-20: #FFFFFF33;
-  --white-10: #FFFFFF1A;
-  --white-4: #FFFFFF0A;
-  --background-1: #F5F5F6FF;
-  --background-2: #FFFFFFFF;
-  --background-3: #00000008;
-  --background-4: #00000005;
-  --background-5: #FFFFFFFF;
-  --background-6: #FFFFFFE5;
-  --secondary-purple: #AF52DEFF;
-  --secondary-indigo: #5856D6FF;
-  --secondary-blue: #007AFFFF;
-  --secondary-cyan: #32ADE6FF;
-  --secondary-mint: #00C7BEFF;
-  --secondary-green: #34C759FF;
-  --secondary-yellow: #FFCC00FF;
-  --secondary-orange: #FF9500FF;
-  --secondary-red: #FF3B30FF;
-  --primary: var(--secondary-blue);
-  --logo: var(--primary);
-  --logo-2: #4F507FFF;
-}
-
-/* === Theme - iOS-Dark === */
-.theme-ios-dark:root {
-  --black-100: #FFFFFFFF;
-  --black-80: #FFFFFFCC;
-  --black-40: #FFFFFF66;
-  --black-20: #FFFFFF33;
-  --black-10: #FFFFFF26;
-  --black-4: #FFFFFF1A;
-  --white-100: #000000FF;
-  --white-80: #000000CC;
-  --white-40: #00000066;
-  --white-20: #00000033;
-  --white-10: #0000001A;
-  --white-4: #0000000A;
-  --background-1: #333333FF;
-  --background-2: #FFFFFF0A;
-  --background-3: #0000001A;
-  --background-4: #0000001A;
-  --background-5: #FFFFFFCC;
-  --background-6: #404040E5;
-  --secondary-purple: #BF5AF2FF;
-  --secondary-indigo: #5E5CE6FF;
-  --secondary-blue: #0A84FFFF;
-  --secondary-cyan: #64D2FFFF;
-  --secondary-mint: #63E6E2FF;
-  --secondary-green: #30D158FF;
-  --secondary-yellow: #FFD60AFF;
-  --secondary-orange: #FF9F0AFF;
-  --secondary-red: #FF453AFF;
-  --primary: var(--secondary-blue);
-  --logo: var(--primary);
-  --logo-2: #EDEDFFFF;
-}
-
-@theme inline {
-  /* === Corner Radius 映射 === */
-  /* 映射圆角到 Tailwind，可使用 rounded-0, rounded-4, rounded-8 等 */
-  --radius-0px: var(--corner-radius-0);
-  --radius-4px: var(--corner-radius-4);
-  --radius-8px: var(--corner-radius-8);
-  --radius-12px: var(--corner-radius-12);
-  --radius-16px: var(--corner-radius-16);
-  --radius-20px: var(--corner-radius-20);
-  --radius-24px: var(--corner-radius-24);
-  --radius-28px: var(--corner-radius-28);
-  --radius-32px: var(--corner-radius-32);
-  --radius-40px: var(--corner-radius-40);
-  --radius-48px: var(--corner-radius-48);
-  --radius-80px: var(--corner-radius-80);
-
-  /* === Spacing 映射 === */
-  /* 映射间距到 Tailwind，可使用 p-4, m-8, gap-12 等 */
-  --spacing-0px: var(--spacing-0);
-  --spacing-4px: var(--spacing-4);
-  --spacing-8px: var(--spacing-8);
-  --spacing-12px: var(--spacing-12);
-  --spacing-16px: var(--spacing-16);
-  --spacing-20px: var(--spacing-20);
-  --spacing-24px: var(--spacing-24);
-  --spacing-28px: var(--spacing-28);
-  --spacing-40px: var(--spacing-40);
-  --spacing-48px: var(--spacing-48);
-
-  /* === Size 映射 === */
-  /* 映射 size 到 Tailwind size 系统，可使用 w-icon-16, h-icon-16 等 */
-  --size-16px: var(--size-16);
-  --size-20px: var(--size-20);
-  --size-24px: var(--size-24);
-  --size-28px: var(--size-28);
-  --size-32px: var(--size-32);
-  --size-40px: var(--size-40);
-  --size-48px: var(--size-48);
-  --size-56px: var(--size-56);
-  --size-64px: var(--size-64);
-  --size-72px: var(--size-72);
-  --size-80px: var(--size-80);
-
-  /* === Font Weight 映射 === */
-  /* 映射字重到 Tailwind，可使用 font-regular, font-semibold */
-  /* 注意：默认字重在 @layer base 中设置为 regular，大部分情况下不需要显式设置 */
-  --font-weight-regular: var(--font-weight-regular);
-  --font-weight-semibold: var(--font-weight-semibold);
-
-  /* === Static Colors 映射 === */
-  /* 固定颜色（不随主题变化），可使用 bg-static-black-100, text-static-white-80 等 */
-  --color-static-black-100: var(--static-black-100);
-  --color-static-black-80: var(--static-black-80);
-  --color-static-black-40: var(--static-black-40);
-  --color-static-black-20: var(--static-black-20);
-  --color-static-black-10: var(--static-black-10);
-  --color-static-black-4: var(--static-black-4);
-  --color-static-white-100: var(--static-white-100);
-  --color-static-white-80: var(--static-white-80);
-  --color-static-white-40: var(--static-white-40);
-  --color-static-white-20: var(--static-white-20);
-  --color-static-white-10: var(--static-white-10);
-  --color-static-white-4: var(--static-white-4);
-
-  /* === Theme Colors 映射 === */
-  /* 主题颜色（随主题变化），可使用 bg-black-100, text-white-80 等 */
-  --color-black-100: var(--black-100);
-  --color-black-80: var(--black-80);
-  --color-black-40: var(--black-40);
-  --color-black-20: var(--black-20);
-  --color-black-10: var(--black-10);
-  --color-black-4: var(--black-4);
-  --color-white-100: var(--white-100);
-  --color-white-80: var(--white-80);
-  --color-white-40: var(--white-40);
-  --color-white-20: var(--white-20);
-  --color-white-10: var(--white-10);
-  --color-white-4: var(--white-4);
-
-  /* === Background Colors 映射 === */
-  --color-background-1: var(--background-1);
-  --color-background-2: var(--background-2);
-  --color-background-3: var(--background-3);
-  --color-background-4: var(--background-4);
-  --color-background-5: var(--background-5);
-  --color-background-6: var(--background-6);
-
-  /* === Secondary Colors 映射 === */
-  /* 次要颜色，可使用 bg-purple, text-blue 等 */
-  --color-purple: var(--secondary-purple);
-  --color-indigo: var(--secondary-indigo);
-  --color-blue: var(--secondary-blue);
-  --color-cyan: var(--secondary-cyan);
-  --color-mint: var(--secondary-mint);
-  --color-green: var(--secondary-green);
-  --color-yellow: var(--secondary-yellow);
-  --color-orange: var(--secondary-orange);
-  --color-red: var(--secondary-red);
-
-  /* === Primary & Foreground 映射 === */
-  /* 使用 --background 而不是直接使用 --background-1，保持一致性 */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-logo: var(--logo);
-  --color-logo-2: var(--logo-2);
-
-  /* === Shadow 映射 === */
-  /* 映射阴影效果到 Tailwind，可使用 shadow-glass-1, shadow-focus 等 */
-  --shadow-glow: var(--effect-glow);
-  --shadow-focus: var(--effect-focus);
-  --shadow-inner-shadow: var(--effect-inner-shadow);
-  --shadow-drop-shadow-1: var(--effect-drop-shadow-1);
-  --shadow-drop-shadow-2: var(--effect-drop-shadow-2);
-  --shadow-image-hover: var(--effect-image-hover);
-  --backdrop-blur-40: var(--effect-background-blur-40);
-  --backdrop-blur-100: var(--effect-background-blur-100);
-}
 
 /* ============================================
-   UnoCSS 支持说明
-   ============================================
+   CSS 变量定义（仅保留 Color）
    
-   UnoCSS 不支持 @theme inline 指令（这是 Tailwind CSS v4 的特性）。
-   如果使用 UnoCSS，需要在 uno.config.ts 中配置主题映射。
+   颜色变量工作原理：
+   1. CSS 变量使用层叠特性，子选择器会覆盖父选择器的变量值
+   2. 默认值定义在 :root，作为 SnowUI Light 主题
+   3. 当元素有主题类（如 .theme-snowui-dark）时，会使用该主题下定义的变量值
+   4. 变量是动态的，会根据当前主题自动切换，无需手动修改代码
+   5. 通过 var() 引用其他变量可以实现颜色关联（如 primary 引用 secondary-indigo）
    
-   示例配置：
-   
-   ```typescript
-   import { defineConfig } from 'unocss'
-   
-   export default defineConfig({
-     theme: {
-       colors: {
-         'static-black-100': 'var(--static-black-100)',
-         'static-black-80': 'var(--static-black-80)',
-         // ... 其他颜色映射
-         'black-100': 'var(--black-100)',
-         'black-80': 'var(--black-80)',
-         // ... 其他主题颜色
-         'background-1': 'var(--background-1)',
-         'background-2': 'var(--background-2)',
-         // ... 其他背景颜色
-         'purple': 'var(--secondary-purple)',
-         'indigo': 'var(--secondary-indigo)',
-         // ... 其他次要颜色
-         'primary': 'var(--primary)',
-         'foreground': 'var(--foreground)',
-         'logo': 'var(--logo)',
-         'logo-2': 'var(--logo-2)',
-       },
-       borderRadius: {
-         '0': 'var(--corner-radius-0)',
-         '4': 'var(--corner-radius-4)',
-         '8': 'var(--corner-radius-8)',
-         '12': 'var(--corner-radius-12)',
-         '16': 'var(--corner-radius-16)',
-         '20': 'var(--corner-radius-20)',
-         '24': 'var(--corner-radius-24)',
-         '28': 'var(--corner-radius-28)',
-         '32': 'var(--corner-radius-32)',
-         '40': 'var(--corner-radius-40)',
-         '48': 'var(--corner-radius-48)',
-         '80': 'var(--corner-radius-80)',
-       },
-       spacing: {
-         '0': 'var(--spacing-0)',
-         '4': 'var(--spacing-4)',
-         '8': 'var(--spacing-8)',
-         '12': 'var(--spacing-12)',
-         '16': 'var(--spacing-16)',
-         '20': 'var(--spacing-20)',
-         '24': 'var(--spacing-24)',
-         '28': 'var(--spacing-28)',
-         '40': 'var(--spacing-40)',
-         '48': 'var(--spacing-48)',
-       },
-       fontSize: {
-         '12': ['var(--font-size-12)', { lineHeight: 'var(--line-height-12)' }],
-         '14': ['var(--font-size-14)', { lineHeight: 'var(--line-height-14)' }],
-         '16': ['var(--font-size-16)', { lineHeight: 'var(--line-height-16)' }],
-         '18': ['var(--font-size-18)', { lineHeight: 'var(--line-height-18)' }],
-         '24': ['var(--font-size-24)', { lineHeight: 'var(--line-height-24)' }],
-         '32': ['var(--font-size-32)', { lineHeight: 'var(--line-height-32)' }],
-         '48': ['var(--font-size-48)', { lineHeight: 'var(--line-height-48)' }],
-         '64': ['var(--font-size-64)', { lineHeight: 'var(--line-height-64)' }],
-       },
-       fontWeight: {
-         'regular': 'var(--font-weight-regular)',
-         'semibold': 'var(--font-weight-semibold)',
-       },
-       boxShadow: {
-         'glow': 'var(--effect-glow)',
-         'focus': 'var(--effect-focus)',
-         'inner-shadow': 'var(--effect-inner-shadow)',
-         'drop-shadow-1': 'var(--effect-drop-shadow-1)',
-         'drop-shadow-2': 'var(--effect-drop-shadow-2)',
-         'image-hover': 'var(--effect-image-hover)',
-         'glass-1': 'var(--effect-glass-1)',
-         'glass-2': 'var(--effect-glass-2)',
-       },
-       backdropBlur: {
-         '40': 'var(--effect-background-blur-40)',
-         '100': 'var(--effect-background-blur-100)',
-       },
-     },
-   })
-   ```
-   
-   使用示例：
-   - 颜色：bg-primary, text-foreground, bg-purple
-   - 圆角：rounded-8, rounded-12
-   - 间距：p-4, m-8, gap-12
-   - 字体：text-14, text-16, font-semibold
-   - 阴影：shadow-glass-1, shadow-focus
-   - 模糊：backdrop-blur-40
-   
+   固定颜色说明：
+   - Static Colors（--static-*）是固定颜色，不会随主题切换而变化
+   - 适用于需要始终保持相同颜色的场景（如 Logo、图标、边框等）
+   - 只在 :root 中定义一次，不会在主题中被覆盖
    ============================================ */
 
-/* === Font Size Utility Classes === */
-/* 基于 :root 中定义的字体变量创建的快捷工具类 */
-.font-12 {
-  font-size: var(--font-size-12);
-  line-height: var(--line-height-12);
-}
+   :root {
+    /* === Static Colors（固定颜色，不随主题变化） === */
+    --static-black-100: #000000FF;
+    --static-black-80: #000000CC;
+    --static-black-40: #00000066;
+    --static-black-20: #00000033;
+    --static-black-10: #0000001A;
+    --static-black-4: #0000000A;
+    --static-white-100: #FFFFFFFF;
+    --static-white-80: #FFFFFFCC;
+    --static-white-40: #FFFFFF66;
+    --static-white-20: #FFFFFF33;
+    --static-white-10: #FFFFFF1A;
+    --static-white-4: #FFFFFF0A;
+  
+    /* === SnowUI Light 主题（默认） === */
+    --black-100: #000000FF;
+    --black-80: #000000CC;
+    --black-40: #00000066;
+    --black-20: #00000033;
+    --black-10: #0000001A;
+    --black-4: #0000000A;
+    --white-100: #FFFFFFFF;
+    --white-80: #FFFFFFCC;
+    --white-40: #FFFFFF66;
+    --white-20: #FFFFFF33;
+    --white-10: #FFFFFF1A;
+    --white-4: #FFFFFF0A;
+    --background-1: #FFFFFFFF;
+    --background-2: #F9F9FAFF;
+    --background-3: #FFFFFFCC;
+    --background-4: #EDEEFCFF;
+    --background-5: #E6F1FDFF;
+    --background-6: #FFFFFFE5;
+    --secondary-purple: #B899EBFF;
+    --secondary-indigo: #ADADFBFF;
+    --secondary-blue: #7DBBFFFF;
+    --secondary-cyan: #A0BCE8FF;
+    --secondary-mint: #6BE6D3FF;
+    --secondary-green: #71DD8CFF;
+    --secondary-yellow: #FFCC00FF;
+    --secondary-orange: #FFB55BFF;
+    --secondary-red: #FF4747FF;
+    --primary: var(--black-100);
+    --foreground: var(--black-100);
+    --background: var(--background-1);
+    --logo-1: #4C98FDFF;
+    --logo-2: #4F507FFF;
+  }
+  
+  /* === SnowUI Dark 主题 === */
+  .theme-snowui-dark:root {
+    --black-100: #FFFFFFFF;
+    --black-80: #FFFFFFCC;
+    --black-40: #FFFFFF66;
+    --black-20: #FFFFFF33;
+    --black-10: #FFFFFF26;
+    --black-4: #FFFFFF1A;
+    --white-100: #000000FF;
+    --white-80: #000000CC;
+    --white-40: #00000066;
+    --white-20: #00000033;
+    --white-10: #0000001A;
+    --white-4: #0000000A;
+    --background-1: #333333FF;
+    --background-2: #FFFFFF0A;
+    --background-3: #0000001A;
+    --background-6: #404040E5;
+    --primary: var(--secondary-indigo);
+    --logo-2: #EDEDFFFF;
+  }
+  
+  /* === iOS Light 主题 === */
+  .theme-ios-light:root {
+    --background-1: #F5F5F6FF;
+    --background-2: #FFFFFFFF;
+    --background-3: #00000008;
+    --background-4: #00000005;
+    --background-5: #FFFFFFFF;
+    --secondary-purple: #AF52DEFF;
+    --secondary-indigo: #5856D6FF;
+    --secondary-blue: #007AFFFF;
+    --secondary-cyan: #32ADE6FF;
+    --secondary-mint: #00C7BEFF;
+    --secondary-green: #34C759FF;
+    --secondary-orange: #FF9500FF;
+    --secondary-red: #FF3B30FF;
+    --primary: var(--secondary-blue);
+    --logo-1: var(--primary);
+  }
+  
+  /* === iOS Dark 主题 === */
+  .theme-ios-dark:root {
+    --black-100: #FFFFFFFF;
+    --black-80: #FFFFFFCC;
+    --black-40: #FFFFFF66;
+    --black-20: #FFFFFF33;
+    --black-10: #FFFFFF26;
+    --black-4: #FFFFFF1A;
+    --white-100: #000000FF;
+    --white-80: #000000CC;
+    --white-40: #00000066;
+    --white-20: #00000033;
+    --white-10: #0000001A;
+    --white-4: #0000000A;
+    --background-1: #333333FF;
+    --background-2: #FFFFFF0A;
+    --background-3: #0000001A;
+    --background-4: #0000001A;
+    --background-5: #FFFFFFCC;
+    --background-6: #404040E5;
+    --secondary-purple: #BF5AF2FF;
+    --secondary-indigo: #5E5CE6FF;
+    --secondary-blue: #0A84FFFF;
+    --secondary-cyan: #64D2FFFF;
+    --secondary-mint: #63E6E2FF;
+    --secondary-green: #30D158FF;
+    --secondary-yellow: #FFD60AFF;
+    --secondary-orange: #FF9F0AFF;
+    --secondary-red: #FF453AFF;
+    --primary: var(--secondary-blue);
+    --logo-1: var(--primary);
+    --logo-2: #EDEDFFFF;
+  }
+  
+  /* ============================================
+     工具类定义
+     ============================================ */
+  
+  /* === Corner Radius 工具类 === */
+  .rounded-0 { border-radius: 0; }
+  .rounded-4 { border-radius: 0.25rem; }  /* 4px */
+  .rounded-8 { border-radius: 0.5rem; }   /* 8px */
+  .rounded-12 { border-radius: 0.75rem; } /* 12px */
+  .rounded-16 { border-radius: 1rem; }    /* 16px */
+  .rounded-20 { border-radius: 1.25rem; } /* 20px */
+  .rounded-24 { border-radius: 1.5rem; }  /* 24px */
+  .rounded-28 { border-radius: 1.75rem; } /* 28px */
+  .rounded-32 { border-radius: 2rem; }    /* 32px */
+  .rounded-40 { border-radius: 2.5rem; }  /* 40px */
+  .rounded-48 { border-radius: 3rem; }    /* 48px */
+  .rounded-80 { border-radius: 5rem; }    /* 80px */
 
-.font-12.paragraph {
-  margin-bottom: var(--paragraph-spacing-12);
-}
+  /* === Corner Radius 工具类 - 单方向 === */
+  .rounded-t-0 { border-top-left-radius: 0; border-top-right-radius: 0; }
+  .rounded-t-4 { border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; } /* 4px */
+  .rounded-t-8 { border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; } /* 8px */
+  .rounded-t-12 { border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; } /* 12px */
+  .rounded-t-16 { border-top-left-radius: 1rem; border-top-right-radius: 1rem; } /* 16px */
+  .rounded-t-20 { border-top-left-radius: 1.25rem; border-top-right-radius: 1.25rem; } /* 20px */
+  .rounded-t-24 { border-top-left-radius: 1.5rem; border-top-right-radius: 1.5rem; } /* 24px */
+  .rounded-t-28 { border-top-left-radius: 1.75rem; border-top-right-radius: 1.75rem; } /* 28px */
+  .rounded-t-32 { border-top-left-radius: 2rem; border-top-right-radius: 2rem; } /* 32px */
+  .rounded-t-40 { border-top-left-radius: 2.5rem; border-top-right-radius: 2.5rem; } /* 40px */
+  .rounded-t-48 { border-top-left-radius: 3rem; border-top-right-radius: 3rem; } /* 48px */
+  .rounded-t-80 { border-top-left-radius: 5rem; border-top-right-radius: 5rem; } /* 80px */
 
-.font-14 {
-  font-size: var(--font-size-14);
-  line-height: var(--line-height-14);
-}
+  .rounded-r-0 { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+  .rounded-r-4 { border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; } /* 4px */
+  .rounded-r-8 { border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; } /* 8px */
+  .rounded-r-12 { border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; } /* 12px */
+  .rounded-r-16 { border-top-right-radius: 1rem; border-bottom-right-radius: 1rem; } /* 16px */
+  .rounded-r-20 { border-top-right-radius: 1.25rem; border-bottom-right-radius: 1.25rem; } /* 20px */
+  .rounded-r-24 { border-top-right-radius: 1.5rem; border-bottom-right-radius: 1.5rem; } /* 24px */
+  .rounded-r-28 { border-top-right-radius: 1.75rem; border-bottom-right-radius: 1.75rem; } /* 28px */
+  .rounded-r-32 { border-top-right-radius: 2rem; border-bottom-right-radius: 2rem; } /* 32px */
+  .rounded-r-40 { border-top-right-radius: 2.5rem; border-bottom-right-radius: 2.5rem; } /* 40px */
+  .rounded-r-48 { border-top-right-radius: 3rem; border-bottom-right-radius: 3rem; } /* 48px */
+  .rounded-r-80 { border-top-right-radius: 5rem; border-bottom-right-radius: 5rem; } /* 80px */
 
-.font-14.paragraph {
-  margin-bottom: var(--paragraph-spacing-14);
-}
+  .rounded-b-0 { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+  .rounded-b-4 { border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0.25rem; } /* 4px */
+  .rounded-b-8 { border-bottom-left-radius: 0.5rem; border-bottom-right-radius: 0.5rem; } /* 8px */
+  .rounded-b-12 { border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem; } /* 12px */
+  .rounded-b-16 { border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem; } /* 16px */
+  .rounded-b-20 { border-bottom-left-radius: 1.25rem; border-bottom-right-radius: 1.25rem; } /* 20px */
+  .rounded-b-24 { border-bottom-left-radius: 1.5rem; border-bottom-right-radius: 1.5rem; } /* 24px */
+  .rounded-b-28 { border-bottom-left-radius: 1.75rem; border-bottom-right-radius: 1.75rem; } /* 28px */
+  .rounded-b-32 { border-bottom-left-radius: 2rem; border-bottom-right-radius: 2rem; } /* 32px */
+  .rounded-b-40 { border-bottom-left-radius: 2.5rem; border-bottom-right-radius: 2.5rem; } /* 40px */
+  .rounded-b-48 { border-bottom-left-radius: 3rem; border-bottom-right-radius: 3rem; } /* 48px */
+  .rounded-b-80 { border-bottom-left-radius: 5rem; border-bottom-right-radius: 5rem; } /* 80px */
 
-.font-16 {
-  font-size: var(--font-size-16);
-  line-height: var(--line-height-16);
-}
+  .rounded-l-0 { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+  .rounded-l-4 { border-top-left-radius: 0.25rem; border-bottom-left-radius: 0.25rem; } /* 4px */
+  .rounded-l-8 { border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem; } /* 8px */
+  .rounded-l-12 { border-top-left-radius: 0.75rem; border-bottom-left-radius: 0.75rem; } /* 12px */
+  .rounded-l-16 { border-top-left-radius: 1rem; border-bottom-left-radius: 1rem; } /* 16px */
+  .rounded-l-20 { border-top-left-radius: 1.25rem; border-bottom-left-radius: 1.25rem; } /* 20px */
+  .rounded-l-24 { border-top-left-radius: 1.5rem; border-bottom-left-radius: 1.5rem; } /* 24px */
+  .rounded-l-28 { border-top-left-radius: 1.75rem; border-bottom-left-radius: 1.75rem; } /* 28px */
+  .rounded-l-32 { border-top-left-radius: 2rem; border-bottom-left-radius: 2rem; } /* 32px */
+  .rounded-l-40 { border-top-left-radius: 2.5rem; border-bottom-left-radius: 2.5rem; } /* 40px */
+  .rounded-l-48 { border-top-left-radius: 3rem; border-bottom-left-radius: 3rem; } /* 48px */
+  .rounded-l-80 { border-top-left-radius: 5rem; border-bottom-left-radius: 5rem; } /* 80px */
 
-.font-16.paragraph {
-  margin-bottom: var(--paragraph-spacing-16);
-}
+  .rounded-tl-0 { border-top-left-radius: 0; }
+  .rounded-tl-4 { border-top-left-radius: 0.25rem; } /* 4px */
+  .rounded-tl-8 { border-top-left-radius: 0.5rem; } /* 8px */
+  .rounded-tl-12 { border-top-left-radius: 0.75rem; } /* 12px */
+  .rounded-tl-16 { border-top-left-radius: 1rem; } /* 16px */
+  .rounded-tl-20 { border-top-left-radius: 1.25rem; } /* 20px */
+  .rounded-tl-24 { border-top-left-radius: 1.5rem; } /* 24px */
+  .rounded-tl-28 { border-top-left-radius: 1.75rem; } /* 28px */
+  .rounded-tl-32 { border-top-left-radius: 2rem; } /* 32px */
+  .rounded-tl-40 { border-top-left-radius: 2.5rem; } /* 40px */
+  .rounded-tl-48 { border-top-left-radius: 3rem; } /* 48px */
+  .rounded-tl-80 { border-top-left-radius: 5rem; } /* 80px */
 
-.font-18 {
-  font-size: var(--font-size-18);
-  line-height: var(--line-height-18);
-}
+  .rounded-tr-0 { border-top-right-radius: 0; }
+  .rounded-tr-4 { border-top-right-radius: 0.25rem; } /* 4px */
+  .rounded-tr-8 { border-top-right-radius: 0.5rem; } /* 8px */
+  .rounded-tr-12 { border-top-right-radius: 0.75rem; } /* 12px */
+  .rounded-tr-16 { border-top-right-radius: 1rem; } /* 16px */
+  .rounded-tr-20 { border-top-right-radius: 1.25rem; } /* 20px */
+  .rounded-tr-24 { border-top-right-radius: 1.5rem; } /* 24px */
+  .rounded-tr-28 { border-top-right-radius: 1.75rem; } /* 28px */
+  .rounded-tr-32 { border-top-right-radius: 2rem; } /* 32px */
+  .rounded-tr-40 { border-top-right-radius: 2.5rem; } /* 40px */
+  .rounded-tr-48 { border-top-right-radius: 3rem; } /* 48px */
+  .rounded-tr-80 { border-top-right-radius: 5rem; } /* 80px */
 
-.font-18.paragraph {
-  margin-bottom: var(--paragraph-spacing-18);
-}
+  .rounded-br-0 { border-bottom-right-radius: 0; }
+  .rounded-br-4 { border-bottom-right-radius: 0.25rem; } /* 4px */
+  .rounded-br-8 { border-bottom-right-radius: 0.5rem; } /* 8px */
+  .rounded-br-12 { border-bottom-right-radius: 0.75rem; } /* 12px */
+  .rounded-br-16 { border-bottom-right-radius: 1rem; } /* 16px */
+  .rounded-br-20 { border-bottom-right-radius: 1.25rem; } /* 20px */
+  .rounded-br-24 { border-bottom-right-radius: 1.5rem; } /* 24px */
+  .rounded-br-28 { border-bottom-right-radius: 1.75rem; } /* 28px */
+  .rounded-br-32 { border-bottom-right-radius: 2rem; } /* 32px */
+  .rounded-br-40 { border-bottom-right-radius: 2.5rem; } /* 40px */
+  .rounded-br-48 { border-bottom-right-radius: 3rem; } /* 48px */
+  .rounded-br-80 { border-bottom-right-radius: 5rem; } /* 80px */
 
-.font-24 {
-  font-size: var(--font-size-24);
-  line-height: var(--line-height-24);
-}
-
-.font-24.paragraph {
-  margin-bottom: var(--paragraph-spacing-24);
-}
-
-.font-32 {
-  font-size: var(--font-size-32);
-  line-height: var(--line-height-32);
-}
-
-.font-32.paragraph {
-  margin-bottom: var(--paragraph-spacing-32);
-}
-
-.font-48 {
-  font-size: var(--font-size-48);
-  line-height: var(--line-height-48);
-}
-
-.font-48.paragraph {
-  margin-bottom: var(--paragraph-spacing-48);
-}
-
-.font-64 {
-  font-size: var(--font-size-64);
-  line-height: var(--line-height-64);
-}
-
-.font-64.paragraph {
-  margin-bottom: var(--paragraph-spacing-64);
-}
-
-/* === Glass Effect Utility Classes === */
-/* 完整的液态玻璃效果工具类，结合阴影、模糊和边框 */
-.glass-1 {
-  box-shadow: var(--effect-glass-1);
+  .rounded-bl-0 { border-bottom-left-radius: 0; }
+  .rounded-bl-4 { border-bottom-left-radius: 0.25rem; } /* 4px */
+  .rounded-bl-8 { border-bottom-left-radius: 0.5rem; } /* 8px */
+  .rounded-bl-12 { border-bottom-left-radius: 0.75rem; } /* 12px */
+  .rounded-bl-16 { border-bottom-left-radius: 1rem; } /* 16px */
+  .rounded-bl-20 { border-bottom-left-radius: 1.25rem; } /* 20px */
+  .rounded-bl-24 { border-bottom-left-radius: 1.5rem; } /* 24px */
+  .rounded-bl-28 { border-bottom-left-radius: 1.75rem; } /* 28px */
+  .rounded-bl-32 { border-bottom-left-radius: 2rem; } /* 32px */
+  .rounded-bl-40 { border-bottom-left-radius: 2.5rem; } /* 40px */
+  .rounded-bl-48 { border-bottom-left-radius: 3rem; } /* 48px */
+  .rounded-bl-80 { border-bottom-left-radius: 5rem; } /* 80px */
+  
+  /* === Spacing - Padding 工具类 === */
+  .p-0 { padding: 0; }
+  .p-4 { padding: 0.25rem; } /* 4px */
+  .p-8 { padding: 0.5rem; } /* 8px */
+  .p-12 { padding: 0.75rem; } /* 12px */
+  .p-16 { padding: 1rem; } /* 16px */
+  .p-20 { padding: 1.25rem; } /* 20px */
+  .p-24 { padding: 1.5rem; } /* 24px */
+  .p-28 { padding: 1.75rem; } /* 28px */
+  .p-40 { padding: 2.5rem; } /* 40px */
+  .p-48 { padding: 3rem; } /* 48px */
+  
+  .px-0 { padding-left: 0; padding-right: 0; }
+  .px-4 { padding-left: 0.25rem; padding-right: 0.25rem; } /* 4px */
+  .px-8 { padding-left: 0.5rem; padding-right: 0.5rem; } /* 8px */
+  .px-12 { padding-left: 0.75rem; padding-right: 0.75rem; } /* 12px */
+  .px-16 { padding-left: 1rem; padding-right: 1rem; } /* 16px */
+  .px-20 { padding-left: 1.25rem; padding-right: 1.25rem; } /* 20px */
+  .px-24 { padding-left: 1.5rem; padding-right: 1.5rem; } /* 24px */
+  .px-28 { padding-left: 1.75rem; padding-right: 1.75rem; } /* 28px */
+  .px-40 { padding-left: 2.5rem; padding-right: 2.5rem; } /* 40px */
+  .px-48 { padding-left: 3rem; padding-right: 3rem; } /* 48px */
+  
+  .py-0 { padding-top: 0; padding-bottom: 0; }
+  .py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; } /* 4px */
+  .py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; } /* 8px */
+  .py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; } /* 12px */
+  .py-16 { padding-top: 1rem; padding-bottom: 1rem; } /* 16px */
+  .py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; } /* 20px */
+  .py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; } /* 24px */
+  .py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; } /* 28px */
+  .py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; } /* 40px */
+  .py-48 { padding-top: 3rem; padding-bottom: 3rem; } /* 48px */
+  
+  .pt-0 { padding-top: 0; }
+  .pt-4 { padding-top: 0.25rem; } /* 4px */
+  .pt-8 { padding-top: 0.5rem; } /* 8px */
+  .pt-12 { padding-top: 0.75rem; } /* 12px */
+  .pt-16 { padding-top: 1rem; } /* 16px */
+  .pt-20 { padding-top: 1.25rem; } /* 20px */
+  .pt-24 { padding-top: 1.5rem; } /* 24px */
+  .pt-28 { padding-top: 1.75rem; } /* 28px */
+  .pt-40 { padding-top: 2.5rem; } /* 40px */
+  .pt-48 { padding-top: 3rem; } /* 48px */
+  
+  .pr-0 { padding-right: 0; }
+  .pr-4 { padding-right: 0.25rem; } /* 4px */
+  .pr-8 { padding-right: 0.5rem; } /* 8px */
+  .pr-12 { padding-right: 0.75rem; } /* 12px */
+  .pr-16 { padding-right: 1rem; } /* 16px */
+  .pr-20 { padding-right: 1.25rem; } /* 20px */
+  .pr-24 { padding-right: 1.5rem; } /* 24px */
+  .pr-28 { padding-right: 1.75rem; } /* 28px */
+  .pr-40 { padding-right: 2.5rem; } /* 40px */
+  .pr-48 { padding-right: 3rem; } /* 48px */
+  
+  .pb-0 { padding-bottom: 0; }
+  .pb-4 { padding-bottom: 0.25rem; } /* 4px */
+  .pb-8 { padding-bottom: 0.5rem; } /* 8px */
+  .pb-12 { padding-bottom: 0.75rem; } /* 12px */
+  .pb-16 { padding-bottom: 1rem; } /* 16px */
+  .pb-20 { padding-bottom: 1.25rem; } /* 20px */
+  .pb-24 { padding-bottom: 1.5rem; } /* 24px */
+  .pb-28 { padding-bottom: 1.75rem; } /* 28px */
+  .pb-40 { padding-bottom: 2.5rem; } /* 40px */
+  .pb-48 { padding-bottom: 3rem; } /* 48px */
+  
+  .pl-0 { padding-left: 0; }
+  .pl-4 { padding-left: 0.25rem; } /* 4px */
+  .pl-8 { padding-left: 0.5rem; } /* 8px */
+  .pl-12 { padding-left: 0.75rem; } /* 12px */
+  .pl-16 { padding-left: 1rem; } /* 16px */
+  .pl-20 { padding-left: 1.25rem; } /* 20px */
+  .pl-24 { padding-left: 1.5rem; } /* 24px */
+  .pl-28 { padding-left: 1.75rem; } /* 28px */
+  .pl-40 { padding-left: 2.5rem; } /* 40px */
+  .pl-48 { padding-left: 3rem; } /* 48px */
+  
+  /* === Spacing - Margin 工具类 === */
+  .m-0 { margin: 0; }
+  .m-4 { margin: 0.25rem; } /* 4px */
+  .m-8 { margin: 0.5rem; } /* 8px */
+  .m-12 { margin: 0.75rem; } /* 12px */
+  .m-16 { margin: 1rem; } /* 16px */
+  .m-20 { margin: 1.25rem; } /* 20px */
+  .m-24 { margin: 1.5rem; } /* 24px */
+  .m-28 { margin: 1.75rem; } /* 28px */
+  .m-40 { margin: 2.5rem; } /* 40px */
+  .m-48 { margin: 3rem; } /* 48px */
+  
+  .mx-0 { margin-left: 0; margin-right: 0; }
+  .mx-4 { margin-left: 0.25rem; margin-right: 0.25rem; } /* 4px */
+  .mx-8 { margin-left: 0.5rem; margin-right: 0.5rem; } /* 8px */
+  .mx-12 { margin-left: 0.75rem; margin-right: 0.75rem; } /* 12px */
+  .mx-16 { margin-left: 1rem; margin-right: 1rem; } /* 16px */
+  .mx-20 { margin-left: 1.25rem; margin-right: 1.25rem; } /* 20px */
+  .mx-24 { margin-left: 1.5rem; margin-right: 1.5rem; } /* 24px */
+  .mx-28 { margin-left: 1.75rem; margin-right: 1.75rem; } /* 28px */
+  .mx-40 { margin-left: 2.5rem; margin-right: 2.5rem; } /* 40px */
+  .mx-48 { margin-left: 3rem; margin-right: 3rem; } /* 48px */
+  
+  .my-0 { margin-top: 0; margin-bottom: 0; }
+  .my-4 { margin-top: 0.25rem; margin-bottom: 0.25rem; } /* 4px */
+  .my-8 { margin-top: 0.5rem; margin-bottom: 0.5rem; } /* 8px */
+  .my-12 { margin-top: 0.75rem; margin-bottom: 0.75rem; } /* 12px */
+  .my-16 { margin-top: 1rem; margin-bottom: 1rem; } /* 16px */
+  .my-20 { margin-top: 1.25rem; margin-bottom: 1.25rem; } /* 20px */
+  .my-24 { margin-top: 1.5rem; margin-bottom: 1.5rem; } /* 24px */
+  .my-28 { margin-top: 1.75rem; margin-bottom: 1.75rem; } /* 28px */
+  .my-40 { margin-top: 2.5rem; margin-bottom: 2.5rem; } /* 40px */
+  .my-48 { margin-top: 3rem; margin-bottom: 3rem; } /* 48px */
+  
+  .mt-0 { margin-top: 0; }
+  .mt-4 { margin-top: 0.25rem; } /* 4px */
+  .mt-8 { margin-top: 0.5rem; } /* 8px */
+  .mt-12 { margin-top: 0.75rem; } /* 12px */
+  .mt-16 { margin-top: 1rem; } /* 16px */
+  .mt-20 { margin-top: 1.25rem; } /* 20px */
+  .mt-24 { margin-top: 1.5rem; } /* 24px */
+  .mt-28 { margin-top: 1.75rem; } /* 28px */
+  .mt-40 { margin-top: 2.5rem; } /* 40px */
+  .mt-48 { margin-top: 3rem; } /* 48px */
+  
+  .mr-0 { margin-right: 0; }
+  .mr-4 { margin-right: 0.25rem; } /* 4px */
+  .mr-8 { margin-right: 0.5rem; } /* 8px */
+  .mr-12 { margin-right: 0.75rem; } /* 12px */
+  .mr-16 { margin-right: 1rem; } /* 16px */
+  .mr-20 { margin-right: 1.25rem; } /* 20px */
+  .mr-24 { margin-right: 1.5rem; } /* 24px */
+  .mr-28 { margin-right: 1.75rem; } /* 28px */
+  .mr-40 { margin-right: 2.5rem; } /* 40px */
+  .mr-48 { margin-right: 3rem; } /* 48px */
+  
+  .mb-0 { margin-bottom: 0; }
+  .mb-4 { margin-bottom: 0.25rem; } /* 4px */
+  .mb-8 { margin-bottom: 0.5rem; } /* 8px */
+  .mb-12 { margin-bottom: 0.75rem; } /* 12px */
+  .mb-16 { margin-bottom: 1rem; } /* 16px */
+  .mb-20 { margin-bottom: 1.25rem; } /* 20px */
+  .mb-24 { margin-bottom: 1.5rem; } /* 24px */
+  .mb-28 { margin-bottom: 1.75rem; } /* 28px */
+  .mb-40 { margin-bottom: 2.5rem; } /* 40px */
+  .mb-48 { margin-bottom: 3rem; } /* 48px */
+  
+  .ml-0 { margin-left: 0; }
+  .ml-4 { margin-left: 0.25rem; } /* 4px */
+  .ml-8 { margin-left: 0.5rem; } /* 8px */
+  .ml-12 { margin-left: 0.75rem; } /* 12px */
+  .ml-16 { margin-left: 1rem; } /* 16px */
+  .ml-20 { margin-left: 1.25rem; } /* 20px */
+  .ml-24 { margin-left: 1.5rem; } /* 24px */
+  .ml-28 { margin-left: 1.75rem; } /* 28px */
+  .ml-40 { margin-left: 2.5rem; } /* 40px */
+  .ml-48 { margin-left: 3rem; } /* 48px */
+  
+  /* === Spacing - Gap 工具类 === */
+  .gap-0 { gap: 0; }
+  .gap-4 { gap: 0.25rem; } /* 4px */
+  .gap-8 { gap: 0.5rem; } /* 8px */
+  .gap-12 { gap: 0.75rem; } /* 12px */
+  .gap-16 { gap: 1rem; } /* 16px */
+  .gap-20 { gap: 1.25rem; } /* 20px */
+  .gap-24 { gap: 1.5rem; } /* 24px */
+  .gap-28 { gap: 1.75rem; } /* 28px */
+  .gap-40 { gap: 2.5rem; } /* 40px */
+  .gap-48 { gap: 3rem; } /* 48px */
+  
+  /* === Size 工具类 === */
+  .size-16 { width: 1rem; height: 1rem; }      /* 16px */
+  .size-20 { width: 1.25rem; height: 1.25rem; }   /* 20px */
+  .size-24 { width: 1.5rem; height: 1.5rem; }    /* 24px */
+  .size-28 { width: 1.75rem; height: 1.75rem; }   /* 28px */
+  .size-32 { width: 2rem; height: 2rem; }      /* 32px */
+  .size-40 { width: 2.5rem; height: 2.5rem; }    /* 40px */
+  .size-48 { width: 3rem; height: 3rem; }      /* 48px */
+  .size-56 { width: 3.5rem; height: 3.5rem; }    /* 56px */
+  .size-64 { width: 4rem; height: 4rem; }      /* 64px */
+  .size-72 { width: 4.5rem; height: 4.5rem; }    /* 72px */
+  .size-80 { width: 5rem; height: 5rem; }      /* 80px */
+  
+  /* === Size - Width 工具类 === */
+  .w-16 { width: 1rem; }      /* 16px */
+  .w-20 { width: 1.25rem; }   /* 20px */
+  .w-24 { width: 1.5rem; }    /* 24px */
+  .w-28 { width: 1.75rem; }   /* 28px */
+  .w-32 { width: 2rem; }      /* 32px */
+  .w-40 { width: 2.5rem; }    /* 40px */
+  .w-48 { width: 3rem; }      /* 48px */
+  .w-56 { width: 3.5rem; }    /* 56px */
+  .w-64 { width: 4rem; }      /* 64px */
+  .w-72 { width: 4.5rem; }    /* 72px */
+  .w-80 { width: 5rem; }      /* 80px */
+  
+  /* === Size - Height 工具类 === */
+  .h-16 { height: 1rem; }      /* 16px */
+  .h-20 { height: 1.25rem; }   /* 20px */
+  .h-24 { height: 1.5rem; }    /* 24px */
+  .h-28 { height: 1.75rem; }   /* 28px */
+  .h-32 { height: 2rem; }      /* 32px */
+  .h-40 { height: 2.5rem; }    /* 40px */
+  .h-48 { height: 3rem; }      /* 48px */
+  .h-56 { height: 3.5rem; }    /* 56px */
+  .h-64 { height: 4rem; }      /* 64px */
+  .h-72 { height: 4.5rem; }    /* 72px */
+  .h-80 { height: 5rem; }      /* 80px */
+  
+  /* === Font Size 工具类 === */
+  .text-12 { font-size: 0.75rem; line-height: 1rem; } /* 12px */
+  .text-14 { font-size: 0.875rem; line-height: 1.25rem; } /* 14px */
+  .text-16 { font-size: 1rem; line-height: 1.5rem; } /* 16px */
+  .text-18 { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
+  .text-24 { font-size: 1.5rem; line-height: 2rem; } /* 24px */
+  .text-32 { font-size: 2rem; line-height: 2.5rem; } /* 32px */
+  .text-48 { font-size: 3rem; line-height: 3.625rem; } /* 48px */
+  .text-64 { font-size: 4rem; line-height: 4.875rem; } /* 64px */
+  
+  /* === Font Size - Paragraph 工具类 === */
+  .text-12.paragraph { margin-bottom: 0.5rem; }  /* 8px */
+  .text-14.paragraph { margin-bottom: 0.625rem; } /* 10px */
+  .text-16.paragraph { margin-bottom: 0.75rem; }  /* 12px */
+  .text-18.paragraph { margin-bottom: 0.875rem; } /* 14px */
+  .text-24.paragraph { margin-bottom: 1.125rem; } /* 18px */
+  .text-32.paragraph { margin-bottom: 1.5rem; }   /* 24px */
+  .text-48.paragraph { margin-bottom: 2.25rem; }  /* 36px */
+  .text-64.paragraph { margin-bottom: 3rem; }     /* 48px */
+  
+  /* === Font Weight 工具类 === */
+  .font-regular { font-weight: 400; }
+  .font-semibold { font-weight: 600; }
+  
+  /* === Color 工具类 - Black === */
+  .bg-black-100 { background-color: var(--black-100); }
+  .bg-black-80 { background-color: var(--black-80); }
+  .bg-black-40 { background-color: var(--black-40); }
+  .bg-black-20 { background-color: var(--black-20); }
+  .bg-black-10 { background-color: var(--black-10); }
+  .bg-black-4 { background-color: var(--black-4); }
+  
+  .text-black-100 { color: var(--black-100); }
+  .text-black-80 { color: var(--black-80); }
+  .text-black-40 { color: var(--black-40); }
+  .text-black-20 { color: var(--black-20); }
+  .text-black-10 { color: var(--black-10); }
+  .text-black-4 { color: var(--black-4); }
+  
+  .border-black-100 { border-color: var(--black-100); }
+  .border-black-80 { border-color: var(--black-80); }
+  .border-black-40 { border-color: var(--black-40); }
+  .border-black-20 { border-color: var(--black-20); }
+  .border-black-10 { border-color: var(--black-10); }
+  .border-black-4 { border-color: var(--black-4); }
+  
+  /* === Color 工具类 - White === */
+  .bg-white-100 { background-color: var(--white-100); }
+  .bg-white-80 { background-color: var(--white-80); }
+  .bg-white-40 { background-color: var(--white-40); }
+  .bg-white-20 { background-color: var(--white-20); }
+  .bg-white-10 { background-color: var(--white-10); }
+  .bg-white-4 { background-color: var(--white-4); }
+  
+  .text-white-100 { color: var(--white-100); }
+  .text-white-80 { color: var(--white-80); }
+  .text-white-40 { color: var(--white-40); }
+  .text-white-20 { color: var(--white-20); }
+  .text-white-10 { color: var(--white-10); }
+  .text-white-4 { color: var(--white-4); }
+  
+  .border-white-100 { border-color: var(--white-100); }
+  .border-white-80 { border-color: var(--white-80); }
+  .border-white-40 { border-color: var(--white-40); }
+  .border-white-20 { border-color: var(--white-20); }
+  .border-white-10 { border-color: var(--white-10); }
+  .border-white-4 { border-color: var(--white-4); }
+  
+  /* === Color 工具类 - Static Black（固定颜色，不随主题变化） === */
+  .bg-static-black-100 { background-color: var(--static-black-100); }
+  .bg-static-black-80 { background-color: var(--static-black-80); }
+  .bg-static-black-40 { background-color: var(--static-black-40); }
+  .bg-static-black-20 { background-color: var(--static-black-20); }
+  .bg-static-black-10 { background-color: var(--static-black-10); }
+  .bg-static-black-4 { background-color: var(--static-black-4); }
+  
+  .text-static-black-100 { color: var(--static-black-100); }
+  .text-static-black-80 { color: var(--static-black-80); }
+  .text-static-black-40 { color: var(--static-black-40); }
+  .text-static-black-20 { color: var(--static-black-20); }
+  .text-static-black-10 { color: var(--static-black-10); }
+  .text-static-black-4 { color: var(--static-black-4); }
+  
+  .border-static-black-100 { border-color: var(--static-black-100); }
+  .border-static-black-80 { border-color: var(--static-black-80); }
+  .border-static-black-40 { border-color: var(--static-black-40); }
+  .border-static-black-20 { border-color: var(--static-black-20); }
+  .border-static-black-10 { border-color: var(--static-black-10); }
+  .border-static-black-4 { border-color: var(--static-black-4); }
+  
+  /* === Color 工具类 - Static White（固定颜色，不随主题变化） === */
+  .bg-static-white-100 { background-color: var(--static-white-100); }
+  .bg-static-white-80 { background-color: var(--static-white-80); }
+  .bg-static-white-40 { background-color: var(--static-white-40); }
+  .bg-static-white-20 { background-color: var(--static-white-20); }
+  .bg-static-white-10 { background-color: var(--static-white-10); }
+  .bg-static-white-4 { background-color: var(--static-white-4); }
+  
+  .text-static-white-100 { color: var(--static-white-100); }
+  .text-static-white-80 { color: var(--static-white-80); }
+  .text-static-white-40 { color: var(--static-white-40); }
+  .text-static-white-20 { color: var(--static-white-20); }
+  .text-static-white-10 { color: var(--static-white-10); }
+  .text-static-white-4 { color: var(--static-white-4); }
+  
+  .border-static-white-100 { border-color: var(--static-white-100); }
+  .border-static-white-80 { border-color: var(--static-white-80); }
+  .border-static-white-40 { border-color: var(--static-white-40); }
+  .border-static-white-20 { border-color: var(--static-white-20); }
+  .border-static-white-10 { border-color: var(--static-white-10); }
+  .border-static-white-4 { border-color: var(--static-white-4); }
+  
+  /* === Color 工具类 - Background === */
+  .bg-background-1 { background-color: var(--background-1); }
+  .bg-background-2 { background-color: var(--background-2); }
+  .bg-background-3 { background-color: var(--background-3); }
+  .bg-background-4 { background-color: var(--background-4); }
+  .bg-background-5 { background-color: var(--background-5); }
+  .bg-background-6 { background-color: var(--background-6); }
+  .bg-background { background-color: var(--background); }
+  
+  /* === Color 工具类 - Secondary Colors === */
+  .bg-purple { background-color: var(--secondary-purple); }
+  .bg-indigo { background-color: var(--secondary-indigo); }
+  .bg-blue { background-color: var(--secondary-blue); }
+  .bg-cyan { background-color: var(--secondary-cyan); }
+  .bg-mint { background-color: var(--secondary-mint); }
+  .bg-green { background-color: var(--secondary-green); }
+  .bg-yellow { background-color: var(--secondary-yellow); }
+  .bg-orange { background-color: var(--secondary-orange); }
+  .bg-red { background-color: var(--secondary-red); }
+  
+  .text-purple { color: var(--secondary-purple); }
+  .text-indigo { color: var(--secondary-indigo); }
+  .text-blue { color: var(--secondary-blue); }
+  .text-cyan { color: var(--secondary-cyan); }
+  .text-mint { color: var(--secondary-mint); }
+  .text-green { color: var(--secondary-green); }
+  .text-yellow { color: var(--secondary-yellow); }
+  .text-orange { color: var(--secondary-orange); }
+  .text-red { color: var(--secondary-red); }
+  
+  .border-purple { border-color: var(--secondary-purple); }
+  .border-indigo { border-color: var(--secondary-indigo); }
+  .border-blue { border-color: var(--secondary-blue); }
+  .border-cyan { border-color: var(--secondary-cyan); }
+  .border-mint { border-color: var(--secondary-mint); }
+  .border-green { border-color: var(--secondary-green); }
+  .border-yellow { border-color: var(--secondary-yellow); }
+  .border-orange { border-color: var(--secondary-orange); }
+  .border-red { border-color: var(--secondary-red); }
+  
+  /* === Color 工具类 - Primary & Foreground === */
+  .bg-primary { background-color: var(--primary); }
+  .text-primary { color: var(--primary); }
+  .border-primary { border-color: var(--primary); }
+  
+  .bg-foreground { background-color: var(--foreground); }
+  .text-foreground { color: var(--foreground); }
+  .border-foreground { border-color: var(--foreground); }
+  
+  .bg-logo-1 { background-color: var(--logo-1); }
+  .text-logo-1 { color: var(--logo-1); }
+  .border-logo-1 { border-color: var(--logo-1); }
+  
+  .bg-logo-2 { background-color: var(--logo-2); }
+  .text-logo-2 { color: var(--logo-2); }
+  .border-logo-2 { border-color: var(--logo-2); }
+  
+  /* === Background Gradients 工具类 === */
+  .bg-gradient-primary {
+    background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--primary);
+  }
+  
+  .bg-gradient-gray {
+    background: linear-gradient(180deg, #00000008 0%, #00000003 100%), var(--background-2);
+  }
+  
+  .bg-gradient-black {
+    background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), linear-gradient(0deg, var(--black-20) 0%, var(--black-20) 100%), var(--black-100);
+  }
+  
+  .bg-gradient-purple {
+    background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-purple);
+  }
+  
+  .bg-gradient-indigo {
+    background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-indigo);
+  }
+  
+  .bg-gradient-blue {
+    background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-blue);
+  }
+  
+  .bg-gradient-cyan {
+    background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-cyan);
+  }
+  
+  .bg-gradient-mint {
+    background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-mint);
+  }
+  
+  .bg-gradient-green {
+    background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-green);
+  }
+  
+  .bg-gradient-yellow {
+    background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-yellow);
+  }
+  
+  .bg-gradient-orange {
+    background: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-orange);
+  }
+  
+  .bg-gradient-red {
+    background: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-red);
+  }
+  
+  /* === Effect Styles 工具类 === */
+  .shadow-glass-1 {
+    box-shadow: 0 4px 16px 0 #0000000A, -2px -2px 8px 0 #FFFFFF26, 2px 4px 12px 0 #00000014, 0 8px 24px -4px #0000000D, 0 -1px 2px 0 #FFFFFF14;
   border: 1px solid #FFFFFF33;
   backdrop-filter: blur(8px);
 }
 
-.glass-2 {
-  box-shadow: var(--effect-glass-2);
+  .shadow-glass-2 {
+    box-shadow: 0 8px 28px 0 #0000001A, -3px -3px 12px 0 #FFFFFF33, 3px 6px 16px 0 #0000001F, 0 12px 32px -6px #00000014, 0 -2px 4px 0 #FFFFFF1F, 0 4px 12px 0 #0000000F;
   border: 1px solid #FFFFFF4D;
   backdrop-filter: blur(20px);
 }
 
-/* === Gradient Background Utility Classes === */
-/* 渐变背景工具类，直接使用原始渐变变量 */
-.bg-gradient-primary {
-  background: var(--gradient-primary);
-}
-
-.bg-gradient-gray {
-  background: var(--gradient-gray);
-}
-
-.bg-gradient-black {
-  background: var(--gradient-black);
-}
-
-.bg-gradient-purple {
-  background: var(--gradient-purple);
-}
-
-.bg-gradient-indigo {
-  background: var(--gradient-indigo);
-}
-
-.bg-gradient-blue {
-  background: var(--gradient-blue);
-}
-
-.bg-gradient-cyan {
-  background: var(--gradient-cyan);
-}
-
-.bg-gradient-mint {
-  background: var(--gradient-mint);
-}
-
-.bg-gradient-green {
-  background: var(--gradient-green);
-}
-
-.bg-gradient-yellow {
-  background: var(--gradient-yellow);
-}
-
-.bg-gradient-orange {
-  background: var(--gradient-orange);
-}
-
-.bg-gradient-red {
-  background: var(--gradient-red);
-}
+  .shadow-glow {
+    box-shadow: 0 0 12px 8px #00000033, 0 0 12px 8px #FFFFFF33;
+  }
+  
+  .shadow-focus {
+    box-shadow: 0 0 0 4px #0000000A;
+  }
+  
+  .shadow-inner {
+    box-shadow: 0 -0.5px 1px 0 #FFFFFF4D inset, 0 -0.5px 1px 0 #FFFFFF40 inset, 1px 1.5px 4px 0 #00000014 inset, 1px 1.5px 4px 0 #0000001A inset;
+  }
+  
+  .shadow-drop-1 {
+    box-shadow: 0 0.5px 0.5px 0 #0000001A;
+  }
+  
+  .shadow-drop-2 {
+    box-shadow: 0 2px 4px 0 #0000001A;
+  }
+  
+  .shadow-image-hover {
+    box-shadow: 0 20px 20px 0 #000000FF inset;
+  }
+  
+  .backdrop-blur-40 {
+    backdrop-filter: blur(20px);
+  }
+  
+  .backdrop-blur-100 {
+    backdrop-filter: blur(50px);
+  }
+  
+  /* ============================================
+     基础样式
+     ============================================ */
 
 @layer base {
   html {
-    font-size: 16px;  /* 默认值，可以改成你想要的，比如 14px、18px 等 */
+      font-size: 16px;
   }
+    
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-weight: var(--font-weight-regular);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    /* 字体平滑渲染设置 */
-    /* -webkit-font-smoothing: antialiased; - 让文字在 WebKit 内核浏览器（Chrome、Safari、Edge）中更平滑，关闭子像素渲染，使用灰度抗锯齿 */
+      background-color: var(--background);
+      color: var(--foreground);
+      font-weight: 400;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
-    /* -moz-osx-font-smoothing: grayscale; - 让文字在 Firefox（macOS 系统）中更平滑，使用灰度抗锯齿而不是子像素渲染 */
     -moz-osx-font-smoothing: grayscale;
-   
+    }
+    
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
   }
-  code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
-}
-
-/* === Phosphor Icons Duotone 透明度自定义 === */
-/* 全局修改所有 duotone 图标的背景层透明度，从默认的 0.2 改为 0.04 */
-/* 
- * 精确选择器：只匹配 Phosphor Icons 的 duotone 图标
- * - viewBox="0 0 256 256" 是 Phosphor Icons 的标准 viewBox
- * - path:first-of-type[opacity="0.2"] 匹配第一个 path 且 opacity 为 0.2（duotone 的特征）
- * - 这样可以避免影响其他 SVG 元素
- */
-svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"], svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],svg[viewBox="0 0 32 32"] g[opacity="0.08"],
-svg[viewBox="0 0 32 32"] g[opacity=".08"] {
+  
+  /* ============================================
+     Phosphor Icons Duotone 透明度自定义
+     ============================================ */
+  
+  /* 全局修改所有 duotone 图标的背景层透明度为 0.08 */
+  svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"],
+  svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],
+  svg[viewBox="0 0 32 32"] g[opacity="0.08"],
+  svg[viewBox="0 0 32 32"] g[opacity=".08"] {
   opacity: 0.08 !important;
 }
-
-/* 备用选择器：如果上面的选择器不生效，使用这个更通用的选择器 */
-/* 只匹配包含多个 path 且第一个 path 有 opacity="0.2" 的 SVG（duotone 图标的特征） */
-/* svg[viewBox="0 0 256 256"]:has(path:first-of-type[opacity="0.2"]) path:first-of-type[opacity="0.2"] {
-  opacity: 0.08 !important;
-} */
