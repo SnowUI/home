@@ -25,129 +25,129 @@
 
    :root {
     /* === Static Colors（固定颜色，不随主题变化） === */
-    --static-black-100: #000000FF;
-    --static-black-80: #000000CC;
-    --static-black-40: #00000066;
-    --static-black-20: #00000033;
-    --static-black-10: #0000001A;
-    --static-black-4: #0000000A;
-    --static-white-100: #FFFFFFFF;
-    --static-white-80: #FFFFFFCC;
-    --static-white-40: #FFFFFF66;
-    --static-white-20: #FFFFFF33;
-    --static-white-10: #FFFFFF1A;
-    --static-white-4: #FFFFFF0A;
-  
+  --static-black-100: #000000FF;
+  --static-black-80: #000000CC;
+  --static-black-40: #00000066;
+  --static-black-20: #00000033;
+  --static-black-10: #0000001A;
+  --static-black-4: #0000000A;
+  --static-white-100: #FFFFFFFF;
+  --static-white-80: #FFFFFFCC;
+  --static-white-40: #FFFFFF66;
+  --static-white-20: #FFFFFF33;
+  --static-white-10: #FFFFFF1A;
+  --static-white-4: #FFFFFF0A;
+
     /* === SnowUI Light 主题（默认） === */
-    --black-100: #000000FF;
-    --black-80: #000000CC;
-    --black-40: #00000066;
-    --black-20: #00000033;
-    --black-10: #0000001A;
-    --black-4: #0000000A;
-    --white-100: #FFFFFFFF;
-    --white-80: #FFFFFFCC;
-    --white-40: #FFFFFF66;
-    --white-20: #FFFFFF33;
-    --white-10: #FFFFFF1A;
-    --white-4: #FFFFFF0A;
-    --background-1: #FFFFFFFF;
-    --background-2: #F9F9FAFF;
-    --background-3: #FFFFFFCC;
-    --background-4: #EDEEFCFF;
-    --background-5: #E6F1FDFF;
-    --background-6: #FFFFFFE5;
-    --secondary-purple: #B899EBFF;
-    --secondary-indigo: #ADADFBFF;
-    --secondary-blue: #7DBBFFFF;
-    --secondary-cyan: #A0BCE8FF;
-    --secondary-mint: #6BE6D3FF;
-    --secondary-green: #71DD8CFF;
-    --secondary-yellow: #FFCC00FF;
-    --secondary-orange: #FFB55BFF;
-    --secondary-red: #FF4747FF;
+  --black-100: #000000FF;
+  --black-80: #000000CC;
+  --black-40: #00000066;
+  --black-20: #00000033;
+  --black-10: #0000001A;
+  --black-4: #0000000A;
+  --white-100: #FFFFFFFF;
+  --white-80: #FFFFFFCC;
+  --white-40: #FFFFFF66;
+  --white-20: #FFFFFF33;
+  --white-10: #FFFFFF1A;
+  --white-4: #FFFFFF0A;
+  --background-1: #FFFFFFFF;
+  --background-2: #F9F9FAFF;
+  --background-3: #FFFFFFCC;
+  --background-4: #EDEEFCFF;
+  --background-5: #E6F1FDFF;
+  --background-6: #FFFFFFE5;
+  --secondary-purple: #B899EBFF;
+  --secondary-indigo: #ADADFBFF;
+  --secondary-blue: #7DBBFFFF;
+  --secondary-cyan: #A0BCE8FF;
+  --secondary-mint: #6BE6D3FF;
+  --secondary-green: #71DD8CFF;
+  --secondary-yellow: #FFCC00FF;
+  --secondary-orange: #FFB55BFF;
+  --secondary-red: #FF4747FF;
     --primary: var(--black-100);
     --foreground: var(--black-100);
-    --background: var(--background-1);
+  --background: var(--background-1);
     --logo-1: #4C98FDFF;
-    --logo-2: #4F507FFF;
+  --logo-2: #4F507FFF;
   }
   
   /* === SnowUI Dark 主题 === */
-  .theme-snowui-dark:root {
-    --black-100: #FFFFFFFF;
-    --black-80: #FFFFFFCC;
-    --black-40: #FFFFFF66;
-    --black-20: #FFFFFF33;
-    --black-10: #FFFFFF26;
-    --black-4: #FFFFFF1A;
-    --white-100: #000000FF;
-    --white-80: #000000CC;
-    --white-40: #00000066;
-    --white-20: #00000033;
-    --white-10: #0000001A;
-    --white-4: #0000000A;
-    --background-1: #333333FF;
-    --background-2: #FFFFFF0A;
-    --background-3: #0000001A;
-    --background-6: #404040E5;
-    --primary: var(--secondary-indigo);
-    --logo-2: #EDEDFFFF;
-  }
-  
+.theme-snowui-dark:root {
+  --black-100: #FFFFFFFF;
+  --black-80: #FFFFFFCC;
+  --black-40: #FFFFFF66;
+  --black-20: #FFFFFF33;
+  --black-10: #FFFFFF26;
+  --black-4: #FFFFFF1A;
+  --white-100: #000000FF;
+  --white-80: #000000CC;
+  --white-40: #00000066;
+  --white-20: #00000033;
+  --white-10: #0000001A;
+  --white-4: #0000000A;
+  --background-1: #333333FF;
+  --background-2: #FFFFFF0A;
+  --background-3: #0000001A;
+  --background-6: #404040E5;
+  --primary: var(--secondary-indigo);
+  --logo-2: #EDEDFFFF;
+}
+
   /* === iOS Light 主题 === */
-  .theme-ios-light:root {
-    --background-1: #F5F5F6FF;
-    --background-2: #FFFFFFFF;
-    --background-3: #00000008;
-    --background-4: #00000005;
-    --background-5: #FFFFFFFF;
-    --secondary-purple: #AF52DEFF;
-    --secondary-indigo: #5856D6FF;
-    --secondary-blue: #007AFFFF;
-    --secondary-cyan: #32ADE6FF;
-    --secondary-mint: #00C7BEFF;
-    --secondary-green: #34C759FF;
-    --secondary-orange: #FF9500FF;
-    --secondary-red: #FF3B30FF;
-    --primary: var(--secondary-blue);
+.theme-ios-light:root {
+  --background-1: #F5F5F6FF;
+  --background-2: #FFFFFFFF;
+  --background-3: #00000008;
+  --background-4: #00000005;
+  --background-5: #FFFFFFFF;
+  --secondary-purple: #AF52DEFF;
+  --secondary-indigo: #5856D6FF;
+  --secondary-blue: #007AFFFF;
+  --secondary-cyan: #32ADE6FF;
+  --secondary-mint: #00C7BEFF;
+  --secondary-green: #34C759FF;
+  --secondary-orange: #FF9500FF;
+  --secondary-red: #FF3B30FF;
+  --primary: var(--secondary-blue);
     --logo-1: var(--primary);
-  }
-  
+}
+
   /* === iOS Dark 主题 === */
-  .theme-ios-dark:root {
-    --black-100: #FFFFFFFF;
-    --black-80: #FFFFFFCC;
-    --black-40: #FFFFFF66;
-    --black-20: #FFFFFF33;
-    --black-10: #FFFFFF26;
-    --black-4: #FFFFFF1A;
-    --white-100: #000000FF;
-    --white-80: #000000CC;
-    --white-40: #00000066;
-    --white-20: #00000033;
-    --white-10: #0000001A;
-    --white-4: #0000000A;
-    --background-1: #333333FF;
-    --background-2: #FFFFFF0A;
-    --background-3: #0000001A;
-    --background-4: #0000001A;
-    --background-5: #FFFFFFCC;
-    --background-6: #404040E5;
-    --secondary-purple: #BF5AF2FF;
-    --secondary-indigo: #5E5CE6FF;
-    --secondary-blue: #0A84FFFF;
-    --secondary-cyan: #64D2FFFF;
-    --secondary-mint: #63E6E2FF;
-    --secondary-green: #30D158FF;
-    --secondary-yellow: #FFD60AFF;
-    --secondary-orange: #FF9F0AFF;
-    --secondary-red: #FF453AFF;
-    --primary: var(--secondary-blue);
+.theme-ios-dark:root {
+  --black-100: #FFFFFFFF;
+  --black-80: #FFFFFFCC;
+  --black-40: #FFFFFF66;
+  --black-20: #FFFFFF33;
+  --black-10: #FFFFFF26;
+  --black-4: #FFFFFF1A;
+  --white-100: #000000FF;
+  --white-80: #000000CC;
+  --white-40: #00000066;
+  --white-20: #00000033;
+  --white-10: #0000001A;
+  --white-4: #0000000A;
+  --background-1: #333333FF;
+  --background-2: #FFFFFF0A;
+  --background-3: #0000001A;
+  --background-4: #0000001A;
+  --background-5: #FFFFFFCC;
+  --background-6: #404040E5;
+  --secondary-purple: #BF5AF2FF;
+  --secondary-indigo: #5E5CE6FF;
+  --secondary-blue: #0A84FFFF;
+  --secondary-cyan: #64D2FFFF;
+  --secondary-mint: #63E6E2FF;
+  --secondary-green: #30D158FF;
+  --secondary-yellow: #FFD60AFF;
+  --secondary-orange: #FF9F0AFF;
+  --secondary-red: #FF453AFF;
+  --primary: var(--secondary-blue);
     --logo-1: var(--primary);
-    --logo-2: #EDEDFFFF;
-  }
-  
+  --logo-2: #EDEDFFFF;
+}
+
   /* ============================================
      工具类定义
      ============================================ */
@@ -751,10 +751,10 @@
   }
     
   body {
-      background-color: var(--background);
-      color: var(--foreground);
+    background-color: var(--background);
+    color: var(--foreground);
       font-weight: 400;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     }
@@ -772,6 +772,6 @@
   svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"],
   svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],
   svg[viewBox="0 0 32 32"] g[opacity="0.08"],
-  svg[viewBox="0 0 32 32"] g[opacity=".08"] {
+svg[viewBox="0 0 32 32"] g[opacity=".08"] {
   opacity: 0.08 !important;
 }
