@@ -464,6 +464,7 @@
   .w-64 { width: 4rem; }      /* 64px */
   .w-72 { width: 4.5rem; }    /* 72px */
   .w-80 { width: 5rem; }      /* 80px */
+  .w-arbitrary { width: var(--w, auto); }      /* 任意宽度, style="--w: 50px; --h: 100px;" */
   
   /* === Size - Height 工具类 === */
   .h-16 { height: 1rem; }      /* 16px */
@@ -477,6 +478,7 @@
   .h-64 { height: 4rem; }      /* 64px */
   .h-72 { height: 4.5rem; }    /* 72px */
   .h-80 { height: 5rem; }      /* 80px */
+  .h-arbitrary { height: var(--h, auto); }      /* 任意高度, style="--w: 50px; --h: 100px;" */
   
   /* === Font Size 工具类 === */
   .text-12 { font-size: 0.75rem; line-height: 1rem; } /* 12px */
@@ -772,6 +774,6 @@
   svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"],
   svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],
   svg[viewBox="0 0 32 32"] g[opacity="0.08"],
-svg[viewBox="0 0 32 32"] g[opacity=".08"] {
+  svg[viewBox="0 0 32 32"] g[opacity=".08"] {
   opacity: 0.08 !important;
 }
