@@ -66,10 +66,10 @@
   --secondary-yellow: #FFCC00FF;
   --secondary-orange: #FFB55BFF;
   --secondary-red: #FF4747FF;
-    --primary: var(--black-100);
-    --foreground: var(--black-100);
+  --primary: var(--black-100);
+  --foreground: var(--black-100);
   --background: var(--background-1);
-    --logo-1: #4C98FDFF;
+  --logo-1: #4C98FDFF;
   --logo-2: #4F507FFF;
   }
   
@@ -111,7 +111,7 @@
   --secondary-orange: #FF9500FF;
   --secondary-red: #FF3B30FF;
   --primary: var(--secondary-blue);
-    --logo-1: var(--primary);
+  --logo-1: var(--primary);
 }
 
   /* === iOS Dark 主题 === */
@@ -144,7 +144,7 @@
   --secondary-orange: #FF9F0AFF;
   --secondary-red: #FF453AFF;
   --primary: var(--secondary-blue);
-    --logo-1: var(--primary);
+  --logo-1: var(--primary);
   --logo-2: #EDEDFFFF;
 }
 
@@ -771,9 +771,9 @@
      ============================================ */
   
   /* 全局修改所有 duotone 图标的背景层透明度为 0.08 */
-  svg[viewBox="0 0 32 32"] path:first-of-type[opacity="0.08"],
-  svg[viewBox="0 0 32 32"] path:first-of-type[opacity=".08"],
-  svg[viewBox="0 0 32 32"] g[opacity="0.08"],
-  svg[viewBox="0 0 32 32"] g[opacity=".08"] {
+  svg[viewBox="0 0 256 256"] path:first-of-type[opacity="0.2"],
+  svg[viewBox="0 0 256 256"] path:first-of-type[opacity=".2"],
+  svg[viewBox="0 0 32 32"] g[opacity="0.2"],
+  svg[viewBox="0 0 32 32"] g[opacity=".2"] {
   opacity: 0.08 !important;
 }
