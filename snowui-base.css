@@ -8,24 +8,92 @@
    ============================================ */
 
 @layer base {
+  /* 所有人最喜欢的 Box-sizing 设置 */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: clamp(14px, 0.875vw + 10px, 16px);
+    scroll-behavior: smooth; /* 页面平滑滚动 */
   }
 
   body {
+    margin: 0;
     background-color: var(--background);
     color: var(--foreground);
     font-weight: 400;
     font-size: 0.875rem; 
-    /* 不在这里设置 line-height，避免被 small 等标签继承 */
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
   }
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
+
+  /* 移除多余 margin，使排版更可控 */
+  h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+    margin: 0;
+  }
+
+  /* 避免长单词导致布局溢出 */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 列表初始化，不破坏语义 */
+  ul, ol {
+    margin: 0;
+    padding-left: 0.75em; /* 保留合理的缩进 */
+  }
+
+  /* 图片默认自适应 */
+  img, picture, svg, video, canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+    /* 表单元素统一外观 */
+  button, input, textarea, select {
+    font: inherit;
+    margin: 0;
+  }
+
+  /* 
+    创建一个新的层叠上下文 
+    防止使用 z-index 时出现意外的覆盖问题 
+  */
+  #root, #__next, body > div[id] {
+    isolation: isolate;
+  }
+
+  /* 超链接的最小 reset */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* 表格初始化 */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* 更好的 Focus 样式 (Accessibility) */
+  :focus-visible {
+    outline: 4px solid var(--black-4);
+  }
+
+  /* 禁用状态标准样式 */
+  :disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+
 }
 
 /* ============================================

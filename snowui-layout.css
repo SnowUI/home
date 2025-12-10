@@ -20,6 +20,7 @@
 .rounded-40 { border-radius: 2.5rem; corner-shape: squircle; }  /* 40px */
 .rounded-48 { border-radius: 3rem; corner-shape: squircle; }    /* 48px */
 .rounded-80 { border-radius: 5rem; corner-shape: squircle; }    /* 80px */
+.rounded-full { border-radius: 50%; object-fit: cover; }    /* full rounded */
 
 /* === Corner Radius 工具类 - 单方向 === */
 .rounded-t-0 { border-top-left-radius: 0; border-top-right-radius: 0; }
