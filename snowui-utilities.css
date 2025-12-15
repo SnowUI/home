@@ -1,0 +1,1946 @@
+/*
+  SnowUI 设计系统 CSS - 布局与通用工具类模块
+  包含圆角、间距、尺寸、字体等非颜色类工具
+*/
+
+/* ============================================
+   Color 工具类
+   ============================================ */
+
+/* === Color 工具类 - Black === */
+.bg-black-100 {
+  background-color: var(--black-100);
+}
+
+.bg-black-80 {
+  background-color: var(--black-80);
+}
+
+.bg-black-40 {
+  background-color: var(--black-40);
+}
+
+.bg-black-20 {
+  background-color: var(--black-20);
+}
+
+.bg-black-10 {
+  background-color: var(--black-10);
+}
+
+.bg-black-4 {
+  background-color: var(--black-4);
+}
+
+.text-black-100 {
+  color: var(--black-100);
+}
+
+.text-black-80 {
+  color: var(--black-80);
+}
+
+.text-black-40 {
+  color: var(--black-40);
+}
+
+.text-black-20 {
+  color: var(--black-20);
+}
+
+.text-black-10 {
+  color: var(--black-10);
+}
+
+.text-black-4 {
+  color: var(--black-4);
+}
+
+.border-black-100 {
+  border-color: var(--black-100);
+}
+
+.border-black-80 {
+  border-color: var(--black-80);
+}
+
+.border-black-40 {
+  border-color: var(--black-40);
+}
+
+.border-black-20 {
+  border-color: var(--black-20);
+}
+
+.border-black-10 {
+  border-color: var(--black-10);
+}
+
+.border-black-4 {
+  border-color: var(--black-4);
+}
+
+/* === Color 工具类 - White === */
+.bg-white-100 {
+  background-color: var(--white-100);
+}
+
+.bg-white-80 {
+  background-color: var(--white-80);
+}
+
+.bg-white-40 {
+  background-color: var(--white-40);
+}
+
+.bg-white-20 {
+  background-color: var(--white-20);
+}
+
+.bg-white-10 {
+  background-color: var(--white-10);
+}
+
+.bg-white-4 {
+  background-color: var(--white-4);
+}
+
+.text-white-100 {
+  color: var(--white-100);
+}
+
+.text-white-80 {
+  color: var(--white-80);
+}
+
+.text-white-40 {
+  color: var(--white-40);
+}
+
+.text-white-20 {
+  color: var(--white-20);
+}
+
+.text-white-10 {
+  color: var(--white-10);
+}
+
+.text-white-4 {
+  color: var(--white-4);
+}
+
+.border-white-100 {
+  border-color: var(--white-100);
+}
+
+.border-white-80 {
+  border-color: var(--white-80);
+}
+
+.border-white-40 {
+  border-color: var(--white-40);
+}
+
+.border-white-20 {
+  border-color: var(--white-20);
+}
+
+.border-white-10 {
+  border-color: var(--white-10);
+}
+
+.border-white-4 {
+  border-color: var(--white-4);
+}
+
+/* === Color 工具类 - Static Black（固定颜色，不随主题变化） === */
+.bg-static-black-100 {
+  background-color: var(--static-black-100);
+}
+
+.bg-static-black-80 {
+  background-color: var(--static-black-80);
+}
+
+.bg-static-black-40 {
+  background-color: var(--static-black-40);
+}
+
+.bg-static-black-20 {
+  background-color: var(--static-black-20);
+}
+
+.bg-static-black-10 {
+  background-color: var(--static-black-10);
+}
+
+.bg-static-black-4 {
+  background-color: var(--static-black-4);
+}
+
+.text-static-black-100 {
+  color: var(--static-black-100);
+}
+
+.text-static-black-80 {
+  color: var(--static-black-80);
+}
+
+.text-static-black-40 {
+  color: var(--static-black-40);
+}
+
+.text-static-black-20 {
+  color: var(--static-black-20);
+}
+
+.text-static-black-10 {
+  color: var(--static-black-10);
+}
+
+.text-static-black-4 {
+  color: var(--static-black-4);
+}
+
+.border-static-black-100 {
+  border-color: var(--static-black-100);
+}
+
+.border-static-black-80 {
+  border-color: var(--static-black-80);
+}
+
+.border-static-black-40 {
+  border-color: var(--static-black-40);
+}
+
+.border-static-black-20 {
+  border-color: var(--static-black-20);
+}
+
+.border-static-black-10 {
+  border-color: var(--static-black-10);
+}
+
+.border-static-black-4 {
+  border-color: var(--static-black-4);
+}
+
+/* === Color 工具类 - Static White（固定颜色，不随主题变化） === */
+.bg-static-white-100 {
+  background-color: var(--static-white-100);
+}
+
+.bg-static-white-80 {
+  background-color: var(--static-white-80);
+}
+
+.bg-static-white-40 {
+  background-color: var(--static-white-40);
+}
+
+.bg-static-white-20 {
+  background-color: var(--static-white-20);
+}
+
+.bg-static-white-10 {
+  background-color: var(--static-white-10);
+}
+
+.bg-static-white-4 {
+  background-color: var(--static-white-4);
+}
+
+.text-static-white-100 {
+  color: var(--static-white-100);
+}
+
+.text-static-white-80 {
+  color: var(--static-white-80);
+}
+
+.text-static-white-40 {
+  color: var(--static-white-40);
+}
+
+.text-static-white-20 {
+  color: var(--static-white-20);
+}
+
+.text-static-white-10 {
+  color: var(--static-white-10);
+}
+
+.text-static-white-4 {
+  color: var(--static-white-4);
+}
+
+.border-static-white-100 {
+  border-color: var(--static-white-100);
+}
+
+.border-static-white-80 {
+  border-color: var(--static-white-80);
+}
+
+.border-static-white-40 {
+  border-color: var(--static-white-40);
+}
+
+.border-static-white-20 {
+  border-color: var(--static-white-20);
+}
+
+.border-static-white-10 {
+  border-color: var(--static-white-10);
+}
+
+.border-static-white-4 {
+  border-color: var(--static-white-4);
+}
+
+/* === Color 工具类 - Background === */
+.bg-background-1 {
+  background-color: var(--background-1);
+}
+
+.bg-background-2 {
+  background-color: var(--background-2);
+}
+
+.bg-background-3 {
+  background-color: var(--background-3);
+}
+
+.bg-background-4 {
+  background-color: var(--background-4);
+}
+
+.bg-background-5 {
+  background-color: var(--background-5);
+}
+
+.bg-background-6 {
+  background-color: var(--background-6);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+/* === Color 工具类 - Secondary Colors === */
+.bg-purple {
+  background-color: var(--secondary-purple);
+}
+
+.bg-indigo {
+  background-color: var(--secondary-indigo);
+}
+
+.bg-blue {
+  background-color: var(--secondary-blue);
+}
+
+.bg-cyan {
+  background-color: var(--secondary-cyan);
+}
+
+.bg-mint {
+  background-color: var(--secondary-mint);
+}
+
+.bg-green {
+  background-color: var(--secondary-green);
+}
+
+.bg-yellow {
+  background-color: var(--secondary-yellow);
+}
+
+.bg-orange {
+  background-color: var(--secondary-orange);
+}
+
+.bg-red {
+  background-color: var(--secondary-red);
+}
+
+.text-purple {
+  color: var(--secondary-purple);
+}
+
+.text-indigo {
+  color: var(--secondary-indigo);
+}
+
+.text-blue {
+  color: var(--secondary-blue);
+}
+
+.text-cyan {
+  color: var(--secondary-cyan);
+}
+
+.text-mint {
+  color: var(--secondary-mint);
+}
+
+.text-green {
+  color: var(--secondary-green);
+}
+
+.text-yellow {
+  color: var(--secondary-yellow);
+}
+
+.text-orange {
+  color: var(--secondary-orange);
+}
+
+.text-red {
+  color: var(--secondary-red);
+}
+
+.border-purple {
+  border-color: var(--secondary-purple);
+}
+
+.border-indigo {
+  border-color: var(--secondary-indigo);
+}
+
+.border-blue {
+  border-color: var(--secondary-blue);
+}
+
+.border-cyan {
+  border-color: var(--secondary-cyan);
+}
+
+.border-mint {
+  border-color: var(--secondary-mint);
+}
+
+.border-green {
+  border-color: var(--secondary-green);
+}
+
+.border-yellow {
+  border-color: var(--secondary-yellow);
+}
+
+.border-orange {
+  border-color: var(--secondary-orange);
+}
+
+.border-red {
+  border-color: var(--secondary-red);
+}
+
+/* === Color 工具类 - Primary & Foreground === */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.bg-foreground {
+  background-color: var(--foreground);
+}
+
+.text-foreground {
+  color: var(--foreground);
+}
+
+.border-foreground {
+  border-color: var(--foreground);
+}
+
+.bg-logo-1 {
+  background-color: var(--logo-1);
+}
+
+.text-logo-1 {
+  color: var(--logo-1);
+}
+
+.border-logo-1 {
+  border-color: var(--logo-1);
+}
+
+.bg-logo-2 {
+  background-color: var(--logo-2);
+}
+
+.text-logo-2 {
+  color: var(--logo-2);
+}
+
+.border-logo-2 {
+  border-color: var(--logo-2);
+}
+
+/* === Background Gradients 工具类 === */
+.bg-gradient-primary {
+  background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--primary);
+}
+
+.bg-gradient-gray {
+  background: linear-gradient(180deg, #00000008 0%, #00000003 100%), var(--background-2);
+}
+
+.bg-gradient-black {
+  background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), linear-gradient(0deg, var(--black-20) 0%, var(--black-20) 100%), var(--black-100);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-purple);
+}
+
+.bg-gradient-indigo {
+  background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-indigo);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-blue);
+}
+
+.bg-gradient-cyan {
+  background: linear-gradient(180deg, #FFFFFF0D 0%, #FFFFFF66 100%), var(--secondary-cyan);
+}
+
+.bg-gradient-mint {
+  background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-mint);
+}
+
+.bg-gradient-green {
+  background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-green);
+}
+
+.bg-gradient-yellow {
+  background: linear-gradient(180deg, #FFFFFF05 0%, #FFFFFF29 100%), var(--secondary-yellow);
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-orange);
+}
+
+.bg-gradient-red {
+  background: linear-gradient(180deg, #FFFFFF0A 0%, #FFFFFF52 100%), var(--secondary-red);
+}
+
+/* === Effect Styles 工具类（阴影 & 毛玻璃等） === */
+.shadow-glass-1 {
+  box-shadow: 0 4px 16px 0 #0000000A, -2px -2px 8px 0 #FFFFFF26, 2px 4px 12px 0 #00000014, 0 8px 24px -4px #0000000D, 0 -1px 2px 0 #FFFFFF14;
+  border: 1px solid #FFFFFF33;
+  backdrop-filter: blur(8px);
+}
+
+.shadow-glass-2 {
+  box-shadow: 0 8px 28px 0 #0000001A, -3px -3px 12px 0 #FFFFFF33, 3px 6px 16px 0 #0000001F, 0 12px 32px -6px #00000014, 0 -2px 4px 0 #FFFFFF1F, 0 4px 12px 0 #0000000F;
+  border: 1px solid #FFFFFF4D;
+  backdrop-filter: blur(20px);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 12px 8px #00000033, 0 0 12px 8px #FFFFFF33;
+}
+
+.shadow-focus {
+  box-shadow: 0 0 0 4px #0000000A;
+}
+
+.shadow-inner {
+  box-shadow: 0 -0.5px 1px 0 #FFFFFF4D inset, 0 -0.5px 1px 0 #FFFFFF40 inset, 1px 1.5px 4px 0 #00000014 inset, 1px 1.5px 4px 0 #0000001A inset;
+}
+
+.shadow-drop-1 {
+  box-shadow: 0 0.5px 0.5px 0 #0000001A;
+}
+
+.shadow-drop-2 {
+  box-shadow: 0 2px 4px 0 #0000001A;
+}
+
+.shadow-image-hover {
+  box-shadow: 0 20px 20px 0 #000000FF inset;
+}
+
+.backdrop-blur-40 {
+  backdrop-filter: blur(20px);
+}
+
+.backdrop-blur-100 {
+  backdrop-filter: blur(50px);
+}
+
+/* ============================================
+   工具类定义（布局与尺寸）
+   ============================================ */
+
+/* === Corner Radius 工具类 === */
+.rounded-0 {
+  border-radius: var(--radius-0);
+}
+
+.rounded-4 {
+  border-radius: var(--radius-4);
+}
+
+.rounded-8 {
+  border-radius: var(--radius-8);
+}
+
+.rounded-12 {
+  border-radius: var(--radius-12);
+}
+
+.rounded-16 {
+  border-radius: var(--radius-16);
+}
+
+.rounded-20 {
+  border-radius: var(--radius-20);
+}
+
+.rounded-24 {
+  border-radius: var(--radius-24);
+}
+
+.rounded-28 {
+  border-radius: var(--radius-28);
+}
+
+.rounded-32 {
+  border-radius: var(--radius-32);
+}
+
+.rounded-40 {
+  border-radius: var(--radius-40);
+}
+
+.rounded-48 {
+  border-radius: var(--radius-48);
+}
+
+.rounded-80 {
+  border-radius: var(--radius-80);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+/* === Corner Radius 工具类 - 单方向 === */
+.rounded-t-0 {
+  border-top-left-radius: var(--radius-0);
+  border-top-right-radius: var(--radius-0);
+}
+
+.rounded-t-4 {
+  border-top-left-radius: var(--radius-4);
+  border-top-right-radius: var(--radius-4);
+}
+
+.rounded-t-8 {
+  border-top-left-radius: var(--radius-8);
+  border-top-right-radius: var(--radius-8);
+}
+
+.rounded-t-12 {
+  border-top-left-radius: var(--radius-12);
+  border-top-right-radius: var(--radius-12);
+}
+
+.rounded-t-16 {
+  border-top-left-radius: var(--radius-16);
+  border-top-right-radius: var(--radius-16);
+}
+
+.rounded-t-20 {
+  border-top-left-radius: var(--radius-20);
+  border-top-right-radius: var(--radius-20);
+}
+
+.rounded-t-24 {
+  border-top-left-radius: var(--radius-24);
+  border-top-right-radius: var(--radius-24);
+}
+
+.rounded-t-28 {
+  border-top-left-radius: var(--radius-28);
+  border-top-right-radius: var(--radius-28);
+}
+
+.rounded-t-32 {
+  border-top-left-radius: var(--radius-32);
+  border-top-right-radius: var(--radius-32);
+}
+
+.rounded-t-40 {
+  border-top-left-radius: var(--radius-40);
+  border-top-right-radius: var(--radius-40);
+}
+
+.rounded-t-48 {
+  border-top-left-radius: var(--radius-48);
+  border-top-right-radius: var(--radius-48);
+}
+
+.rounded-t-80 {
+  border-top-left-radius: var(--radius-80);
+  border-top-right-radius: var(--radius-80);
+}
+
+.rounded-r-0 {
+  border-top-right-radius: var(--radius-0);
+  border-bottom-right-radius: var(--radius-0);
+}
+
+.rounded-r-4 {
+  border-top-right-radius: var(--radius-4);
+  border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-r-8 {
+  border-top-right-radius: var(--radius-8);
+  border-bottom-right-radius: var(--radius-8);
+}
+
+.rounded-r-12 {
+  border-top-right-radius: var(--radius-12);
+  border-bottom-right-radius: var(--radius-12);
+}
+
+.rounded-r-16 {
+  border-top-right-radius: var(--radius-16);
+  border-bottom-right-radius: var(--radius-16);
+}
+
+.rounded-r-20 {
+  border-top-right-radius: var(--radius-20);
+  border-bottom-right-radius: var(--radius-20);
+}
+
+.rounded-r-24 {
+  border-top-right-radius: var(--radius-24);
+  border-bottom-right-radius: var(--radius-24);
+}
+
+.rounded-r-28 {
+  border-top-right-radius: var(--radius-28);
+  border-bottom-right-radius: var(--radius-28);
+}
+
+.rounded-r-32 {
+  border-top-right-radius: var(--radius-32);
+  border-bottom-right-radius: var(--radius-32);
+}
+
+.rounded-r-40 {
+  border-top-right-radius: var(--radius-40);
+  border-bottom-right-radius: var(--radius-40);
+}
+
+.rounded-r-48 {
+  border-top-right-radius: var(--radius-48);
+  border-bottom-right-radius: var(--radius-48);
+}
+
+.rounded-r-80 {
+  border-top-right-radius: var(--radius-80);
+  border-bottom-right-radius: var(--radius-80);
+}
+
+.rounded-b-0 {
+  border-bottom-left-radius: var(--radius-0);
+  border-bottom-right-radius: var(--radius-0);
+}
+
+.rounded-b-4 {
+  border-bottom-left-radius: var(--radius-4);
+  border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-b-8 {
+  border-bottom-left-radius: var(--radius-8);
+  border-bottom-right-radius: var(--radius-8);
+}
+
+.rounded-b-12 {
+  border-bottom-left-radius: var(--radius-12);
+  border-bottom-right-radius: var(--radius-12);
+}
+
+.rounded-b-16 {
+  border-bottom-left-radius: var(--radius-16);
+  border-bottom-right-radius: var(--radius-16);
+}
+
+.rounded-b-20 {
+  border-bottom-left-radius: var(--radius-20);
+  border-bottom-right-radius: var(--radius-20);
+}
+
+.rounded-b-24 {
+  border-bottom-left-radius: var(--radius-24);
+  border-bottom-right-radius: var(--radius-24);
+}
+
+.rounded-b-28 {
+  border-bottom-left-radius: var(--radius-28);
+  border-bottom-right-radius: var(--radius-28);
+}
+
+.rounded-b-32 {
+  border-bottom-left-radius: var(--radius-32);
+  border-bottom-right-radius: var(--radius-32);
+}
+
+.rounded-b-40 {
+  border-bottom-left-radius: var(--radius-40);
+  border-bottom-right-radius: var(--radius-40);
+}
+
+.rounded-b-48 {
+  border-bottom-left-radius: var(--radius-48);
+  border-bottom-right-radius: var(--radius-48);
+}
+
+.rounded-b-80 {
+  border-bottom-left-radius: var(--radius-80);
+  border-bottom-right-radius: var(--radius-80);
+}
+
+.rounded-l-0 {
+  border-top-left-radius: var(--radius-0);
+  border-bottom-left-radius: var(--radius-0);
+}
+
+.rounded-l-4 {
+  border-top-left-radius: var(--radius-4);
+  border-bottom-left-radius: var(--radius-4);
+}
+
+.rounded-l-8 {
+  border-top-left-radius: var(--radius-8);
+  border-bottom-left-radius: var(--radius-8);
+}
+
+.rounded-l-12 {
+  border-top-left-radius: var(--radius-12);
+  border-bottom-left-radius: var(--radius-12);
+}
+
+.rounded-l-16 {
+  border-top-left-radius: var(--radius-16);
+  border-bottom-left-radius: var(--radius-16);
+}
+
+.rounded-l-20 {
+  border-top-left-radius: var(--radius-20);
+  border-bottom-left-radius: var(--radius-20);
+}
+
+.rounded-l-24 {
+  border-top-left-radius: var(--radius-24);
+  border-bottom-left-radius: var(--radius-24);
+}
+
+.rounded-l-28 {
+  border-top-left-radius: var(--radius-28);
+  border-bottom-left-radius: var(--radius-28);
+}
+
+.rounded-l-32 {
+  border-top-left-radius: var(--radius-32);
+  border-bottom-left-radius: var(--radius-32);
+}
+
+.rounded-l-40 {
+  border-top-left-radius: var(--radius-40);
+  border-bottom-left-radius: var(--radius-40);
+}
+
+.rounded-l-48 {
+  border-top-left-radius: var(--radius-48);
+  border-bottom-left-radius: var(--radius-48);
+}
+
+.rounded-l-80 {
+  border-top-left-radius: var(--radius-80);
+  border-bottom-left-radius: var(--radius-80);
+}
+
+.rounded-tl-0 {
+  border-top-left-radius: var(--radius-0);
+}
+
+.rounded-tl-4 {
+  border-top-left-radius: var(--radius-4);
+}
+
+.rounded-tl-8 {
+  border-top-left-radius: var(--radius-8);
+}
+
+.rounded-tl-12 {
+  border-top-left-radius: var(--radius-12);
+}
+
+.rounded-tl-16 {
+  border-top-left-radius: var(--radius-16);
+}
+
+.rounded-tl-20 {
+  border-top-left-radius: var(--radius-20);
+}
+
+.rounded-tl-24 {
+  border-top-left-radius: var(--radius-24);
+}
+
+.rounded-tl-28 {
+  border-top-left-radius: var(--radius-28);
+}
+
+.rounded-tl-32 {
+  border-top-left-radius: var(--radius-32);
+}
+
+.rounded-tl-40 {
+  border-top-left-radius: var(--radius-40);
+}
+
+.rounded-tl-48 {
+  border-top-left-radius: var(--radius-48);
+}
+
+.rounded-tl-80 {
+  border-top-left-radius: var(--radius-80);
+}
+
+.rounded-tr-0 {
+  border-top-right-radius: var(--radius-0);
+}
+
+.rounded-tr-4 {
+  border-top-right-radius: var(--radius-4);
+}
+
+.rounded-tr-8 {
+  border-top-right-radius: var(--radius-8);
+}
+
+.rounded-tr-12 {
+  border-top-right-radius: var(--radius-12);
+}
+
+.rounded-tr-16 {
+  border-top-right-radius: var(--radius-16);
+}
+
+.rounded-tr-20 {
+  border-top-right-radius: var(--radius-20);
+}
+
+.rounded-tr-24 {
+  border-top-right-radius: var(--radius-24);
+}
+
+.rounded-tr-28 {
+  border-top-right-radius: var(--radius-28);
+}
+
+.rounded-tr-32 {
+  border-top-right-radius: var(--radius-32);
+}
+
+.rounded-tr-40 {
+  border-top-right-radius: var(--radius-40);
+}
+
+.rounded-tr-48 {
+  border-top-right-radius: var(--radius-48);
+}
+
+.rounded-tr-80 {
+  border-top-right-radius: var(--radius-80);
+}
+
+.rounded-br-0 {
+  border-bottom-right-radius: var(--radius-0);
+}
+
+.rounded-br-4 {
+  border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-br-8 {
+  border-bottom-right-radius: var(--radius-8);
+}
+
+.rounded-br-12 {
+  border-bottom-right-radius: var(--radius-12);
+}
+
+.rounded-br-16 {
+  border-bottom-right-radius: var(--radius-16);
+}
+
+.rounded-br-20 {
+  border-bottom-right-radius: var(--radius-20);
+}
+
+.rounded-br-24 {
+  border-bottom-right-radius: var(--radius-24);
+}
+
+.rounded-br-28 {
+  border-bottom-right-radius: var(--radius-28);
+}
+
+.rounded-br-32 {
+  border-bottom-right-radius: var(--radius-32);
+}
+
+.rounded-br-40 {
+  border-bottom-right-radius: var(--radius-40);
+}
+
+.rounded-br-48 {
+  border-bottom-right-radius: var(--radius-48);
+}
+
+.rounded-br-80 {
+  border-bottom-right-radius: var(--radius-80);
+}
+
+.rounded-bl-0 {
+  border-bottom-left-radius: var(--radius-0);
+}
+
+.rounded-bl-4 {
+  border-bottom-left-radius: var(--radius-4);
+}
+
+.rounded-bl-8 {
+  border-bottom-left-radius: var(--radius-8);
+}
+
+.rounded-bl-12 {
+  border-bottom-left-radius: var(--radius-12);
+}
+
+.rounded-bl-16 {
+  border-bottom-left-radius: var(--radius-16);
+}
+
+.rounded-bl-20 {
+  border-bottom-left-radius: var(--radius-20);
+}
+
+.rounded-bl-24 {
+  border-bottom-left-radius: var(--radius-24);
+}
+
+.rounded-bl-28 {
+  border-bottom-left-radius: var(--radius-28);
+}
+
+.rounded-bl-32 {
+  border-bottom-left-radius: var(--radius-32);
+}
+
+.rounded-bl-40 {
+  border-bottom-left-radius: var(--radius-40);
+}
+
+.rounded-bl-48 {
+  border-bottom-left-radius: var(--radius-48);
+}
+
+.rounded-bl-80 {
+  border-bottom-left-radius: var(--radius-80);
+}
+
+/* === Spacing - Padding 工具类 === */
+.p-0 {
+  padding: var(--spacing-0);
+}
+
+.p-4 {
+  padding: var(--spacing-4);
+}
+
+.p-8 {
+  padding: var(--spacing-8);
+}
+
+.p-12 {
+  padding: var(--spacing-12);
+}
+
+.p-16 {
+  padding: var(--spacing-16);
+}
+
+.p-20 {
+  padding: var(--spacing-20);
+}
+
+.p-24 {
+  padding: var(--spacing-24);
+}
+
+.p-28 {
+  padding: var(--spacing-28);
+}
+
+.p-40 {
+  padding: var(--spacing-40);
+}
+
+.p-48 {
+  padding: var(--spacing-48);
+}
+
+.px-0 {
+  padding-left: var(--spacing-0);
+  padding-right: var(--spacing-0);
+}
+
+.px-4 {
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+.px-8 {
+  padding-left: var(--spacing-8);
+  padding-right: var(--spacing-8);
+}
+
+.px-12 {
+  padding-left: var(--spacing-12);
+  padding-right: var(--spacing-12);
+}
+
+.px-16 {
+  padding-left: var(--spacing-16);
+  padding-right: var(--spacing-16);
+}
+
+.px-20 {
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
+}
+
+.px-24 {
+  padding-left: var(--spacing-24);
+  padding-right: var(--spacing-24);
+}
+
+.px-28 {
+  padding-left: var(--spacing-28);
+  padding-right: var(--spacing-28);
+}
+
+.px-40 {
+  padding-left: var(--spacing-40);
+  padding-right: var(--spacing-40);
+}
+
+.px-48 {
+  padding-left: var(--spacing-48);
+  padding-right: var(--spacing-48);
+}
+
+.py-0 {
+  padding-top: var(--spacing-0);
+  padding-bottom: var(--spacing-0);
+}
+
+.py-4 {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+
+.py-8 {
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+}
+
+.py-12 {
+  padding-top: var(--spacing-12);
+  padding-bottom: var(--spacing-12);
+}
+
+.py-16 {
+  padding-top: var(--spacing-16);
+  padding-bottom: var(--spacing-16);
+}
+
+.py-20 {
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+}
+
+.py-24 {
+  padding-top: var(--spacing-24);
+  padding-bottom: var(--spacing-24);
+}
+
+.py-28 {
+  padding-top: var(--spacing-28);
+  padding-bottom: var(--spacing-28);
+}
+
+.py-40 {
+  padding-top: var(--spacing-40);
+  padding-bottom: var(--spacing-40);
+}
+
+.py-48 {
+  padding-top: var(--spacing-48);
+  padding-bottom: var(--spacing-48);
+}
+
+.pt-0 {
+  padding-top: var(--spacing-0);
+}
+
+.pt-4 {
+  padding-top: var(--spacing-4);
+}
+
+.pt-8 {
+  padding-top: var(--spacing-8);
+}
+
+.pt-12 {
+  padding-top: var(--spacing-12);
+}
+
+.pt-16 {
+  padding-top: var(--spacing-16);
+}
+
+.pt-20 {
+  padding-top: var(--spacing-20);
+}
+
+.pt-24 {
+  padding-top: var(--spacing-24);
+}
+
+.pt-28 {
+  padding-top: var(--spacing-28);
+}
+
+.pt-40 {
+  padding-top: var(--spacing-40);
+}
+
+.pt-48 {
+  padding-top: var(--spacing-48);
+}
+
+.pr-0 {
+  padding-right: var(--spacing-0);
+}
+
+.pr-4 {
+  padding-right: var(--spacing-4);
+}
+
+.pr-8 {
+  padding-right: var(--spacing-8);
+}
+
+.pr-12 {
+  padding-right: var(--spacing-12);
+}
+
+.pr-16 {
+  padding-right: var(--spacing-16);
+}
+
+.pr-20 {
+  padding-right: var(--spacing-20);
+}
+
+.pr-24 {
+  padding-right: var(--spacing-24);
+}
+
+.pr-28 {
+  padding-right: var(--spacing-28);
+}
+
+.pr-40 {
+  padding-right: var(--spacing-40);
+}
+
+.pr-48 {
+  padding-right: var(--spacing-48);
+}
+
+.pb-0 {
+  padding-bottom: var(--spacing-0);
+}
+
+.pb-4 {
+  padding-bottom: var(--spacing-4);
+}
+
+.pb-8 {
+  padding-bottom: var(--spacing-8);
+}
+
+.pb-12 {
+  padding-bottom: var(--spacing-12);
+}
+
+.pb-16 {
+  padding-bottom: var(--spacing-16);
+}
+
+.pb-20 {
+  padding-bottom: var(--spacing-20);
+}
+
+.pb-24 {
+  padding-bottom: var(--spacing-24);
+}
+
+.pb-28 {
+  padding-bottom: var(--spacing-28);
+}
+
+.pb-40 {
+  padding-bottom: var(--spacing-40);
+}
+
+.pb-48 {
+  padding-bottom: var(--spacing-48);
+}
+
+.pl-0 {
+  padding-left: var(--spacing-0);
+}
+
+.pl-4 {
+  padding-left: var(--spacing-4);
+}
+
+.pl-8 {
+  padding-left: var(--spacing-8);
+}
+
+.pl-12 {
+  padding-left: var(--spacing-12);
+}
+
+.pl-16 {
+  padding-left: var(--spacing-16);
+}
+
+.pl-20 {
+  padding-left: var(--spacing-20);
+}
+
+.pl-24 {
+  padding-left: var(--spacing-24);
+}
+
+.pl-28 {
+  padding-left: var(--spacing-28);
+}
+
+.pl-40 {
+  padding-left: var(--spacing-40);
+}
+
+.pl-48 {
+  padding-left: var(--spacing-48);
+}
+
+/* === Spacing - Margin 工具类 === */
+.m-0 {
+  margin: var(--spacing-0);
+}
+
+.m-4 {
+  margin: var(--spacing-4);
+}
+
+.m-8 {
+  margin: var(--spacing-8);
+}
+
+.m-12 {
+  margin: var(--spacing-12);
+}
+
+.m-16 {
+  margin: var(--spacing-16);
+}
+
+.m-20 {
+  margin: var(--spacing-20);
+}
+
+.m-24 {
+  margin: var(--spacing-24);
+}
+
+.m-28 {
+  margin: var(--spacing-28);
+}
+
+.m-40 {
+  margin: var(--spacing-40);
+}
+
+.m-48 {
+  margin: var(--spacing-48);
+}
+
+.mx-0 {
+  margin-left: var(--spacing-0);
+  margin-right: var(--spacing-0);
+}
+
+.mx-4 {
+  margin-left: var(--spacing-4);
+  margin-right: var(--spacing-4);
+}
+
+.mx-8 {
+  margin-left: var(--spacing-8);
+  margin-right: var(--spacing-8);
+}
+
+.mx-12 {
+  margin-left: var(--spacing-12);
+  margin-right: var(--spacing-12);
+}
+
+.mx-16 {
+  margin-left: var(--spacing-16);
+  margin-right: var(--spacing-16);
+}
+
+.mx-20 {
+  margin-left: var(--spacing-20);
+  margin-right: var(--spacing-20);
+}
+
+.mx-24 {
+  margin-left: var(--spacing-24);
+  margin-right: var(--spacing-24);
+}
+
+.mx-28 {
+  margin-left: var(--spacing-28);
+  margin-right: var(--spacing-28);
+}
+
+.mx-40 {
+  margin-left: var(--spacing-40);
+  margin-right: var(--spacing-40);
+}
+
+.mx-48 {
+  margin-left: var(--spacing-48);
+  margin-right: var(--spacing-48);
+}
+
+.my-0 {
+  margin-top: var(--spacing-0);
+  margin-bottom: var(--spacing-0);
+}
+
+.my-4 {
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.my-8 {
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
+.my-12 {
+  margin-top: var(--spacing-12);
+  margin-bottom: var(--spacing-12);
+}
+
+.my-16 {
+  margin-top: var(--spacing-16);
+  margin-bottom: var(--spacing-16);
+}
+
+.my-20 {
+  margin-top: var(--spacing-20);
+  margin-bottom: var(--spacing-20);
+}
+
+.my-24 {
+  margin-top: var(--spacing-24);
+  margin-bottom: var(--spacing-24);
+}
+
+.my-28 {
+  margin-top: var(--spacing-28);
+  margin-bottom: var(--spacing-28);
+}
+
+.my-40 {
+  margin-top: var(--spacing-40);
+  margin-bottom: var(--spacing-40);
+}
+
+.my-48 {
+  margin-top: var(--spacing-48);
+  margin-bottom: var(--spacing-48);
+}
+
+.mt-0 {
+  margin-top: var(--spacing-0);
+}
+
+.mt-4 {
+  margin-top: var(--spacing-4);
+}
+
+.mt-8 {
+  margin-top: var(--spacing-8);
+}
+
+.mt-12 {
+  margin-top: var(--spacing-12);
+}
+
+.mt-16 {
+  margin-top: var(--spacing-16);
+}
+
+.mt-20 {
+  margin-top: var(--spacing-20);
+}
+
+.mt-24 {
+  margin-top: var(--spacing-24);
+}
+
+.mt-28 {
+  margin-top: var(--spacing-28);
+}
+
+.mt-40 {
+  margin-top: var(--spacing-40);
+}
+
+.mt-48 {
+  margin-top: var(--spacing-48);
+}
+
+.mr-0 {
+  margin-right: var(--spacing-0);
+}
+
+.mr-4 {
+  margin-right: var(--spacing-4);
+}
+
+.mr-8 {
+  margin-right: var(--spacing-8);
+}
+
+.mr-12 {
+  margin-right: var(--spacing-12);
+}
+
+.mr-16 {
+  margin-right: var(--spacing-16);
+}
+
+.mr-20 {
+  margin-right: var(--spacing-20);
+}
+
+.mr-24 {
+  margin-right: var(--spacing-24);
+}
+
+.mr-28 {
+  margin-right: var(--spacing-28);
+}
+
+.mr-40 {
+  margin-right: var(--spacing-40);
+}
+
+.mr-48 {
+  margin-right: var(--spacing-48);
+}
+
+.mb-0 {
+  margin-bottom: var(--spacing-0);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-4);
+}
+
+.mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+.mb-12 {
+  margin-bottom: var(--spacing-12);
+}
+
+.mb-16 {
+  margin-bottom: var(--spacing-16);
+}
+
+.mb-20 {
+  margin-bottom: var(--spacing-20);
+}
+
+.mb-24 {
+  margin-bottom: var(--spacing-24);
+}
+
+.mb-28 {
+  margin-bottom: var(--spacing-28);
+}
+
+.mb-40 {
+  margin-bottom: var(--spacing-40);
+}
+
+.mb-48 {
+  margin-bottom: var(--spacing-48);
+}
+
+.ml-0 {
+  margin-left: var(--spacing-0);
+}
+
+.ml-4 {
+  margin-left: var(--spacing-4);
+}
+
+.ml-8 {
+  margin-left: var(--spacing-8);
+}
+
+.ml-12 {
+  margin-left: var(--spacing-12);
+}
+
+.ml-16 {
+  margin-left: var(--spacing-16);
+}
+
+.ml-20 {
+  margin-left: var(--spacing-20);
+}
+
+.ml-24 {
+  margin-left: var(--spacing-24);
+}
+
+.ml-28 {
+  margin-left: var(--spacing-28);
+}
+
+.ml-40 {
+  margin-left: var(--spacing-40);
+}
+
+.ml-48 {
+  margin-left: var(--spacing-48);
+}
+
+/* === Spacing - Gap 工具类 === */
+.gap-0 {
+  gap: var(--spacing-0);
+}
+
+.gap-4 {
+  gap: var(--spacing-4);
+}
+
+.gap-8 {
+  gap: var(--spacing-8);
+}
+
+.gap-12 {
+  gap: var(--spacing-12);
+}
+
+.gap-16 {
+  gap: var(--spacing-16);
+}
+
+.gap-20 {
+  gap: var(--spacing-20);
+}
+
+.gap-24 {
+  gap: var(--spacing-24);
+}
+
+.gap-28 {
+  gap: var(--spacing-28);
+}
+
+.gap-40 {
+  gap: var(--spacing-40);
+}
+
+.gap-48 {
+  gap: var(--spacing-48);
+}
+
+/* === Size 工具类 === */
+.size-16 {
+  width: var(--size-16);
+  height: var(--size-16);
+}
+
+.size-20 {
+  width: var(--size-20);
+  height: var(--size-20);
+}
+
+.size-24 {
+  width: var(--size-24);
+  height: var(--size-24);
+}
+
+.size-28 {
+  width: var(--size-28);
+  height: var(--size-28);
+}
+
+.size-32 {
+  width: var(--size-32);
+  height: var(--size-32);
+}
+
+.size-40 {
+  width: var(--size-40);
+  height: var(--size-40);
+}
+
+.size-48 {
+  width: var(--size-48);
+  height: var(--size-48);
+}
+
+.size-56 {
+  width: var(--size-56);
+  height: var(--size-56);
+}
+
+.size-64 {
+  width: var(--size-64);
+  height: var(--size-64);
+}
+
+.size-72 {
+  width: var(--size-72);
+  height: var(--size-72);
+}
+
+.size-80 {
+  width: var(--size-80);
+  height: var(--size-80);
+}
+
+/* === Size - Width 工具类 === */
+.w-16 {
+  width: var(--size-16);
+}
+
+.w-20 {
+  width: var(--size-20);
+}
+
+.w-24 {
+  width: var(--size-24);
+}
+
+.w-28 {
+  width: var(--size-28);
+}
+
+.w-32 {
+  width: var(--size-32);
+}
+
+.w-40 {
+  width: var(--size-40);
+}
+
+.w-48 {
+  width: var(--size-48);
+}
+
+.w-56 {
+  width: var(--size-56);
+}
+
+.w-64 {
+  width: var(--size-64);
+}
+
+.w-72 {
+  width: var(--size-72);
+}
+
+.w-80 {
+  width: var(--size-80);
+}
+
+/* === Size - Height 工具类 === */
+.h-16 {
+  height: var(--size-16);
+}
+
+.h-20 {
+  height: var(--size-20);
+}
+
+.h-24 {
+  height: var(--size-24);
+}
+
+.h-28 {
+  height: var(--size-28);
+}
+
+.h-32 {
+  height: var(--size-32);
+}
+
+.h-40 {
+  height: var(--size-40);
+}
+
+.h-48 {
+  height: var(--size-48);
+}
+
+.h-56 {
+  height: var(--size-56);
+}
+
+.h-64 {
+  height: var(--size-64);
+}
+
+.h-72 {
+  height: var(--size-72);
+}
+
+.h-80 {
+  height: var(--size-80);
+}
+
+/* === Font Size 工具类 === */
+.text-12 {
+  font-size: var(--text-12);
+  line-height: var(--leading-12);
+}
+
+.text-14 {
+  font-size: var(--text-14);
+  line-height: var(--leading-14);
+}
+
+.text-16 {
+  font-size: var(--text-16);
+  line-height: var(--leading-16);
+}
+
+.text-18 {
+  font-size: var(--text-18);
+  line-height: var(--leading-18);
+}
+
+.text-24 {
+  font-size: var(--text-24);
+  line-height: var(--leading-24);
+}
+
+.text-32 {
+  font-size: var(--text-32);
+  line-height: var(--leading-32);
+}
+
+.text-48 {
+  font-size: var(--text-48);
+  line-height: var(--leading-48);
+}
+
+.text-64 {
+  font-size: var(--text-64);
+  line-height: var(--leading-64);
+}
+
+
+/* === Font Size - Paragraph 工具类 === */
+.text-12.paragraph {
+  margin-bottom: 0.5rem;
+}
+
+.text-14.paragraph {
+  margin-bottom: 0.625rem;
+}
+
+.text-16.paragraph {
+  margin-bottom: 0.75rem;
+}
+
+.text-18.paragraph {
+  margin-bottom: 0.875rem;
+}
+
+.text-24.paragraph {
+  margin-bottom: 1.125rem;
+}
+
+.text-32.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.text-48.paragraph {
+  margin-bottom: 2.25rem;
+}
+
+.text-64.paragraph {
+  margin-bottom: 3rem;
+}
+
+
+/* === Font Weight 工具类 === */
+.font-regular {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}

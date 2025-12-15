@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnowUI 主题测试</title>
+  <link rel="stylesheet" href="./snowui.css">
+  <style>
+    body {
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .card {
+      padding: 2rem;
+      background-color: var(--background-2);
+      border: 1px solid var(--black-10);
+      margin-bottom: 1rem;
+      transition: border-radius 0.3s;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--primary);
+      color: var(--white-100);
+      border: none;
+      cursor: pointer;
+      transition: border-radius 0.3s;
+    }
+
+    .theme-btn {
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid var(--black-20);
+      background: var(--background-1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="theme-snowui-light">
+  <h1>SnowUI 主题测试</h1>
+  <p class="text-16 paragraph">当前主题: <span id="current-theme">theme-snowui-light</span></p>
+
+  <div class="mb-24">
+    <button class="theme-btn" onclick="setTheme('theme-snowui-light')">SnowUI Light</button>
+    <button class="theme-btn" onclick="setTheme('theme-snowui-dark')">SnowUI Dark</button>
+    <button class="theme-btn" onclick="setTheme('theme-ios-light')">iOS Light</button>
+    <button class="theme-btn" onclick="setTheme('theme-playful')">Playful (活泼)</button>
+    <button class="theme-btn" onclick="setTheme('theme-elegant')">Elegant (优雅)</button>
+    <button class="theme-btn" onclick="setTheme('theme-technical')">Technical (硬朗)</button>
+    <button class="theme-btn" onclick="setTheme('theme-soft')">Soft (柔和)</button>
+  </div>
+
+  <div class="card rounded-lg">
+    <h2 class="text-24 font-semibold mb-16">字体与圆角 (Typography & Radius)</h2>
+    <p class="text-16 paragraph">这是一个段落，用于展示当前字体系列。卡片使用了 rounded-lg 类。</p>
+    <p class="text-14 text-black-40">当前字体: <span id="font-family-display"></span></p>
+  </div>
+
+  <div class="card rounded-xl">
+    <h2 class="text-24 font-semibold mb-16">按钮与交互 (Buttons)</h2>
+    <button class="btn rounded-md">主要按钮 (rounded-md)</button>
+    <button class="btn rounded-full ml-16">胶囊按钮 (rounded-full)</button>
+  </div>
+
+  <div class="card rounded-md">
+    <h2 class="text-24 font-semibold mb-16">颜色 (Colors)</h2>
+    <div class="gap-16" style="display: flex; flex-wrap: wrap;">
+      <div class="size-48 bg-purple rounded-md"></div>
+      <div class="size-48 bg-indigo rounded-md"></div>
+      <div class="size-48 bg-blue rounded-md"></div>
+      <div class="size-48 bg-mint rounded-md"></div>
+      <div class="size-48 bg-orange rounded-md"></div>
+    </div>
+  </div>
+
+  <script>
+    function setTheme(themeName) {
+      document.body.className = themeName;
+      document.getElementById('current-theme').textContent = themeName;
+      updateFontDisplay();
+    }
+
+    function updateFontDisplay() {
+      const font = getComputedStyle(document.body).fontFamily;
+      document.getElementById('font-family-display').textContent = font;
+    }
+
+    updateFontDisplay();
+  </script>
+</body>
+
+</html>

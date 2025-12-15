@@ -1,16 +1,16 @@
 /*
   SnowUI 设计系统 CSS
-  已拆分为 3 个模块：
-  1. snowui-colors.css  —— 颜色变量 & 颜色工具类
-  2. snowui-layout.css  —— 布局与通用工具类
-  3. snowui-base.css    —— 浏览器基础 & 全局样式
+  已拆分为 4 个模块：
+  1. snowui-tokens.css    —— 所有设计变量 (Colors, Radius, Spacing, Fonts)
+  2. snowui-utilities.css —— 工具类 (使用变量)
+  3. snowui-base.css      —— 浏览器基础 & 全局样式
+  4. snowui-themes.css    —— 主题定义 (Themes)
 
   兼容说明：
-  - 仍然可以像之前一样只引入 snowui.css；
-  - 也可以按需只引入其中某几个模块。
+  - 引入此文件即可获得完整功能。
 */
 
-@import url('./snowui-colors.css');
-@import url('./snowui-layout.css');
+@import url('./snowui-tokens.css');
+@import url('./snowui-utilities.css');
 @import url('./snowui-base.css');
-
+@import url('./snowui-themes.css');

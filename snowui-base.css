@@ -8,14 +8,18 @@
    ============================================ */
 
 @layer base {
+
   /* 所有人最喜欢的 Box-sizing 设置 */
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
   html {
     font-size: clamp(14px, 0.875vw + 10px, 16px);
-    scroll-behavior: smooth; /* 页面平滑滚动 */
+    scroll-behavior: smooth;
+    /* 页面平滑滚动 */
   }
 
   body {
@@ -23,8 +27,8 @@
     background-color: var(--background);
     color: var(--foreground);
     font-weight: 400;
-    font-size: 0.875rem; 
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -35,30 +39,55 @@
   }
 
   /* 移除多余 margin，使排版更可控 */
-  h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
     margin: 0;
   }
 
   /* 避免长单词导致布局溢出 */
-  p, h1, h2, h3, h4, h5, h6 {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     overflow-wrap: break-word;
   }
 
   /* 列表初始化，不破坏语义 */
-  ul, ol {
+  ul,
+  ol {
     margin: 0;
-    padding-left: 0.75em; /* 保留合理的缩进 */
+    padding-left: 0.75em;
+    /* 保留合理的缩进 */
   }
 
   /* 图片默认自适应 */
-  img, picture, svg, video, canvas {
+  img,
+  picture,
+  svg,
+  video,
+  canvas {
     display: block;
     max-width: 100%;
     height: auto;
   }
 
-    /* 表单元素统一外观 */
-  button, input, textarea, select {
+  /* 表单元素统一外观 */
+  button,
+  input,
+  textarea,
+  select {
     font: inherit;
     margin: 0;
   }
@@ -67,7 +96,9 @@
     创建一个新的层叠上下文 
     防止使用 z-index 时出现意外的覆盖问题 
   */
-  #root, #__next, body > div[id] {
+  #root,
+  #__next,
+  body>div[id] {
     isolation: isolate;
   }
 
@@ -107,5 +138,3 @@ svg[viewBox="0 0 32 32"] g[opacity="0.2"],
 svg[viewBox="0 0 32 32"] g[opacity=".2"] {
   opacity: 0.08 !important;
 }
-
-
