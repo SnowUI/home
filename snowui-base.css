@@ -1,5 +1,6 @@
 /*
-  SnowUI 设计系统 CSS - 浏览器基础 & 全局样式模块
+  SnowUI 设计系统 CSS - 浏览器基础 & 全局样式模块 v1.0.0
+
   建议：未来可在此补充 reset/normalize 等浏览器样式重置
 */
 
@@ -16,6 +17,50 @@
     box-sizing: border-box;
   }
 
+  /*
+   * 页面级全局滚动条：引入 snowui.css 后无需额外添加 class。
+   * 横向与纵向均为 8px；几何尺寸固定，hover 只改变颜色。
+   * 组件内部需要独立行为时，使用 components/styles 中的
+   * .snowui-scrollbar 或 .snowui-overlay-scrollbar。
+   */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--black-20, rgba(0, 0, 0, 0.2)) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--black-20, rgba(0, 0, 0, 0.2));
+    border-radius: 99px;
+    transition: background-color 150ms ease-out;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--black-20, rgba(0, 0, 0, 0.2));
+  }
+
   html {
     font-size: clamp(14px, 0.875vw + 10px, 16px);
     scroll-behavior: smooth;
@@ -27,7 +72,8 @@
     background-color: var(--background);
     color: var(--foreground);
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: var(--text-14, 0.875rem);
+    line-height: var(--leading-14, 1.25rem);
     font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -35,7 +81,16 @@
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    /* 相对当前字号稍微缩小 */
+    font-size: 0.875em;
+    line-height: 1.2;
+    font-family: var(--font-mono);
+    background-color: var(--black-4);
+    border-radius: 0.4em;
+    padding: 0.25em 0.35em;
+    margin: 0 0.25em;
+    display: inline-block;
+    /* 使 margin 在所有方向生效 */
   }
 
   /* 移除多余 margin，使排版更可控 */
@@ -64,12 +119,19 @@
     overflow-wrap: break-word;
   }
 
-  /* 列表初始化，不破坏语义 */
+  /* 列表样式 */
   ul,
   ol {
     margin: 0;
     padding-left: 0.75em;
-    /* 保留合理的缩进 */
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  ol li {
+    list-style-type: decimal;
   }
 
   /* 图片默认自适应 */
@@ -121,7 +183,7 @@
 
   /* 禁用状态标准样式 */
   :disabled {
-    cursor: not-allowed;
+    cursor: default;
     opacity: 0.2;
   }
 

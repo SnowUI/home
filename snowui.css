@@ -1,16 +1,23 @@
 /*
-  SnowUI 设计系统 CSS
+  SnowUI 设计系统 CSS v1.1.0
+  SnowUI是类似tailwind css的精简版, 类名和SnowUI设计系统(https://snowui.byewind.com)保持一致, 同时尽可能兼容tailwind css的类名.
+  
   已拆分为 4 个模块：
-  1. snowui-tokens.css    —— 所有设计变量 (Colors, Radius, Spacing, Fonts)
-  2. snowui-utilities.css —— 工具类 (使用变量)
-  3. snowui-base.css      —— 浏览器基础 & 全局样式
-  4. snowui-themes.css    —— 主题定义 (Themes)
+  1. snowui-base.css      —— 浏览器基础 & 全局样式
+  2. snowui-utilities.css —— 工具类 (颜色使用 CSS 变量, 其余使用具体 rem 值)
+  3. snowui-themes.css    —— 主题定义 (Themes) + 颜色变量 + 缩放系数
+  4. snowui-extra.css     —— 额外样式 (可选)
+  使用方法：
+  1. 直接引入此文件即可获得完整功能。
+  2. 按需引入，例如只引入基础样式和工具类。
+    @import url('./snowui-base.css');
+    @import url('./snowui-utilities.css');
 
   兼容说明：
   - 引入此文件即可获得完整功能。
 */
 
-@import url('./snowui-tokens.css');
-@import url('./snowui-utilities.css');
 @import url('./snowui-base.css');
+@import url('./snowui-utilities.css');
 @import url('./snowui-themes.css');
+@import url('./snowui-extra.css');

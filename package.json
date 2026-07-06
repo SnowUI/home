@@ -1,0 +1,13 @@
+{
+  "name": "@snowui-design-system/styles",
+  "version": "0.1.0",
+  "exports": {
+    ".":            "./snowui.css",
+    "./themes":     "./snowui-themes.css",
+    "./components": "./snowui-components.css",
+    "./base":       "./snowui-base.css",
+    "./utilities":  "./snowui-utilities.css",
+    "./extra":      "./snowui-extra.css"
+  },
+  "files": ["*.css", "README.md"]
+}

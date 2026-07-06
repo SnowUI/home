@@ -1,0 +1,277 @@
+/* ============================================
+   SnowUI Styles (设计风格)
+   ============================================ 
+   
+   本文件定义设计风格的简写类。
+   这些简写类使用语义化的默认值（如 --foreground）。
+   
+   注意: 本文件目前暂不使用。
+   Token 规范: 基于 tokens.css 中的梯度变量（--*-n）。
+*/
+
+/* ============================================
+   1. 颜色简写 (Color Shortcuts)
+   ============================================ */
+
+/* === 背景简写 === */
+.bg {
+    background-color: var(--foreground);
+    --hover-opacity: 20%;
+}
+
+/* === 文字简写 === */
+.text {
+    color: var(--foreground);
+}
+
+/* === 边框简写 (全边框) === */
+.border {
+    border: var(--border-1) solid var(--foreground);
+}
+
+/* === 内边框简写 === */
+.inset {
+    box-shadow: inset 0 0 0 var(--border-1) var(--foreground);
+}
+
+/* ============================================
+   2. 圆角简写 (Rounded Shortcuts)
+   ============================================ */
+/* 默认 16px = var(--radius-4) */
+
+.rounded {
+    border-radius: var(--radius-4);
+}
+
+/* 双边圆角 */
+.rounded-t {
+    border-top-left-radius: var(--radius-4);
+    border-top-right-radius: var(--radius-4);
+}
+
+.rounded-r {
+    border-top-right-radius: var(--radius-4);
+    border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-b {
+    border-bottom-left-radius: var(--radius-4);
+    border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-l {
+    border-top-left-radius: var(--radius-4);
+    border-bottom-left-radius: var(--radius-4);
+}
+
+/* 单角圆角 */
+.rounded-tl {
+    border-top-left-radius: var(--radius-4);
+}
+
+.rounded-tr {
+    border-top-right-radius: var(--radius-4);
+}
+
+.rounded-br {
+    border-bottom-right-radius: var(--radius-4);
+}
+
+.rounded-bl {
+    border-bottom-left-radius: var(--radius-4);
+}
+
+/* ============================================
+   3. 单边边框简写 (Single Border Shortcuts)
+   ============================================ */
+/* 使用语义化默认颜色 (--black-10) */
+
+.border-t {
+    border-top: var(--border-1) solid var(--black-10);
+}
+
+.border-b {
+    border-bottom: var(--border-1) solid var(--black-10);
+}
+
+.border-l {
+    border-left: var(--border-1) solid var(--black-10);
+}
+
+.border-r {
+    border-right: var(--border-1) solid var(--black-10);
+}
+
+/* ============================================
+   4. 尺寸简写 (Size Shortcuts)
+   ============================================ */
+/* 默认 64px = var(--size-16) */
+
+.size {
+    width: var(--size-16);
+    height: var(--size-16);
+}
+
+.w {
+    width: var(--size-16);
+}
+
+.h {
+    height: var(--size-16);
+}
+
+.min-w {
+    min-width: var(--size-16);
+}
+
+.min-h {
+    min-height: var(--size-16);
+}
+
+.min {
+    min-width: var(--size-16);
+    min-height: var(--size-16);
+}
+
+.max-w {
+    max-width: calc(var(--size-20) * 4);
+}
+
+.max-h {
+    max-height: calc(var(--size-20) * 4);
+}
+
+.max {
+    max-width: calc(var(--size-20) * 4);
+    max-height: calc(var(--size-20) * 4);
+}
+
+/* ============================================
+   5. 间距简写 (Spacing Shortcuts)
+   ============================================ */
+/* 默认 16px = var(--padding-4) */
+
+/* Padding */
+.p {
+    padding: var(--padding-4);
+}
+
+.px {
+    padding-left: var(--padding-4);
+    padding-right: var(--padding-4);
+}
+
+.py {
+    padding-top: var(--padding-4);
+    padding-bottom: var(--padding-4);
+}
+
+.pt {
+    padding-top: var(--padding-4);
+}
+
+.pr {
+    padding-right: var(--padding-4);
+}
+
+.pb {
+    padding-bottom: var(--padding-4);
+}
+
+.pl {
+    padding-left: var(--padding-4);
+}
+
+/* Margin */
+.m {
+    margin: var(--padding-4);
+}
+
+.mx {
+    margin-left: var(--padding-4);
+    margin-right: var(--padding-4);
+}
+
+.my {
+    margin-top: var(--padding-4);
+    margin-bottom: var(--padding-4);
+}
+
+.mt {
+    margin-top: var(--padding-4);
+}
+
+.mr {
+    margin-right: var(--padding-4);
+}
+
+.mb {
+    margin-bottom: var(--padding-4);
+}
+
+.ml {
+    margin-left: var(--padding-4);
+}
+
+/* Gap */
+.gap {
+    gap: var(--gap-4);
+}
+
+/* ============================================
+   6. 定位简写 (Position Shortcuts)
+   ============================================ */
+/* 默认 16px = var(--padding-4) */
+
+.top {
+    top: var(--padding-4);
+}
+
+.right {
+    right: var(--padding-4);
+}
+
+.bottom {
+    bottom: var(--padding-4);
+}
+
+.left {
+    left: var(--padding-4);
+}
+
+/* ============================================
+   7. 视觉效果简写 (Visual Effects Shortcuts)
+   ============================================ */
+
+/* 阴影: 默认 drop-1 */
+.shadow {
+    box-shadow: 0 var(--border-1) var(--border-1) 0 rgba(0, 0, 0, 0.10);
+}
+
+/* 毛玻璃: 默认 blur-100 */
+.backdrop {
+    backdrop-filter: blur(3.125rem);
+}
+
+/* ============================================
+   8. 布局简写 (Layout Shortcuts)
+   ============================================ */
+
+/* Grid: 默认 1 列/行 */
+.grid-cols {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-rows {
+    grid-template-rows: repeat(1, 1fr);
+}
+
+/* ============================================
+   9. 字体简写 (Typography Shortcuts)
+   ============================================ */
+/* 默认 16px */
+
+.font {
+    font-size: var(--text-16, 1rem);
+    line-height: var(--leading-16, 1.5rem);
+}
