@@ -88,12 +88,13 @@
 
     /* ─────────────────────────────────────────
        Progress
-       line: gap=4px thickness=4px；circle: size=16px，确定态 thickness=4px，不确定态 thickness=15% size。
-       两种形态共享轨道底色与填充颜色。
-       label 默认排版 12px / 16px；空 label 自动显示实时值。
-    ───────────────────────────────────────── */
+        line 确定态: gap=4px thickness=4px；
+        circle / 不确定态对齐 Spinner: size=16px，thickness=size×15%（2.4px）。
+        两种形态共享轨道底色与填充颜色。
+        label 默认排版 12px / 16px；空 label 自动显示实时值。
+     ───────────────────────────────────────── */
     /* --snowui-progress-gap-override: ; */        /* line label 与轨道间距（默认 var(--gap-1) = 4px） */
-    /* --snowui-progress-thickness-override: ; */  /* line 高度 / circle 圆环粗细（默认 4px；circle 不确定态默认 size × 15%） */
+    /* --snowui-progress-thickness-override: ; */  /* line 高度 / circle 圆环粗细（line 确定态默认 4px；circle / 不确定态默认 size × 15%） */
     /* --snowui-progress-background-override: ; */ /* 轨道底色（默认 var(--black-4)） */
     /* --snowui-progress-color-override: ; */      /* 填充颜色（默认 var(--primary)） */
 
@@ -214,9 +215,6 @@
     /* --snowui-pagination-idle-opacity-override: ; */       /* 默认非当前文字 / Icon 透明度（默认 0.4） */
     /* --snowui-pagination-hover-opacity-override: ; */      /* 默认非当前文字 / Icon hover 透明度（默认 1） */
     /* --snowui-pagination-icon-size-override: ; */          /* 默认箭头 Icon 尺寸（默认 var(--size-4) = 16px） */
-    /* --snowui-pagination-item-min-width-override: ; */     /* 默认项最小宽度（默认 var(--size-6) = 24px） */
-    /* --snowui-pagination-item-min-height-override: ; */    /* 默认项最小高度（默认 var(--size-6) = 24px） */
-
 
     /* ─────────────────────────────────────────
        Separator
@@ -306,7 +304,7 @@
     /* --snowui-code-block-padding-y-override: ; */   /* 上下 padding（默认 var(--padding-5) = 20px） */
     /* --snowui-code-block-padding-x-override: ; */   /* 左右 padding（默认 var(--padding-5) = 20px） */
     /* --snowui-code-block-radius-override: ; */      /* 圆角（默认 var(--radius-4) = 16px） */
-    /* --snowui-code-block-gap-override: ; */         /* 代码区 / 操作区 gap（默认 var(--gap-1) = 4px） */
+    /* --snowui-code-block-gap-override: ; */         /* 操作按钮 gap（默认 var(--gap-2) = 8px） */
     /* --snowui-code-block-scroll-mask-size-override: ; */ /* 滚动边缘透明渐隐尺寸（默认 32px） */
 
 
@@ -436,7 +434,7 @@
     /* Button */
     /* --snowui-button-width-override: ; */         /* 宽度（默认值见组件源码） */
     /* --snowui-button-height-override: ; */        /* 高度（默认值见组件源码） */
-    /* --snowui-button-min-width-override: ; */     /* 最小宽度（默认值见组件源码） */
+    /* --snowui-button-min-width-override: ; */     /* 最小宽度（默认 max-content） */
     /* --snowui-button-min-height-override: ; */    /* 最小高度（默认值见组件源码） */
     /* --snowui-button-icon-size-override: ; */     /* 图标尺寸（尺寸 px，默认值见组件源码） */
     /* --snowui-button-background-override: ; */    /* 背景（默认值见组件源码） */
@@ -497,6 +495,23 @@
     /* --snowui-popover-radius-override: ; */   /* border-radius(默认 sm 16 / md 24 / lg 32) */
     /* --snowui-popover-font-size-override: ; */    /* font-size(默认 var(--text-14) = 14px) */
     /* --snowui-popover-line-height-override: ; */  /* line-height(默认 var(--leading-14)) */
+
+    /* PRO SidePanel */
+    /* --snowui-side-panel-radius-override: ; */            /* 圆角（默认 20px = var(--radius-5)） */
+    /* --snowui-side-panel-font-size-override: ; */         /* font-size（默认 var(--text-14) = 14px） */
+    /* --snowui-side-panel-line-height-override: ; */       /* line-height（默认 var(--leading-14)） */
+    /* --snowui-side-panel-z-index-override: ; */           /* 浮层 z-index（默认 50） */
+    /* --snowui-side-panel-height-override: ; */            /* 仅内嵌模式高度（默认 100dvh - 32px） */
+    /* --snowui-side-panel-scroll-mask-top-size-override: ; */     /* 上遮罩带高度（默认 48px；solid-ratio 0.8） */
+    /* --snowui-side-panel-scroll-mask-bottom-size-override: ; */  /* 下遮罩带高度（默认 56px；solid-ratio 0.8） */
+    /* --snowui-scroll-mask-top-size-override: ; */                 /* 通用滚动遮罩上遮罩带高度（默认跟随顶部工具栏高度） */
+    /* --snowui-scroll-mask-bottom-size-override: ; */              /* 通用滚动遮罩下遮罩带高度（默认 16px；有底部工具栏时 56px） */
+    /* --snowui-scroll-mask-top-solid-ratio-override: ; */          /* 通用滚动遮罩上侧实心占比（默认 0.8） */
+    /* --snowui-scroll-mask-bottom-solid-ratio-override: ; */       /* 通用滚动遮罩下侧实心占比（默认 0.8） */
+
+    /* Indicator */
+    /* --snowui-indicator-color-override: ; */         /* 默认颜色（默认 var(--black-10)） */
+    /* --snowui-indicator-active-color-override: ; */  /* hover / focus / dragging 颜色（默认 var(--black-20)） */
 
     /* Radio */
     /* --snowui-radio-size-override: ; */                    /* 整体尺寸（尺寸 px，默认值见组件源码） */
@@ -717,13 +732,13 @@
     /* --snowui-table-row-radius-override: ; */ /* default: --radius-3 */
     /* --snowui-table-body-skeleton-width-override: ; */ /* default: 54%–76% staggered by row and column */
     /* --snowui-table-head-padding-override: ; */ /* default: --padding-2 --padding-3 */
-    /* --snowui-table-head-selection-padding-override: ; */ /* default: --padding-2 0 --padding-2 --padding-2 */
-    /* --snowui-table-head-actions-padding-override: ; */ /* default: --padding-2 --padding-2 --padding-2 0 */
+    /* --snowui-table-head-selection-padding-override: ; */ /* default: --padding-2 --padding-3 */
+    /* --snowui-table-head-actions-padding-override: ; */ /* default: --padding-2 --padding-3 */
     /* TableHead sortable foreground: black-100 at opacity .4; hover/focus/active-sort opacity 1; only the defaultSort column baseline stays neutral; built-in sort icon 16px with 0 gap. */
     /* TableHead resizable Indicator: default 1px × 16px, vertically centered via pin-right. */
     /* --snowui-table-cell-padding-override: ; */ /* default: --padding-2 --padding-3 */
-    /* --snowui-table-cell-selection-padding-override: ; */ /* default: --padding-2 0 --padding-2 --padding-2 */
-    /* --snowui-table-cell-actions-padding-override: ; */ /* default: --padding-2 --padding-2 --padding-2 0 */
+    /* --snowui-table-cell-selection-padding-override: ; */ /* default: --padding-2 --padding-3 */
+    /* --snowui-table-cell-actions-padding-override: ; */ /* default: --padding-2 --padding-3 */
     /* --snowui-table-cell-actions-gap-override: ; */ /* default: --gap-2 */
     /* --snowui-table-head-fade-start-override: ; */ /* default: ~14px fixed (表头第一列渐隐起点) */
     /* --snowui-table-head-fade-end-override: ; */ /* default: ~26px fixed (表头第一列渐隐终点) */
@@ -737,4 +752,72 @@
     /* --snowui-table-toolbar-radius-override: ; */ /* default: --radius-3 */
     /* --snowui-table-toolbar-background-override: ; */ /* default: --black-4 */
 
+}
+
+/* ─────────────────────────────────────────
+   Corner smoothing 渐进增强
+   仅在浏览器支持 CSS corner-shape 时，为已有圆角的组件启用 squircle 圆角。
+   不修改任何 border-radius 数值；不支持的浏览器会忽略本段。
+───────────────────────────────────────── */
+@supports (corner-shape: squircle) {
+    :where(
+        .snowui-accordion-item,
+        .snowui-avatar,
+        .snowui-badge,
+        .snowui-badge-dot,
+        .snowui-button,
+        .snowui-button-group,
+        .snowui-card,
+        .snowui-checkbox-visual,
+        .snowui-chip,
+        .snowui-code-block,
+        .snowui-code-block-copy-button,
+        .snowui-dialog,
+        .snowui-field,
+        .snowui-field-bordered,
+        .snowui-gradient-motion,
+        .snowui-icon,
+        .snowui-icon-content,
+        .snowui-image,
+        .snowui-indicator,
+        .snowui-input,
+        .snowui-input-color-swatch,
+        .snowui-input-date-segment,
+        .snowui-kbd,
+        .snowui-listbox-portal,
+        .snowui-menu-item,
+        .snowui-pagination-item,
+        .snowui-pagination-ellipsis,
+        .snowui-popover,
+        .snowui-progress-track,
+        .snowui-progress-fill,
+        .snowui-radio-visual,
+        .snowui-radio-dot,
+        .snowui-search-box,
+        .snowui-select-trigger,
+        .snowui-select-button-trigger,
+        .snowui-separator,
+        .snowui-slider-track,
+        .snowui-slider-fill,
+        .snowui-slider-thumb,
+        .snowui-skeleton-line,
+        .snowui-skeleton-rect,
+        .snowui-skeleton-circle,
+        .snowui-spinner-circle-gradient,
+        .snowui-switch-track,
+        .snowui-switch-thumb,
+        .snowui-tab,
+        .snowui-tab-indicator,
+        .snowui-table-cell,
+        .snowui-table-head,
+        .snowui-table-role-overlay-controls,
+        .snowui-table-selection-control,
+        .snowui-table-toolbar,
+        .snowui-tag,
+        .snowui-textarea,
+        .snowui-toast,
+        .snowui-tooltip
+    ) {
+        corner-shape: squircle;
+    }
 }
