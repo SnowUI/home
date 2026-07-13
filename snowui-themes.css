@@ -1,4 +1,12 @@
 /*
+ * SnowUI 主题同步文件。
+ * 仅允许项目所有者手动修改；每次必须同时修改以下两份文件并保持内容完全一致：
+ * - /Users/yuan/Project/snowui/styles/snowui-themes.css
+ * - /Users/yuan/Project/snowui/components/src/styles/themes.css
+ * AI、自动脚本和发布流程只能校验一致性，不得自动覆盖任一文件。
+ */
+
+/*
   SnowUI 设计系统 CSS - Themes 模块 v1.2.0
   包含所有颜色定义：Static, Default (Light), Dark, iOS
 

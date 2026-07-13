@@ -4,7 +4,6 @@
   "exports": {
     ".":            "./snowui.css",
     "./themes":     "./snowui-themes.css",
-    "./components": "./snowui-components.css",
     "./base":       "./snowui-base.css",
     "./utilities":  "./snowui-utilities.css",
     "./extra":      "./snowui-extra.css"

@@ -30,7 +30,6 @@ import "@snowui-design-system/styles/utilities";
 | `snowui.css` | 推荐入口，整合基础变量、主题、组件覆盖和工具类 |
 | `snowui-base.css` | 基础 Token |
 | `snowui-themes.css` | SnowUI / iOS 主题 |
-| `snowui-components.css` | 组件外部覆盖变量入口 |
 | `snowui-utilities.css` | 工具类 |
 | `snowui-extra.css` | 额外样式扩展 |
 
