@@ -27,7 +27,7 @@ import "@snowui-design-system/styles/utilities";
 
 | 文件 | 用途 |
 | --- | --- |
-| `snowui.css` | 推荐入口，整合基础变量、主题、组件覆盖和工具类 |
+| `snowui.css` | 推荐入口，整合页面基础、主题和工具类；不包含 Components override |
 | `snowui-base.css` | 基础 Token |
 | `snowui-themes.css` | SnowUI / iOS 主题 |
 | `snowui-utilities.css` | 工具类 |
