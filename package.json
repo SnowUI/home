@@ -6,7 +6,12 @@
     "./themes":     "./snowui-themes.css",
     "./base":       "./snowui-base.css",
     "./utilities":  "./snowui-utilities.css",
+    "./responsive": "./snowui-responsive.css",
     "./extra":      "./snowui-extra.css"
   },
-  "files": ["*.css", "README.md"]
+  "files": ["*.css", "README.md"],
+  "scripts": {
+    "generate:responsive": "node scripts/generate-responsive-utilities.mjs",
+    "check:responsive": "node scripts/generate-responsive-utilities.mjs --check"
+  }
 }

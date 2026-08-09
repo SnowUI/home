@@ -4,6 +4,16 @@
 
 All classes can be used directly in JSX/HTML. Numeric suffixes equal px (e.g. `p-12` = 12px).
 
+## Responsive utilities (optional entry)
+
+Import `@snowui-design-system/styles/responsive` or `snowui-responsive.css` to enable mobile-first prefixes: `sm:` 640px, `md:` 768px, `lg:` 1024px, `xl:` 1280px, and `2xl:` 1536px.
+
+```html
+<div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:p-24"></div>
+```
+
+Phase-one allowlist: Display, Flexbox, `grid-cols-*`, `col-span-*`, Alignment, Gap, `p/px/py`, layout sizing, and Overflow/Whitespace. Static Margin remains available but has no responsive matrix. Colors, borders, gradients, shadows, blur, opacity, cursor, resize/select, hover/focus, Position/Inset/Z-index, and Typography also remain static-only.
+
 ---
 
 ## Radius Utilities

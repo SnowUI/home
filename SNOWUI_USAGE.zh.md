@@ -4,6 +4,16 @@
 
 所有类名均可直接用于 JSX/HTML，数值后缀即 px（如 `p-12` = 12px）。
 
+## 响应式工具类（可选入口）
+
+额外引入 `@snowui-design-system/styles/responsive` 或 `snowui-responsive.css` 后，可使用 mobile-first 前缀：`sm:` 640px、`md:` 768px、`lg:` 1024px、`xl:` 1280px、`2xl:` 1536px。
+
+```html
+<div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:p-24"></div>
+```
+
+第一阶段 allowlist：Display、Flexbox、`grid-cols-*`、`col-span-*`、Alignment、Gap、`p/px/py`、布局尺寸、Overflow/Whitespace。静态 Margin 可继续使用，但不生成响应式 Margin；颜色、边框、渐变、阴影、毛玻璃、opacity、cursor、resize/select、hover/focus、Position/Inset/Z-index、Typography 也不生成响应式矩阵。
+
 ---
 
 ## 圆角（Radius）

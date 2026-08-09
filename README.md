@@ -21,7 +21,18 @@ import "@snowui-design-system/styles";
 import "@snowui-design-system/styles/themes";
 import "@snowui-design-system/styles/components";
 import "@snowui-design-system/styles/utilities";
+import "@snowui-design-system/styles/responsive";
 ```
+
+响应式工具类是可选模块，不包含在默认 `snowui.css` 中。采用 mobile-first 的 `min-width` 前缀：
+
+```html
+<section class="grid grid-cols-1 gap-8 p-8 md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:p-24">
+  ...
+</section>
+```
+
+标准断点为 `sm` 640px、`md` 768px、`lg` 1024px、`xl` 1280px、`2xl` 1536px。第一阶段仅为 Display、Flexbox、Grid columns/spans、Alignment、Gap、`p/px/py`、布局尺寸和 Overflow/Whitespace 生成前缀；Margin、颜色、边框、动效与交互类保持静态。
 
 ## 文件
 
@@ -31,6 +42,7 @@ import "@snowui-design-system/styles/utilities";
 | `snowui-base.css` | 基础 Token |
 | `snowui-themes.css` | SnowUI / iOS 主题 |
 | `snowui-utilities.css` | 工具类 |
+| `snowui-responsive.css` | 可选的 mobile-first 响应式工具类 |
 | `snowui-extra.css` | 额外样式扩展 |
 
 ## 与资源包的关系
@@ -70,3 +82,4 @@ https://github.com/SnowUI/home
 - 发布前确认 `package.json` 版本号已更新
 - GitHub Pages / CDN 使用 `main` 分支内容
 - README、CSS 入口、`package.json` 的 exports 需要同步维护
+- 修改响应式 allowlist 或静态工具类声明后，运行 `pnpm generate:responsive`；提交前运行 `pnpm check:responsive`，生成器会同时守卫可选入口以及 44,000 B raw / 5,250 B gzip 的体积上限

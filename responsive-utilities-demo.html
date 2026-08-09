@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SnowUI 响应式工具类</title>
+    <link rel="stylesheet" href="./snowui.css" />
+    <link rel="stylesheet" href="./snowui-responsive.css" />
+    <style>
+      body { margin: 0; }
+      .demo-card { min-height: 5rem; }
+    </style>
+  </head>
+  <body class="bg-background text-black-100">
+    <main class="p-8 md:p-16 lg:p-24">
+      <header class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h1 class="text-24">响应式工具类</h1>
+          <p class="text-14 text-black-40">调整视口宽度，验证列数、间距、内边距与显示状态。</p>
+        </div>
+        <span class="hidden md:block text-14 text-indigo">md 以上可见</span>
+      </header>
+
+      <section class="grid grid-cols-1 gap-8 py-16 md:grid-cols-2 md:gap-16 lg:grid-cols-3 lg:gap-24">
+        <article class="demo-card rounded-12 bg-surface-1 p-12 md:p-16">A</article>
+        <article class="demo-card rounded-12 bg-surface-1 p-12 md:p-16">B</article>
+        <article class="demo-card rounded-12 bg-surface-1 p-12 md:p-16 md:col-span-2 lg:col-span-1">C</article>
+      </section>
+
+      <div id="responsive-probe" class="w-full overflow-hidden whitespace-nowrap md:w-80 2xl:w-64">
+        probe
+      </div>
+    </main>
+  </body>
+</html>
