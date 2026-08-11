@@ -155,12 +155,13 @@
   }
 
   /* 
-    创建一个新的层叠上下文 
-    防止使用 z-index 时出现意外的覆盖问题 
+    只为应用根节点创建新的层叠上下文。
+    body 下后续带 id 的 Portal 不能被隔离，否则其 backdrop-filter
+    无法采样应用根节点内的页面内容。
   */
   #root,
   #__next,
-  body>div[id] {
+  body > div[id]:first-of-type:not([data-snowui-frame]) {
     isolation: isolate;
   }
 

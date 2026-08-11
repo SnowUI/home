@@ -76,46 +76,46 @@
   .sm\:self-baseline { align-self: baseline; }
   /* Gap */
   .sm\:gap-0 { gap: 0px; }
-  .sm\:gap-4 { gap: 0.25rem; }
-  .sm\:gap-8 { gap: 0.5rem; }
-  .sm\:gap-12 { gap: 0.75rem; }
-  .sm\:gap-16 { gap: 1rem; }
-  .sm\:gap-20 { gap: 1.25rem; }
-  .sm\:gap-24 { gap: 1.5rem; }
-  .sm\:gap-28 { gap: 1.75rem; }
-  .sm\:gap-40 { gap: 2.5rem; }
-  .sm\:gap-48 { gap: 3rem; }
+  .sm\:gap-4 { gap: 4px; }
+  .sm\:gap-8 { gap: 8px; }
+  .sm\:gap-12 { gap: 12px; }
+  .sm\:gap-16 { gap: 16px; }
+  .sm\:gap-20 { gap: 20px; }
+  .sm\:gap-24 { gap: 24px; }
+  .sm\:gap-28 { gap: 28px; }
+  .sm\:gap-40 { gap: 40px; }
+  .sm\:gap-48 { gap: 48px; }
   /* Padding */
   .sm\:p-0 { padding: 0px; }
-  .sm\:p-4 { padding: 0.25rem; }
-  .sm\:p-8 { padding: 0.5rem; }
-  .sm\:p-12 { padding: 0.75rem; }
-  .sm\:p-16 { padding: 1rem; }
-  .sm\:p-20 { padding: 1.25rem; }
-  .sm\:p-24 { padding: 1.5rem; }
-  .sm\:p-28 { padding: 1.75rem; }
-  .sm\:p-40 { padding: 2.5rem; }
-  .sm\:p-48 { padding: 3rem; }
+  .sm\:p-4 { padding: 4px; }
+  .sm\:p-8 { padding: 8px; }
+  .sm\:p-12 { padding: 12px; }
+  .sm\:p-16 { padding: 16px; }
+  .sm\:p-20 { padding: 20px; }
+  .sm\:p-24 { padding: 24px; }
+  .sm\:p-28 { padding: 28px; }
+  .sm\:p-40 { padding: 40px; }
+  .sm\:p-48 { padding: 48px; }
   .sm\:px-0 { padding-left: 0px; padding-right: 0px; }
-  .sm\:px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
-  .sm\:px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
-  .sm\:px-12 { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .sm\:px-16 { padding-left: 1rem; padding-right: 1rem; }
-  .sm\:px-20 { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .sm\:px-24 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .sm\:px-28 { padding-left: 1.75rem; padding-right: 1.75rem; }
-  .sm\:px-40 { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .sm\:px-48 { padding-left: 3rem; padding-right: 3rem; }
+  .sm\:px-4 { padding-left: 4px; padding-right: 4px; }
+  .sm\:px-8 { padding-left: 8px; padding-right: 8px; }
+  .sm\:px-12 { padding-left: 12px; padding-right: 12px; }
+  .sm\:px-16 { padding-left: 16px; padding-right: 16px; }
+  .sm\:px-20 { padding-left: 20px; padding-right: 20px; }
+  .sm\:px-24 { padding-left: 24px; padding-right: 24px; }
+  .sm\:px-28 { padding-left: 28px; padding-right: 28px; }
+  .sm\:px-40 { padding-left: 40px; padding-right: 40px; }
+  .sm\:px-48 { padding-left: 48px; padding-right: 48px; }
   .sm\:py-0 { padding-top: 0px; padding-bottom: 0px; }
-  .sm\:py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  .sm\:py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-  .sm\:py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .sm\:py-16 { padding-top: 1rem; padding-bottom: 1rem; }
-  .sm\:py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .sm\:py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .sm\:py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; }
-  .sm\:py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .sm\:py-48 { padding-top: 3rem; padding-bottom: 3rem; }
+  .sm\:py-4 { padding-top: 4px; padding-bottom: 4px; }
+  .sm\:py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .sm\:py-12 { padding-top: 12px; padding-bottom: 12px; }
+  .sm\:py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .sm\:py-20 { padding-top: 20px; padding-bottom: 20px; }
+  .sm\:py-24 { padding-top: 24px; padding-bottom: 24px; }
+  .sm\:py-28 { padding-top: 28px; padding-bottom: 28px; }
+  .sm\:py-40 { padding-top: 40px; padding-bottom: 40px; }
+  .sm\:py-48 { padding-top: 48px; padding-bottom: 48px; }
   /* Sizing */
   .sm\:w-12 { width: 0.75rem; }
   .sm\:w-16 { width: 1rem; }
@@ -257,46 +257,46 @@
   .md\:self-baseline { align-self: baseline; }
   /* Gap */
   .md\:gap-0 { gap: 0px; }
-  .md\:gap-4 { gap: 0.25rem; }
-  .md\:gap-8 { gap: 0.5rem; }
-  .md\:gap-12 { gap: 0.75rem; }
-  .md\:gap-16 { gap: 1rem; }
-  .md\:gap-20 { gap: 1.25rem; }
-  .md\:gap-24 { gap: 1.5rem; }
-  .md\:gap-28 { gap: 1.75rem; }
-  .md\:gap-40 { gap: 2.5rem; }
-  .md\:gap-48 { gap: 3rem; }
+  .md\:gap-4 { gap: 4px; }
+  .md\:gap-8 { gap: 8px; }
+  .md\:gap-12 { gap: 12px; }
+  .md\:gap-16 { gap: 16px; }
+  .md\:gap-20 { gap: 20px; }
+  .md\:gap-24 { gap: 24px; }
+  .md\:gap-28 { gap: 28px; }
+  .md\:gap-40 { gap: 40px; }
+  .md\:gap-48 { gap: 48px; }
   /* Padding */
   .md\:p-0 { padding: 0px; }
-  .md\:p-4 { padding: 0.25rem; }
-  .md\:p-8 { padding: 0.5rem; }
-  .md\:p-12 { padding: 0.75rem; }
-  .md\:p-16 { padding: 1rem; }
-  .md\:p-20 { padding: 1.25rem; }
-  .md\:p-24 { padding: 1.5rem; }
-  .md\:p-28 { padding: 1.75rem; }
-  .md\:p-40 { padding: 2.5rem; }
-  .md\:p-48 { padding: 3rem; }
+  .md\:p-4 { padding: 4px; }
+  .md\:p-8 { padding: 8px; }
+  .md\:p-12 { padding: 12px; }
+  .md\:p-16 { padding: 16px; }
+  .md\:p-20 { padding: 20px; }
+  .md\:p-24 { padding: 24px; }
+  .md\:p-28 { padding: 28px; }
+  .md\:p-40 { padding: 40px; }
+  .md\:p-48 { padding: 48px; }
   .md\:px-0 { padding-left: 0px; padding-right: 0px; }
-  .md\:px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
-  .md\:px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
-  .md\:px-12 { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .md\:px-16 { padding-left: 1rem; padding-right: 1rem; }
-  .md\:px-20 { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .md\:px-24 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .md\:px-28 { padding-left: 1.75rem; padding-right: 1.75rem; }
-  .md\:px-40 { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .md\:px-48 { padding-left: 3rem; padding-right: 3rem; }
+  .md\:px-4 { padding-left: 4px; padding-right: 4px; }
+  .md\:px-8 { padding-left: 8px; padding-right: 8px; }
+  .md\:px-12 { padding-left: 12px; padding-right: 12px; }
+  .md\:px-16 { padding-left: 16px; padding-right: 16px; }
+  .md\:px-20 { padding-left: 20px; padding-right: 20px; }
+  .md\:px-24 { padding-left: 24px; padding-right: 24px; }
+  .md\:px-28 { padding-left: 28px; padding-right: 28px; }
+  .md\:px-40 { padding-left: 40px; padding-right: 40px; }
+  .md\:px-48 { padding-left: 48px; padding-right: 48px; }
   .md\:py-0 { padding-top: 0px; padding-bottom: 0px; }
-  .md\:py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  .md\:py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-  .md\:py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .md\:py-16 { padding-top: 1rem; padding-bottom: 1rem; }
-  .md\:py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .md\:py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .md\:py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; }
-  .md\:py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .md\:py-48 { padding-top: 3rem; padding-bottom: 3rem; }
+  .md\:py-4 { padding-top: 4px; padding-bottom: 4px; }
+  .md\:py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .md\:py-12 { padding-top: 12px; padding-bottom: 12px; }
+  .md\:py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .md\:py-20 { padding-top: 20px; padding-bottom: 20px; }
+  .md\:py-24 { padding-top: 24px; padding-bottom: 24px; }
+  .md\:py-28 { padding-top: 28px; padding-bottom: 28px; }
+  .md\:py-40 { padding-top: 40px; padding-bottom: 40px; }
+  .md\:py-48 { padding-top: 48px; padding-bottom: 48px; }
   /* Sizing */
   .md\:w-12 { width: 0.75rem; }
   .md\:w-16 { width: 1rem; }
@@ -438,46 +438,46 @@
   .lg\:self-baseline { align-self: baseline; }
   /* Gap */
   .lg\:gap-0 { gap: 0px; }
-  .lg\:gap-4 { gap: 0.25rem; }
-  .lg\:gap-8 { gap: 0.5rem; }
-  .lg\:gap-12 { gap: 0.75rem; }
-  .lg\:gap-16 { gap: 1rem; }
-  .lg\:gap-20 { gap: 1.25rem; }
-  .lg\:gap-24 { gap: 1.5rem; }
-  .lg\:gap-28 { gap: 1.75rem; }
-  .lg\:gap-40 { gap: 2.5rem; }
-  .lg\:gap-48 { gap: 3rem; }
+  .lg\:gap-4 { gap: 4px; }
+  .lg\:gap-8 { gap: 8px; }
+  .lg\:gap-12 { gap: 12px; }
+  .lg\:gap-16 { gap: 16px; }
+  .lg\:gap-20 { gap: 20px; }
+  .lg\:gap-24 { gap: 24px; }
+  .lg\:gap-28 { gap: 28px; }
+  .lg\:gap-40 { gap: 40px; }
+  .lg\:gap-48 { gap: 48px; }
   /* Padding */
   .lg\:p-0 { padding: 0px; }
-  .lg\:p-4 { padding: 0.25rem; }
-  .lg\:p-8 { padding: 0.5rem; }
-  .lg\:p-12 { padding: 0.75rem; }
-  .lg\:p-16 { padding: 1rem; }
-  .lg\:p-20 { padding: 1.25rem; }
-  .lg\:p-24 { padding: 1.5rem; }
-  .lg\:p-28 { padding: 1.75rem; }
-  .lg\:p-40 { padding: 2.5rem; }
-  .lg\:p-48 { padding: 3rem; }
+  .lg\:p-4 { padding: 4px; }
+  .lg\:p-8 { padding: 8px; }
+  .lg\:p-12 { padding: 12px; }
+  .lg\:p-16 { padding: 16px; }
+  .lg\:p-20 { padding: 20px; }
+  .lg\:p-24 { padding: 24px; }
+  .lg\:p-28 { padding: 28px; }
+  .lg\:p-40 { padding: 40px; }
+  .lg\:p-48 { padding: 48px; }
   .lg\:px-0 { padding-left: 0px; padding-right: 0px; }
-  .lg\:px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
-  .lg\:px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
-  .lg\:px-12 { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .lg\:px-16 { padding-left: 1rem; padding-right: 1rem; }
-  .lg\:px-20 { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .lg\:px-24 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .lg\:px-28 { padding-left: 1.75rem; padding-right: 1.75rem; }
-  .lg\:px-40 { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .lg\:px-48 { padding-left: 3rem; padding-right: 3rem; }
+  .lg\:px-4 { padding-left: 4px; padding-right: 4px; }
+  .lg\:px-8 { padding-left: 8px; padding-right: 8px; }
+  .lg\:px-12 { padding-left: 12px; padding-right: 12px; }
+  .lg\:px-16 { padding-left: 16px; padding-right: 16px; }
+  .lg\:px-20 { padding-left: 20px; padding-right: 20px; }
+  .lg\:px-24 { padding-left: 24px; padding-right: 24px; }
+  .lg\:px-28 { padding-left: 28px; padding-right: 28px; }
+  .lg\:px-40 { padding-left: 40px; padding-right: 40px; }
+  .lg\:px-48 { padding-left: 48px; padding-right: 48px; }
   .lg\:py-0 { padding-top: 0px; padding-bottom: 0px; }
-  .lg\:py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  .lg\:py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-  .lg\:py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .lg\:py-16 { padding-top: 1rem; padding-bottom: 1rem; }
-  .lg\:py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .lg\:py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .lg\:py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; }
-  .lg\:py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .lg\:py-48 { padding-top: 3rem; padding-bottom: 3rem; }
+  .lg\:py-4 { padding-top: 4px; padding-bottom: 4px; }
+  .lg\:py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .lg\:py-12 { padding-top: 12px; padding-bottom: 12px; }
+  .lg\:py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .lg\:py-20 { padding-top: 20px; padding-bottom: 20px; }
+  .lg\:py-24 { padding-top: 24px; padding-bottom: 24px; }
+  .lg\:py-28 { padding-top: 28px; padding-bottom: 28px; }
+  .lg\:py-40 { padding-top: 40px; padding-bottom: 40px; }
+  .lg\:py-48 { padding-top: 48px; padding-bottom: 48px; }
   /* Sizing */
   .lg\:w-12 { width: 0.75rem; }
   .lg\:w-16 { width: 1rem; }
@@ -619,46 +619,46 @@
   .xl\:self-baseline { align-self: baseline; }
   /* Gap */
   .xl\:gap-0 { gap: 0px; }
-  .xl\:gap-4 { gap: 0.25rem; }
-  .xl\:gap-8 { gap: 0.5rem; }
-  .xl\:gap-12 { gap: 0.75rem; }
-  .xl\:gap-16 { gap: 1rem; }
-  .xl\:gap-20 { gap: 1.25rem; }
-  .xl\:gap-24 { gap: 1.5rem; }
-  .xl\:gap-28 { gap: 1.75rem; }
-  .xl\:gap-40 { gap: 2.5rem; }
-  .xl\:gap-48 { gap: 3rem; }
+  .xl\:gap-4 { gap: 4px; }
+  .xl\:gap-8 { gap: 8px; }
+  .xl\:gap-12 { gap: 12px; }
+  .xl\:gap-16 { gap: 16px; }
+  .xl\:gap-20 { gap: 20px; }
+  .xl\:gap-24 { gap: 24px; }
+  .xl\:gap-28 { gap: 28px; }
+  .xl\:gap-40 { gap: 40px; }
+  .xl\:gap-48 { gap: 48px; }
   /* Padding */
   .xl\:p-0 { padding: 0px; }
-  .xl\:p-4 { padding: 0.25rem; }
-  .xl\:p-8 { padding: 0.5rem; }
-  .xl\:p-12 { padding: 0.75rem; }
-  .xl\:p-16 { padding: 1rem; }
-  .xl\:p-20 { padding: 1.25rem; }
-  .xl\:p-24 { padding: 1.5rem; }
-  .xl\:p-28 { padding: 1.75rem; }
-  .xl\:p-40 { padding: 2.5rem; }
-  .xl\:p-48 { padding: 3rem; }
+  .xl\:p-4 { padding: 4px; }
+  .xl\:p-8 { padding: 8px; }
+  .xl\:p-12 { padding: 12px; }
+  .xl\:p-16 { padding: 16px; }
+  .xl\:p-20 { padding: 20px; }
+  .xl\:p-24 { padding: 24px; }
+  .xl\:p-28 { padding: 28px; }
+  .xl\:p-40 { padding: 40px; }
+  .xl\:p-48 { padding: 48px; }
   .xl\:px-0 { padding-left: 0px; padding-right: 0px; }
-  .xl\:px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
-  .xl\:px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
-  .xl\:px-12 { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .xl\:px-16 { padding-left: 1rem; padding-right: 1rem; }
-  .xl\:px-20 { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .xl\:px-24 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .xl\:px-28 { padding-left: 1.75rem; padding-right: 1.75rem; }
-  .xl\:px-40 { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .xl\:px-48 { padding-left: 3rem; padding-right: 3rem; }
+  .xl\:px-4 { padding-left: 4px; padding-right: 4px; }
+  .xl\:px-8 { padding-left: 8px; padding-right: 8px; }
+  .xl\:px-12 { padding-left: 12px; padding-right: 12px; }
+  .xl\:px-16 { padding-left: 16px; padding-right: 16px; }
+  .xl\:px-20 { padding-left: 20px; padding-right: 20px; }
+  .xl\:px-24 { padding-left: 24px; padding-right: 24px; }
+  .xl\:px-28 { padding-left: 28px; padding-right: 28px; }
+  .xl\:px-40 { padding-left: 40px; padding-right: 40px; }
+  .xl\:px-48 { padding-left: 48px; padding-right: 48px; }
   .xl\:py-0 { padding-top: 0px; padding-bottom: 0px; }
-  .xl\:py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  .xl\:py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-  .xl\:py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .xl\:py-16 { padding-top: 1rem; padding-bottom: 1rem; }
-  .xl\:py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .xl\:py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .xl\:py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; }
-  .xl\:py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .xl\:py-48 { padding-top: 3rem; padding-bottom: 3rem; }
+  .xl\:py-4 { padding-top: 4px; padding-bottom: 4px; }
+  .xl\:py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .xl\:py-12 { padding-top: 12px; padding-bottom: 12px; }
+  .xl\:py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .xl\:py-20 { padding-top: 20px; padding-bottom: 20px; }
+  .xl\:py-24 { padding-top: 24px; padding-bottom: 24px; }
+  .xl\:py-28 { padding-top: 28px; padding-bottom: 28px; }
+  .xl\:py-40 { padding-top: 40px; padding-bottom: 40px; }
+  .xl\:py-48 { padding-top: 48px; padding-bottom: 48px; }
   /* Sizing */
   .xl\:w-12 { width: 0.75rem; }
   .xl\:w-16 { width: 1rem; }
@@ -800,46 +800,46 @@
   .\32 xl\:self-baseline { align-self: baseline; }
   /* Gap */
   .\32 xl\:gap-0 { gap: 0px; }
-  .\32 xl\:gap-4 { gap: 0.25rem; }
-  .\32 xl\:gap-8 { gap: 0.5rem; }
-  .\32 xl\:gap-12 { gap: 0.75rem; }
-  .\32 xl\:gap-16 { gap: 1rem; }
-  .\32 xl\:gap-20 { gap: 1.25rem; }
-  .\32 xl\:gap-24 { gap: 1.5rem; }
-  .\32 xl\:gap-28 { gap: 1.75rem; }
-  .\32 xl\:gap-40 { gap: 2.5rem; }
-  .\32 xl\:gap-48 { gap: 3rem; }
+  .\32 xl\:gap-4 { gap: 4px; }
+  .\32 xl\:gap-8 { gap: 8px; }
+  .\32 xl\:gap-12 { gap: 12px; }
+  .\32 xl\:gap-16 { gap: 16px; }
+  .\32 xl\:gap-20 { gap: 20px; }
+  .\32 xl\:gap-24 { gap: 24px; }
+  .\32 xl\:gap-28 { gap: 28px; }
+  .\32 xl\:gap-40 { gap: 40px; }
+  .\32 xl\:gap-48 { gap: 48px; }
   /* Padding */
   .\32 xl\:p-0 { padding: 0px; }
-  .\32 xl\:p-4 { padding: 0.25rem; }
-  .\32 xl\:p-8 { padding: 0.5rem; }
-  .\32 xl\:p-12 { padding: 0.75rem; }
-  .\32 xl\:p-16 { padding: 1rem; }
-  .\32 xl\:p-20 { padding: 1.25rem; }
-  .\32 xl\:p-24 { padding: 1.5rem; }
-  .\32 xl\:p-28 { padding: 1.75rem; }
-  .\32 xl\:p-40 { padding: 2.5rem; }
-  .\32 xl\:p-48 { padding: 3rem; }
+  .\32 xl\:p-4 { padding: 4px; }
+  .\32 xl\:p-8 { padding: 8px; }
+  .\32 xl\:p-12 { padding: 12px; }
+  .\32 xl\:p-16 { padding: 16px; }
+  .\32 xl\:p-20 { padding: 20px; }
+  .\32 xl\:p-24 { padding: 24px; }
+  .\32 xl\:p-28 { padding: 28px; }
+  .\32 xl\:p-40 { padding: 40px; }
+  .\32 xl\:p-48 { padding: 48px; }
   .\32 xl\:px-0 { padding-left: 0px; padding-right: 0px; }
-  .\32 xl\:px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
-  .\32 xl\:px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
-  .\32 xl\:px-12 { padding-left: 0.75rem; padding-right: 0.75rem; }
-  .\32 xl\:px-16 { padding-left: 1rem; padding-right: 1rem; }
-  .\32 xl\:px-20 { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .\32 xl\:px-24 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .\32 xl\:px-28 { padding-left: 1.75rem; padding-right: 1.75rem; }
-  .\32 xl\:px-40 { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .\32 xl\:px-48 { padding-left: 3rem; padding-right: 3rem; }
+  .\32 xl\:px-4 { padding-left: 4px; padding-right: 4px; }
+  .\32 xl\:px-8 { padding-left: 8px; padding-right: 8px; }
+  .\32 xl\:px-12 { padding-left: 12px; padding-right: 12px; }
+  .\32 xl\:px-16 { padding-left: 16px; padding-right: 16px; }
+  .\32 xl\:px-20 { padding-left: 20px; padding-right: 20px; }
+  .\32 xl\:px-24 { padding-left: 24px; padding-right: 24px; }
+  .\32 xl\:px-28 { padding-left: 28px; padding-right: 28px; }
+  .\32 xl\:px-40 { padding-left: 40px; padding-right: 40px; }
+  .\32 xl\:px-48 { padding-left: 48px; padding-right: 48px; }
   .\32 xl\:py-0 { padding-top: 0px; padding-bottom: 0px; }
-  .\32 xl\:py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  .\32 xl\:py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-  .\32 xl\:py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .\32 xl\:py-16 { padding-top: 1rem; padding-bottom: 1rem; }
-  .\32 xl\:py-20 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .\32 xl\:py-24 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .\32 xl\:py-28 { padding-top: 1.75rem; padding-bottom: 1.75rem; }
-  .\32 xl\:py-40 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .\32 xl\:py-48 { padding-top: 3rem; padding-bottom: 3rem; }
+  .\32 xl\:py-4 { padding-top: 4px; padding-bottom: 4px; }
+  .\32 xl\:py-8 { padding-top: 8px; padding-bottom: 8px; }
+  .\32 xl\:py-12 { padding-top: 12px; padding-bottom: 12px; }
+  .\32 xl\:py-16 { padding-top: 16px; padding-bottom: 16px; }
+  .\32 xl\:py-20 { padding-top: 20px; padding-bottom: 20px; }
+  .\32 xl\:py-24 { padding-top: 24px; padding-bottom: 24px; }
+  .\32 xl\:py-28 { padding-top: 28px; padding-bottom: 28px; }
+  .\32 xl\:py-40 { padding-top: 40px; padding-bottom: 40px; }
+  .\32 xl\:py-48 { padding-top: 48px; padding-bottom: 48px; }
   /* Sizing */
   .\32 xl\:w-12 { width: 0.75rem; }
   .\32 xl\:w-16 { width: 1rem; }

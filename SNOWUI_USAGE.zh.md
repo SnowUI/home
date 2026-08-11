@@ -2,7 +2,9 @@
 
 [View English Documentation](./SNOWUI_USAGE.md)
 
-所有类名均可直接用于 JSX/HTML，数值后缀即 px（如 `p-12` = 12px）。
+所有类名均可直接用于 JSX/HTML；数值后缀表示 16px 根字号基准下的名义 px 值（如 `p-12` = 12px）。
+
+Padding、Gap 与圆角工具类使用固定 CSS px。没有显式响应式前缀时，它们的计算值不会随视口宽度或根字号变化。
 
 ## 响应式工具类（可选入口）
 
@@ -82,7 +84,7 @@
 > 取值映射同样适用于 `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*`。
 
 ## 外边距 `m-*`
-与 padding 完全一致：`m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`。
+后缀取值与前缀家族同 padding：`m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`。Margin 仍使用 rem，可能跟随根字号变化，不属于 padding / gap / radius 的稳定值契约。
 
 ## Gap
 | 类名 | 数值 |

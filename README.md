@@ -34,6 +34,8 @@ import "@snowui-design-system/styles/responsive";
 
 标准断点为 `sm` 640px、`md` 768px、`lg` 1024px、`xl` 1280px、`2xl` 1536px。第一阶段仅为 Display、Flexbox、Grid columns/spans、Alignment、Gap、`p/px/py`、布局尺寸和 Overflow/Whitespace 生成前缀；Margin、颜色、边框、动效与交互类保持静态。
 
+Padding、Gap 与圆角工具类使用固定 px；未显式添加响应式前缀时，它们不会因视口宽度或根字号变化而改变。响应式前缀只切换明确声明的目标值。
+
 ## 文件
 
 | 文件 | 用途 |

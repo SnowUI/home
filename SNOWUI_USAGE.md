@@ -2,7 +2,9 @@
 
 [查看中文文档](./SNOWUI_USAGE.zh.md)
 
-All classes can be used directly in JSX/HTML. Numeric suffixes equal px (e.g. `p-12` = 12px).
+All classes can be used directly in JSX/HTML. Numeric suffixes denote their nominal px value at the 16px root baseline (e.g. `p-12` = 12px).
+
+Padding, gap, and radius utilities use fixed CSS px. Without an explicit responsive prefix, their computed values remain unchanged across viewport widths and root font-size changes.
 
 ## Responsive utilities (optional entry)
 
@@ -73,7 +75,7 @@ Same value set for:
 Applies to `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*` with identical value mapping.
 
 ## Margin `m-*`
-Same values and prefixes as padding: `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`.
+Same suffix set and prefixes as padding: `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`. Margin remains rem-based and may follow the root font size; it is not part of the stable padding/gap/radius contract.
 
 ## Gap
 | Class | Value |

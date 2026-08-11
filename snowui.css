@@ -4,7 +4,7 @@
   
   已拆分为 4 个模块：
   1. snowui-base.css      —— 浏览器基础 & 全局样式
-  2. snowui-utilities.css —— 工具类 (颜色使用 CSS 变量, 其余使用具体 rem 值)
+  2. snowui-utilities.css —— 工具类（颜色使用 CSS 变量；padding / gap / radius 使用固定 px，其余使用具体 rem 值）
   3. snowui-themes.css    —— 主题定义 (Themes) + 颜色变量 + 缩放系数
   4. snowui-extra.css     —— 额外样式 (可选)
   使用方法：
