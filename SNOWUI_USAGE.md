@@ -4,7 +4,7 @@
 
 All classes can be used directly in JSX/HTML. Numeric suffixes denote their nominal px value at the 16px root baseline (e.g. `p-12` = 12px).
 
-Padding, gap, and radius utilities use fixed CSS px. Without an explicit responsive prefix, their computed values remain unchanged across viewport widths and root font-size changes.
+Padding, gap, and ordinary radius utilities use rem. Their numeric suffixes are nominal px values at a 16px root; with `snowui-base.css`, computed values scale smoothly with its responsive 14px–16px root size. Responsive prefixes switch explicit semantic steps, while `rounded-full` remains the semantic `9999px` exception.
 
 ## Responsive utilities (optional entry)
 
@@ -75,7 +75,7 @@ Same value set for:
 Applies to `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*` with identical value mapping.
 
 ## Margin `m-*`
-Same suffix set and prefixes as padding: `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`. Margin remains rem-based and may follow the root font size; it is not part of the stable padding/gap/radius contract.
+Same suffix set and prefixes as padding: `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`. Margin is rem-based and follows the same responsive root-font calculation.
 
 ## Gap
 | Class | Value |
@@ -232,7 +232,10 @@ Available for `w-*` and `h-*`: 16 / 20 / 24 / 28 / 32 / 40 / 48 / 56 / 64 / 72 /
 
 ## Base layer (auto applied)
 - `:root` + `.theme-*` provide theme variables (SnowUI / iOS light & dark).
-- `@layer base` sets `html`, `body`, `code` fonts, smoothing, and default colors.
+- `@layer base` provides a responsive 14px–16px root size; rem-based component typography, Border, Size, Padding, Gap, and ordinary Radius tokens scale with it.
+- `@layer base` provides default `body / code` typography and colors, page-level native scrollbars, plus browser initialization for document flow, lists, media, form controls, and links.
+- React / Next / common app roots use `#root`, `#__next`, or `#app`; other frameworks should mark the real application root with `[data-snowui-app-root]`. Body-level portals must remain outside that root.
+- Table, focus-visible, and disabled visuals are not globally overridden; SnowUI components own those surfaces and states.
 - Phosphor Duotone icons have background opacity forced to `0.08`.
 
 **Usage**: import `snowui.css` once, then apply any classes above just like Tailwind utilities.

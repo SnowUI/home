@@ -4,7 +4,7 @@
 
 所有类名均可直接用于 JSX/HTML；数值后缀表示 16px 根字号基准下的名义 px 值（如 `p-12` = 12px）。
 
-Padding、Gap 与圆角工具类使用固定 CSS px。没有显式响应式前缀时，它们的计算值不会随视口宽度或根字号变化。
+Padding、Gap 与普通圆角工具类使用 rem。数值后缀表示 16px 根字号下的名义 px 值；引入 `snowui-base.css` 后，计算值会随其 14px–16px 响应式根字号平滑缩放。响应式前缀只切换明确声明的语义档位，`.rounded-full` 仍是语义性 `9999px` 例外。
 
 ## 响应式工具类（可选入口）
 
@@ -84,7 +84,7 @@ Padding、Gap 与圆角工具类使用固定 CSS px。没有显式响应式前�
 > 取值映射同样适用于 `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*`。
 
 ## 外边距 `m-*`
-后缀取值与前缀家族同 padding：`m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`。Margin 仍使用 rem，可能跟随根字号变化，不属于 padding / gap / radius 的稳定值契约。
+后缀取值与前缀家族同 padding：`m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`。Margin 使用 rem，并遵循相同的响应式根字号计算。
 
 ## Gap
 | 类名 | 数值 |
@@ -241,7 +241,10 @@ Padding、Gap 与圆角工具类使用固定 CSS px。没有显式响应式前�
 
 ## 基础层（自动生效）
 - `:root` + `.theme-*`：SnowUI / iOS 明暗主题变量。
-- `@layer base`：制定 `html / body / code` 字体、颜色、抗锯齿。
+- `@layer base`：提供 14px–16px 响应式根字号；组件中的 rem 排版、Border、Size、Padding、Gap 与普通 Radius Token 会随之联动。
+- `@layer base`：提供 `body / code` 默认排版与颜色、页面级原生滚动条，以及文档流、列表、媒体、表单和链接的浏览器初始化。
+- React / Next / 常见应用根使用 `#root`、`#__next` 或 `#app`；其他框架应在真实应用根添加 `[data-snowui-app-root]`。挂到 body 的 Portal 必须位于该根节点外。
+- Table、focus-visible 与 disabled 的最终视觉不由基础层统一覆盖，SnowUI 组件各自拥有这些状态和表面。
 - Phosphor Duotone 图标背景层统一透明度 `0.08`。
 
 **使用方法**：入口处引入 `snowui.css`，即可像 Tailwind 工具类一样使用上表所有类名。

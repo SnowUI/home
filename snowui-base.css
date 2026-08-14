@@ -1,7 +1,9 @@
 /*
-  SnowUI 设计系统 CSS - 浏览器基础 & 全局样式模块 v1.0.0
+  SnowUI 设计系统 CSS - 浏览器基础与全局初始化 v1.2.0
 
-  建议：未来可在此补充 reset/normalize 等浏览器样式重置
+  作用范围：引入后对整个应用生效，包括 SnowUI 组件与普通页面内容。
+  组件包不依赖本文件才能工作；本文件只提供应用级环境、浏览器初始化与
+  SnowUI 明确约定的全局视觉策略。
 */
 
 /* ============================================
@@ -10,7 +12,10 @@
 
 @layer base {
 
-  /* 所有人最喜欢的 Box-sizing 设置 */
+  /*
+   * 统一盒模型：元素声明的 width / height 包含 padding 与 border。
+   * 伪元素同步使用同一盒模型，避免组件和页面装饰层出现尺寸偏差。
+   */
   *,
   *::before,
   *::after {
@@ -18,22 +23,24 @@
   }
 
   /*
-   * 页面级全局滚动条：引入 snowui.css 后无需额外添加 class。
-   * 横向与纵向均为 8px；几何尺寸固定，hover 只改变颜色。
-   * 组件内部需要独立行为时，使用 components/styles 中的
-   * .snowui-scrollbar 或 .snowui-overlay-scrollbar。
+   * 页面级原生滚动条替代样式：用于未接入 SnowUI ScrollArea、
+   * .snowui-scrollbar 或 .snowui-overlay-scrollbar 的滚动区域。
+   * Firefox 使用标准 thin 几何；颜色为 Black/20%，轨道透明。
+   * thin 是 Firefox 原生 API 中与 WebKit 8px 轨道最接近的视觉档位。
    */
   * {
-    scrollbar-width: auto;
+    scrollbar-width: thin;
     scrollbar-color: var(--black-20, rgba(0, 0, 0, 0.2)) transparent;
   }
 
+  /* Chromium / Safari：横向和纵向轨道固定为 8px。 */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
     background: transparent;
   }
 
+  /* 轨道保持透明，不额外绘制边框或阴影。 */
   ::-webkit-scrollbar-track,
   ::-webkit-scrollbar-track-piece {
     background: transparent;
@@ -41,59 +48,87 @@
     box-shadow: none;
   }
 
+  /* 隐藏浏览器可能绘制的滚动条方向按钮。 */
   ::-webkit-scrollbar-button {
     display: none;
     width: 0;
     height: 0;
   }
 
+  /* 双轴滚动条交汇角保持透明。 */
   ::-webkit-scrollbar-corner {
     background: transparent;
   }
 
+  /* Thumb 使用 Black/20% 与全圆角；颜色变化使用 150ms 过渡。 */
   ::-webkit-scrollbar-thumb {
     background-color: var(--black-20, rgba(0, 0, 0, 0.2));
     border-radius: 99px;
     transition: background-color 150ms ease-out;
   }
 
+  /* 当前全局替代样式的 hover 不改变几何，只维持统一颜色。 */
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--black-20, rgba(0, 0, 0, 0.2));
   }
 
+  /*
+   * 根字号在 14px–16px 间随视口平滑变化。
+   * 该规则有意影响组件：所有 rem 排版、Border、Size、Padding、Gap 与普通 Radius Token 随根字号联动。
+   * 语义性 full radius、动态测量、定位坐标与命中计算使用 px，不受根字号影响。
+   * scroll-behavior 只控制页面内锚点及脚本滚动的平滑行为。
+   */
   html {
     font-size: clamp(14px, 0.875vw + 10px, 16px);
     scroll-behavior: smooth;
-    /* 页面平滑滚动 */
   }
 
+  /*
+   * 应用默认排版与颜色环境：移除浏览器 body 外边距，并从主题 Token 提供
+   * 背景、前景、字重、字号、行高和字体。SnowUI 组件允许继承这些环境值，
+   * 组件公开 size / typography 仍由组件自己的 Prop 与 Token 决定。
+   * 字体平滑与 text-size-adjust 只归一化浏览器文字渲染。
+   */
   body {
     margin: 0;
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--background, #fff);
+    color: var(--foreground, #000);
     font-weight: 400;
     font-size: var(--text-14, 0.875rem);
     line-height: var(--leading-14, 1.25rem);
-    font-family: var(--font-family);
+    font-family: var(
+      --font-family,
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      sans-serif
+    );
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
 
+  /*
+   * 普通内联 code 的全局初始化：相对当前字号缩小，使用等宽字体、弱背景、
+   * 圆角和紧凑内外间距。该规则允许影响语义上选择 <code> 的组件；
+   * CodeBlock 等拥有独立代码表面的组件必须在内部明确重置这些属性。
+   */
   code {
-    /* 相对当前字号稍微缩小 */
     font-size: 0.875em;
     line-height: 1.2;
-    font-family: var(--font-mono);
-    background-color: var(--black-4);
+    font-family: var(--font-mono, ui-monospace, monospace);
+    background-color: var(--black-4, rgba(0, 0, 0, 0.04));
     border-radius: 0.4em;
     padding: 0.25em 0.35em;
     margin: 0 0.25em;
     display: inline-block;
-    /* 使 margin 在所有方向生效 */
   }
 
-  /* 移除多余 margin，使排版更可控 */
+  /*
+   * 文档流元素初始化：移除浏览器自带外边距，让页面由父容器的 gap / padding
+   * 管理节奏。渲染这些标签的 SnowUI 组件必须自行声明其最终盒模型。
+   */
   h1,
   h2,
   h3,
@@ -108,7 +143,10 @@
     margin: 0;
   }
 
-  /* 避免长单词导致布局溢出 */
+  /*
+   * 长文本保护：标题和段落允许在不可分词内容处换行，避免撑破容器。
+   * 拥有截断、nowrap 或自定义换行语义的组件必须显式覆盖。
+   */
   p,
   h1,
   h2,
@@ -119,22 +157,31 @@
     overflow-wrap: break-word;
   }
 
-  /* 列表样式 */
+  /*
+   * 列表容器初始化：移除浏览器外边距，保留 0.75em 左侧缩进。
+   * SnowUI 列表型组件必须自行拥有其布局与 marker，不依赖这里的默认值。
+   */
   ul,
   ol {
     margin: 0;
     padding-left: 0.75em;
   }
 
+  /* 无序列表恢复 disc marker，保证不同浏览器初始化结果一致。 */
   ul li {
     list-style-type: disc;
   }
 
+  /* 有序列表恢复 decimal marker，保证不同浏览器初始化结果一致。 */
   ol li {
     list-style-type: decimal;
   }
 
-  /* 图片默认自适应 */
+  /*
+   * 页面媒体初始化：使用块级盒，最大宽度不超过容器并保持原始宽高比。
+   * Image、Icon、Chart 等拥有固定尺寸或画布语义的组件必须在组件样式中
+   * 明确 display / width / height / max-width，不能依赖本规则形成最终视觉。
+   */
   img,
   picture,
   svg,
@@ -145,7 +192,11 @@
     height: auto;
   }
 
-  /* 表单元素统一外观 */
+  /*
+   * 原生表单初始化：控件继承应用字体并移除浏览器默认外边距。
+   * SnowUI 表单组件会在组件包内再次建立自身宿主基线，因此未引入本文件时
+   * 也能保持一致；引入后仍可继承 body 提供的字体环境。
+   */
   button,
   input,
   textarea,
@@ -154,38 +205,37 @@
     margin: 0;
   }
 
-  /* 
-    只为应用根节点创建新的层叠上下文。
-    body 下后续带 id 的 Portal 不能被隔离，否则其 backdrop-filter
-    无法采样应用根节点内的页面内容。
-  */
+  /*
+   * 应用根层隔离：为显式应用根节点创建独立层叠上下文，避免页面 z-index
+   * 向外泄漏。React / Next / 常见 app 根使用既有 id；其他框架在真实应用根
+   * 添加 data-snowui-app-root。Tooltip / Dialog 等 Portal 必须挂在该根节点外，
+   * 否则 Portal 的 backdrop-filter 无法采样应用根节点内的页面内容。
+   */
   #root,
   #__next,
-  body > div[id]:first-of-type:not([data-snowui-frame]) {
+  #app,
+  [data-snowui-app-root] {
     isolation: isolate;
   }
 
-  /* 超链接的最小 reset */
+  /*
+   * 普通链接初始化：继承上下文颜色并移除浏览器默认下划线。
+   * SnowUI Link 组件自行拥有颜色、交互与 focus-visible 反馈。
+   */
   a {
     color: inherit;
     text-decoration: none;
   }
 
-  /* 表格初始化 */
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
+  /* 减少动效时关闭平滑滚动和原生替代滚动条的颜色过渡。 */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
 
-  /* 更好的 Focus 样式 (Accessibility) */
-  :focus-visible {
-    outline: 4px solid var(--black-4);
-  }
-
-  /* 禁用状态标准样式 */
-  :disabled {
-    cursor: default;
-    opacity: 0.2;
+    ::-webkit-scrollbar-thumb {
+      transition: none;
+    }
   }
 
 }
@@ -194,7 +244,11 @@
    Phosphor Icons Duotone 透明度自定义（全局）
    ============================================ */
 
-/* 全局修改所有 duotone 图标的背景层透明度为 0.08 */
+/*
+ * SnowUI 对 Phosphor Duotone 的全局视觉策略：把库默认 0.2 的背景层统一为
+ * 0.08。选择器只匹配 Phosphor 常用 256 / 32 viewBox 与对应背景层结构；
+ * !important 用于覆盖 SVG presentation attribute 及图标库自身声明。
+ */
 svg[viewBox="0 0 256 256"] path:first-of-type[opacity="0.2"],
 svg[viewBox="0 0 256 256"] path:first-of-type[opacity=".2"],
 svg[viewBox="0 0 32 32"] g[opacity="0.2"],
