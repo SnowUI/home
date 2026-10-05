@@ -189,7 +189,7 @@ Available for `w-*` and `h-*`: 16 / 20 / 24 / 28 / 32 / 40 / 48 / 56 / 64 / 72 /
 | `bg-background` | Active theme background |
 | `bg/text/border-primary` | Primary color |
 | `bg/text/border-foreground` | Foreground color |
-| `bg/text/border-logo-1/2` | Brand colors |
+| `bg/text/border-brand` | Brand colors |
 
 ### Secondary palette (`bg- / text- / border-`)
 `purple`, `indigo`, `blue`, `cyan`, `mint`, `green`, `yellow`, `orange`, `red`

@@ -198,7 +198,7 @@ Padding、Gap 与普通圆角工具类使用 rem。数值后缀表示 16px 根�
 | `bg-background` | 当前主题背景 |
 | `bg/text/border-primary` | 主色 |
 | `bg/text/border-foreground` | 前景色 |
-| `bg/text/border-logo-1/2` | 品牌色 |
+| `bg/text/border-brand` | 品牌色 |
 
 ### 辅助色板（统一拥有 `bg- / text- / border-`）
 `purple`, `indigo`, `blue`, `cyan`, `mint`, `green`, `yellow`, `orange`, `red`
