@@ -234,6 +234,7 @@ Available for `w-*` and `h-*`: 16 / 20 / 24 / 28 / 32 / 40 / 48 / 56 / 64 / 72 /
 - `:root` + `.theme-*` provide theme variables (SnowUI / iOS light & dark).
 - `@layer base` provides a responsive 14px–16px root size; rem-based component typography, Border, Size, Padding, Gap, and ordinary Radius tokens scale with it.
 - `@layer base` provides default `body / code` typography and colors, page-level native scrollbars, plus browser initialization for document flow, lists, media, form controls, and links.
+- Native `<a href>` elements not hosted by SnowUI `Frame` stay underlined by default and hide the underline on hover. Component links such as `Link` and `Button href` keep their own public state and are not overridden.
 - React / Next / common app roots use `#root`, `#__next`, or `#app`; other frameworks should mark the real application root with `[data-snowui-app-root]`. Body-level portals must remain outside that root.
 - Table, focus-visible, and disabled visuals are not globally overridden; SnowUI components own those surfaces and states.
 - Phosphor Duotone icons have background opacity forced to `0.08`.

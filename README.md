@@ -49,6 +49,8 @@ Padding、Gap 与普通圆角工具类使用 rem，数值后缀表示 16px 根�
 
 `snowui-base.css` 会为 `#root`、`#__next`、`#app` 建立应用根隔离；其他框架应在真实应用根添加 `data-snowui-app-root`。Tooltip、Dialog 等挂到 `body` 的 Portal 必须位于该根节点外。
 
+其中未经 SnowUI `Frame` 承载的原生 `<a href>` 默认显示下划线，hover 时隐藏；`Link`、`Button href` 等组件链接继续由组件自身样式控制，不受该全局规则覆盖。
+
 ## 与资源包的关系
 
 样式包只提供 CSS Token、主题和工具类；图标、头像、背景、插画等素材由 `@snowui-design-system/resource-base`、`resource-svelte`、`resource-react` 维护。资源包已支持多图标库切换，业务代码应优先使用稳定的 `usageName`，由 Provider 决定实际渲染 SnowUI、Phosphor、Material Symbols、Lucide 等图标库。

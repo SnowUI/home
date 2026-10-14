@@ -243,6 +243,7 @@ Padding、Gap 与普通圆角工具类使用 rem。数值后缀表示 16px 根�
 - `:root` + `.theme-*`：SnowUI / iOS 明暗主题变量。
 - `@layer base`：提供 14px–16px 响应式根字号；组件中的 rem 排版、Border、Size、Padding、Gap 与普通 Radius Token 会随之联动。
 - `@layer base`：提供 `body / code` 默认排版与颜色、页面级原生滚动条，以及文档流、列表、媒体、表单和链接的浏览器初始化。
+- 未经 SnowUI `Frame` 承载的原生 `<a href>` 默认保留下划线，hover 时隐藏；`Link`、`Button href` 等组件链接继续由组件自身的公开状态控制，不受该规则覆盖。
 - React / Next / 常见应用根使用 `#root`、`#__next` 或 `#app`；其他框架应在真实应用根添加 `[data-snowui-app-root]`。挂到 body 的 Portal 必须位于该根节点外。
 - Table、focus-visible 与 disabled 的最终视觉不由基础层统一覆盖，SnowUI 组件各自拥有这些状态和表面。
 - Phosphor Duotone 图标背景层统一透明度 `0.08`。

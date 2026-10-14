@@ -218,15 +218,6 @@
     isolation: isolate;
   }
 
-  /*
-   * 普通链接初始化：继承上下文颜色并移除浏览器默认下划线。
-   * SnowUI Link 组件自行拥有颜色、交互与 focus-visible 反馈。
-   */
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
   /* 减少动效时关闭平滑滚动和原生替代滚动条的颜色过渡。 */
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -238,6 +229,25 @@
     }
   }
 
+  /*
+   * 普通链接初始化：继承上下文颜色并保留下划线。
+   * SnowUI 组件链接通过 data-snowui-frame 自行拥有最终视觉与状态。
+   */
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+  }
+
+}
+
+/*
+ * 普通原生链接在 hover 时隐藏下划线。此规则必须保持在 @layer base 之外，
+ * 才能覆盖应用中未分层的常态下划线规则；排除 data-snowui-frame，确保
+ * Link、Button href 等 SnowUI 组件链接继续由组件自己的公开状态控制。
+ */
+a:any-link:not([data-snowui-frame]):hover {
+  text-decoration-line: none;
 }
 
 /* ============================================
