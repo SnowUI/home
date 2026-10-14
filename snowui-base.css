@@ -229,24 +229,25 @@
     }
   }
 
-  /*
-   * 普通链接初始化：继承上下文颜色并保留下划线。
-   * SnowUI 组件链接通过 data-snowui-frame 自行拥有最终视觉与状态。
-   */
-  a {
-    color: inherit;
-    text-decoration-line: underline;
-    text-decoration-color: currentColor;
+  /* 普通链接使用 Link 的默认颜色；应用自己的未分层颜色声明仍可覆盖。 */
+  a:any-link:not([data-snowui-frame]) {
+    color: var(--snowui-native-link-color, var(--black-40));
+    text-decoration-line: none;
+    transition: color 150ms ease-out;
+  }
+
+  a:any-link:not([data-snowui-frame]):not(.snowui-disabled):not([data-disabled="true"]):not([aria-disabled="true"]):is(:hover, :focus-visible) {
+    color: var(--snowui-native-link-hover-color, var(--black-100));
   }
 
 }
 
 /*
- * 普通原生链接在 hover 时隐藏下划线。此规则必须保持在 @layer base 之外，
- * 才能覆盖应用中未分层的常态下划线规则；排除 data-snowui-frame，确保
- * Link、Button href 等 SnowUI 组件链接继续由组件自己的公开状态控制。
+ * 带显式下划线的普通原生链接在 hover 时隐藏下划线。置于 @layer base
+ * 之外以覆盖应用的常态装饰；应用若自行定义 hover 装饰，可用更具体的
+ * 状态规则保留。组件链接的最终视觉仍由自身拥有。
  */
-a:any-link:not([data-snowui-frame]):hover {
+a:any-link:not([data-snowui-frame]):not(.snowui-disabled):not([data-disabled="true"]):not([aria-disabled="true"]):hover {
   text-decoration-line: none;
 }
 
