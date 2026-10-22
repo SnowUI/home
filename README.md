@@ -89,3 +89,7 @@ https://github.com/SnowUI/home
 - GitHub Pages / CDN 使用 `main` 分支内容
 - README、CSS 入口、`package.json` 的 exports 需要同步维护
 - 修改响应式 allowlist 或静态工具类声明后，运行 `pnpm generate:responsive`；提交前运行 `pnpm check:responsive`，生成器会同时守卫可选入口以及 44,000 B raw / 5,250 B gzip 的体积上限
+
+## 主题单一来源
+
+`components/src/styles/themes.css`是当前唯一可编辑来源；本仓`snowui-themes.css`由工作区`node specs/scripts/sync-themes.mjs --write`生成，`--check`验证一致。AI可修改权威源，不再Owner手工双份维护。生成器仅用于工作区维护；组件构建仍自包含，本仓已生成CSS可直接交付。主题／Token数值未因来源整理改变。未来设计配置归引擎插件，base／utilities继续只服务自有应用。
