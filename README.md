@@ -92,4 +92,4 @@ https://github.com/SnowUI/home
 
 ## 主题单一来源
 
-`components/src/styles/themes.css`是当前唯一可编辑来源；本仓`snowui-themes.css`由工作区`node specs/scripts/sync-themes.mjs --write`生成，`--check`验证一致。AI可修改权威源，不再Owner手工双份维护。生成器仅用于工作区维护；组件构建仍自包含，本仓已生成CSS可直接交付。主题／Token数值未因来源整理改变。未来设计配置归引擎插件，base／utilities继续只服务自有应用。
+`components/src/styles/themes.css`是当前唯一可编辑来源；本仓`snowui-themes.css`由工作区`node docs/scripts/sync-themes.mjs --write`生成，`--check`验证一致。AI可修改权威源，不再Owner手工双份维护。生成器仅用于工作区维护；组件构建仍自包含，本仓已生成CSS可直接交付。主题／Token数值未因来源整理改变。未来设计配置归引擎插件，base／utilities继续只服务自有应用。
