@@ -10,13 +10,7 @@ Use the stylesheet from the repository's CDN:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css">
 ```
 
-In a workspace with the package available, install it with:
-
-```sh
-pnpm add @snowui-design-system/styles
-```
-
-Import the styles needed by your application:
+When the package is available in your workspace, import the styles needed by your application:
 
 ```ts
 import '@snowui-design-system/styles';
